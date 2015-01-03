@@ -1,0 +1,55 @@
+\section{Théorème de l'application ouverte}
+
+Définissons d'abord ce qu'est une application ouverte.
+
+Nous avons par définition qu'une application $f$ entre deux espaces topologiques
+$X$ et $Y$ est continue si pour tout ouvert $O$ de $Y$, $f^{-1}(O)$ est un
+ouvert de $X$.
+
+Nous définissons alors dans l'autre sens la propriété d'application ouverte :
+
+\begin{definition}
+	Soient $X$ et $Y$ deux espaces topologiques, et \GSfunction{f}{X}{Y}. Alors
+	f est ouverte si pour tout ouvert $O$ de $X$, $f(O)$ est un ouvert de $Y$.
+\end{definition}
+
+\begin{proposition}
+	Toute application non continue est ouverte.
+\end{proposition}
+
+\begin{proposition}
+	L'ensemble des applications ouvertes de $E$ dans $F$, noté $O(E, F)$ est ouvert dans \GScontinueHomo{E}{F}.
+\end{proposition}
+
+Le théorème de l'application ouverte nous dit :
+
+\begin{theorem} [Théorème des applications ouvertes]
+	Soit $E$ et $F$ deux espaces de Banach, et $T \in$ \GScontinueHomo{E}{F} tel
+	que T est surjective.
+
+	Alors T est ouverte.
+	\label{open-application-theorem}
+\end{theorem}
+
+Pour rappel, on appelle application bicontinue une application bijective
+continue tel que sa réciproque est aussi continue.
+
+Par le théorème \ref{open-application-theorem}, on en déduit les corollaires
+suivants :
+
+\begin{corollary}
+	Toute application bijective continue entre deux espaces de Banach est bicontinue.
+\end{corollary}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{corollary}
+	Soient deux normes \GSnormeDef{.}{1} et \GSnormeDef{.}{2} sur E tel que
+	$\exists C > 0$ tel que $\forall x \in E$ \GSnormeDef{x}{1} $\leq$
+	C \GSnormeDef{x}{2}, et que \GSnormedSpace{E}{\GSnormeDef{.}{1}} et
+	\GSnormedSpace{E}{\GSnormeDef{.}{2}} sont des espaces de Banach.
+	
+	Alors les normes sont équivalentes.
+\end{corollary}

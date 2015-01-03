@@ -1,24 +1,78 @@
 \section{Théorème de Baire}
 
-Énonçons d'abord une propriete, qu'on appelle propriete de Baire.
+Énonçons d'abord une propriété, qu'on appelle propriété de Baire.
 
-\begin{propriete} [Propriété de Baire]
+\begin{propriete} [Propriété de Baire ouverts]
 	Pour toutes suites dénombrables d'ouverts denses dans E, on a $\displaystyle
 	\bigcap_{n = 0}^{\infty} O_{n}$ qui est dense dans E.
 \end{propriete}
 
+On a alors une proposition équivalente à la propriété de Baire en terme de
+fermés.
 
+\begin{propriete} [Propriété de Baire fermés]
+	Pour toutes suites dénombrables de fermé d'intérieur vide, on a $E \neq
+	\displaystyle \bigcup_{n = 0}^{\infty} F_{n}$.
+\end{propriete}
+
+\begin{proof}
+	
+\end{proof}
+
+Nous avons alors un corollaire (en supposant que la propriété de Baire est
+vraie) :
+
+\begin{corollary}
+	Soit une suite \GSsequence{F}{n}{\naturel} de fermés tel que $\displaystyle
+	\bigcup_{n = 0}^{\infty}{F_{n}} = E$, alors il existe un $F_{n_{0}}$
+	d'intérieur non vide.
+\end{corollary}
+
+\begin{proof}
+	
+\end{proof}
 
 \begin{definition} [Espace de Baire]
 	Si un espace topologie E a la propriété de Baire, on dit que c'est un espace
 	de Baire.
 \end{definition}
 
+La question à se poser est : est-ce qu'il existe des espaces de Baire. La
+réponse est oui, et la proposition suivante nous en donne une partie.
+
 \begin{proposition}
 	Tout espace métrique complet est un espace de Baire.
 \end{proposition}
 
+\begin{proof}
+	
+\end{proof}
+
 \begin{remarque}
 	Si on considère les suites d'ouverts non dénombrables pour la propriété de
 	Baire, nous n'avons pas la proposition précédente (exemple avec $\real$).
+	%Donner le contre-exemple
 \end{remarque}
+
+On a alors comme conséquence un proposition très intéressante sur les bases
+algébriques des espaces vectoriels normés E. Pour rappel, une base algébrique
+est un ensemble d'éléments B de E linéairement indépendants tel que tout élément
+de E s'écrit comme une combinaire linéaire finie des éléments de B.
+
+\begin{proposition}
+	Soit E un espace de Banach, alors toute base algébrique est soit finie, soit
+	non-dénombrable.
+\end{proposition}
+
+On a alors comme exemple d'application de la proposition que $\mathcal{C}[0, 1]$
+et \GScontinueHomo{E}{F}, avec E ou F de dimension infinie, et F de Banach,
+n'ont que des bases algébriques non dénombrables (car ce ne sont pas des espaces
+vectoriels de dimension finie).
+
+On a alors, grace à la contraposée, un corollaire important sur les espaces de
+Banach :
+
+\begin{corollary}
+	Soit E un espace vectoriel normé qui a une base algébrique dénombrable.
+	Alors E n'est pas complet (ou E n'est pas de Banach).
+\end{corollary}

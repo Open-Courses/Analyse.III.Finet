@@ -1,0 +1,38 @@
+\section{Théorème de Banach-Steinhaus}
+
+Le théorème suivant utilise la propriété de Baire, et la proposition que tout
+espace de Banach est de Baire. Nous utiliserons le corollaire.
+
+\begin{theorem}
+	Soient E et F deux espaces de Banach.
+	Soit \GSsequence{T}{i}{I} $\subseteq$ \GScontinueHomo{E}{F}
+	\label{banach-steinhaus}
+
+	On a alors que si $\forall x \in E$ $sup_{i \in I}||T_{i}(x)|| < \infty$,
+	alors $sup_{i \in I} ||T_{i}|| < \infty$
+\end{theorem}
+
+Avant de montrer ce théorème, expliquons ce qu'il signifie.
+
+La prémisse demande que pour chaque élément x de E, la famille $(T_{i}(x))_{i
+\in I}$ est bornée.
+On a alors que chaque application linéaire de la famille est borné sur la
+boule unité par une même constante. Nous savons, comme les applications sont
+continues, qu'elles sont bornée sur la boule unité, et le théorème nous dit
+qu'elles sont bornées par une même constante.
+
+\begin{proof}
+	
+\end{proof}
+
+Nous avons alors un corollaire se rapportant aux formes linéaires :
+
+\begin{corollary}
+	Soit \GSsequence{x^{*}}{n}{\naturel} $\subseteq$ $\GSdual{E}$, tel que pour
+	tout $x \in E$, la suite $(x_{n}^{*}(x))_{n \in \naturel}$ est bornée. Alors
+	la suite $(||x_{n}||)_{n \in \naturel}$ est bornée.
+\end{corollary}
+
+\begin{proof}
+	Ce n'est qu'une application avec I = $\naturel$.
+\end{proof}
