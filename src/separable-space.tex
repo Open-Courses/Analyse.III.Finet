@@ -1,0 +1,86 @@
+\section{Espace séparable}
+
+\begin{definition}
+	Soit E un espace topologique.
+	E est dit séparable s'il existe un sous-ensemble D tel que D est dense dans
+	E et dénombrable.
+\end{definition}
+
+\begin{proposition}
+	Soit $D \subseteq E$.
+	D est dense dans E ssi D coupe tout ouvert de E.
+\end{proposition}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{proposition}
+	Prenons un espace topologique séparable X et une famille d'ouvert indicé par
+	I \GSsequence{O}{i}{I}. Alors I est au plus dénombrable.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+\subsection{Séparabilité dans les espaces métriques}
+
+Donnons quelques équivalences plus faciles à utiliser quand nous sommes dans un
+espace métrique.
+
+\begin{proposition}
+	Soit $(E, d_{E})$ un espace métrique, LASSE :
+	\begin{enumerate}
+		\item $\forall \epsilon > 0$, le recouvrement $(B(x, \epsilon))_{x \in
+			E}$ admet un sous-recouvrement \textbf{dénombrable}.
+		\item E est séparable.
+		\item $\exists$ \GSsequence{O}{n}{\naturel}, $O_{n}$ ouvert, tel que
+			tout ouvert de E s'écrit comme une union de $O_{n}$.
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{proposition}
+	Si $(E, d_{E})$ est séparable, alors toute partie de E est séparable.
+\end{proposition}
+
+\begin{remarque}
+	Cette proposition n'est pas vrai dans un espace simplement topologique.
+	%Donner un exemple
+\end{remarque}
+
+\subsection{Séparabilité dans les espaces vectoriels normés}
+
+Comme nous l'avons fait pour les espaces métriques, nous allons donner des
+équivalences plus faciles à utiliser pour les espaces vectoriel normés.
+
+\begin{proposition}
+	Soit \GSnormedSpace{E}{\GSnorme{.}} un espace métrique, LASSE :
+	\begin{enumerate}
+		\item $E$ est séparable.
+		\item $B(E)$ est séparable
+		\item $S(E)$ est séparable
+	\end{enumerate}
+\end{proposition}
+
+\begin{exemple}
+	Prenons $c_{0}(\real)$, l'ensemble des suites à coefficients dans $\real$
+	qui convergent vers 0. On a que $c_{0}$ est séparable.
+\end{exemple}
+
+\begin{exemple}
+	Prenons $l^{1}(\real)$, l'ensemble des suites à coefficients dans $\real$
+	tel que \GSnormeDef{x}{1} = \GSsum{n}{0}{\infty}{$x_{n}$} < $\infty$ est
+	séparable.
+\end{exemple}
+
+\begin{exemple}
+	$l^{\infty}(\real)$, l'ensemble des suites bornées à coefficients dans
+	$\real$ n'est pas séparable.
+\end{exemple}
+
+%Théorème des Stone-Weierstrass ??
