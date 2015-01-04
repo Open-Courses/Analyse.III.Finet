@@ -1,2 +1,41 @@
 \section{Topologie initiale, cas particuliers et applications}
 
+\subsection{Topologie initiale}
+
+Prenons une famille
+\GSsequence{E}{i}{I} d'espace topologique, où la topologie sur $E_{i}$ est notée
+$\tau_{i}$, ainsi qu'une famille de fonctions \GSsequence{f}{i}{I} tel que
+\GSfunction{$f_{i}$}{E}{$E_{i}$} où E est un ensemble.
+
+Nous allons construire une topologie sur E, appelée \textbf{topologie initiale}
+et noté $\tau$, telle qu'elle rend les applications $f_{i}$ continues. Il faut pour cela que
+pour chaque $i \in I$, et pour chaque ouvert $O_{i} \in \tau_{i}$,
+$f_{i}^{-1}(O_{i}) \in \tau$.
+
+Nous posons une condition supplémentaire sur $\tau$ qui est qu'elle est la
+topologie la moins fine qui rend les $f_{i}$ continues, c'est-à-dire que si on
+prend une autre topologie $\tau^{*}$ sur E qui rend les $f_{i}$ continues, chaque
+ouvert de $\tau$ doit être dans $\tau^{*}$.
+
+Nous allons alors définir 
+
+\subsection{Topologie produit}
+
+\subsection{Topologie faible et préfaible}
+
+\subsection{Applications}
+
+On a construit précédemment sur $\GSdual{E}$ une topologie, qui est la topologie
+préfaible, notée \GSpreweakTopo{E}.
+
+Nous avons vu dans le chapitre sur les espaces de Banach, que dans un espace
+vectoriel normé, la boule unité est compacte ssi l'espace est de dimension
+finie. Dans notre cas, $E^{*}$ n'est pas de dimension finie si $E$ n'est pas de
+dimension finie, donc la boule unité n'est pas compacte.
+
+Or, la compacité joue un rôle important en analyse, et c'est là qu'intervient la topologie préfaible. On a le théorème suivant.
+
+\begin{theorem}
+	Soit l'espace topologique $(E,$ \GSpreweakTopo{E}$)$, alors la boule unité
+	est compacte.
+\end{theorem}
