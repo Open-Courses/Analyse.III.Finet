@@ -117,3 +117,93 @@ Hahn-Banach analytiques.
 
 \subsection{Forme géométrique}
 
+Donnons d'abord quelques définitions. Dans cette partie, $E$ désigne un espace
+vectoriel.
+
+\begin{definition} [Jauge]
+	Soit $C \subseteq E$ tel que $0 \in C$.
+
+	La jauge de $C$ est définie comme la fonction \GSfunction{$p$}{$E$}{$R^{+}}$
+	tel que $p(x) = \inf\left\{ \alpha > 0 \, | \, \alpha^{-1}x \in C\right\}$.
+\end{definition}
+
+%Donner des exercices et des exemples, avec les corrigés
+
+Regardons quels résultats nous avons quand $C$ est lié à la topologie de $E$.
+
+\begin{proposition}
+	Si $C$ est ouvert, alors $\exists M > 0$, $\forall x \in E$, $p(x) \leq M
+	||x||$.
+\end{proposition}
+
+\begin{proposition}
+	Si $C$ est ouvert et convexe, alors $C = \left\{x \in E \, | \, p(x) <
+	1\right\}$.
+\end{proposition}
+
+\begin{definition} [Hyperplan]
+	Soit $H$ un sous-espace vectoriel de $E$. $H$ est appelé hyperplan
+	(vectoriel) si il est de codimension 1, c'est-à-dire que $E = H\oplus
+	\mathbb{K}e$ où $e \in E$, non nul.
+\end{definition}
+
+\begin{proposition}
+	$H$ est un hyperplan ssi $\exists$ \GSfunction{$f$}{$E$}{$\mathbb{K}$} non nulle
+	tel que $H = ker(f)$.
+\end{proposition}
+
+\begin{definition} [Hyperplan affine]
+	Soit \GSfunction{$f$}{$E$}{$\mathbb{K}_{0}$}, et $\alpha \in \mathbb{K}$.
+	
+	Soit $H = \left\{ x \in E \, | \, f(x) = \alpha \right\}$.
+
+	$H$ est appelé hyperplan (vectoriel) affine.
+\end{definition}
+
+
+\begin{definition}
+	Soient $A$, $B \subseteq E$ convexes et disjoints.
+	
+	Soit $H = \left\{ x \in E \, | \, f(x) = \alpha\right\}$ un hyperplan affine
+
+	On dit que \textbf{$H$ sépare $A$ et $B$ au sens large} si
+
+	$\forall x \in A$, $f(x) \leq \alpha$ et $\forall x \in B$, $f(x) \geq
+	\alpha$
+
+	et on dit que \textbf{$H$ sépare $A$ et $B$ au sens strict} si
+
+	$\exists \epsilon > 0 \forall x \in A$, $f(x) \leq \alpha -
+	\epsilon$ et $\forall x \in B$, $f(x) \geq \alpha + \epsilon$.
+
+\end{definition}
+
+
+Nous en venons aux théorèmes de Hahn-Banach sous leurs formes géométriques.
+
+\begin{theorem} [Théorème de Hahn-Banach 1 - géométrique]
+	Soit $A$, $B \subseteq E$ convexes et disjoints tel que $A$ est ouvert.
+
+	Alors il existe un hyperplan vectoriel fermé qui sépare $A$ et $B$ au sens
+	large.
+\end{theorem}
+
+\begin{theorem} [Théorème de Hahn-Banach 2 - géométrique]
+	Soit $A$, $B \subseteq E$ convexes et disjoints tel que $A$ est fermé et $B$
+	compact.
+
+	Alors il existe un hyperplan vectoriel fermé qui sépare $A$ et $B$ au sens
+	strict.
+\end{theorem}
+
+\subsection{Applications géométriques}
+
+\begin{corollary}
+	Soient deux convexes $A$ et $B$ tel que $A-B$ est dense dans E.
+
+	Alors $A$ et $B$ ne peuvent être séparés par un hyperplan fermé.
+\end{corollary}
+
+\begin{corollary}
+	Tout hyperplan vectoriel est soit fermé, soit dense dans $E$.
+\end{corollary}
