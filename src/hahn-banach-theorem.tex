@@ -3,26 +3,117 @@
 Les théorèmes de Hahn-Banach s'intéresse aux formes linéaires sur les espaces
 vectoriels normés sur les corps $\real$ ou $\complex$.
 Ceux-ci permettent de montrer l'existence de prolongement des formes linéaires
-définies au définies au départ sur un sous-espace vectoriel.
+définies au départ sur un sous-espace vectoriel.
 
 Nous les montrerons d'abord sur $\real$, et après sur $\complex$ (qui sera une
 généralisons simple).
 
 \subsection{Forme analytique}
 
-\begin{theorem} [Hahn-Banach - analytique]
-	Soit E un $\real$-espace vectoriel normé, et G un sous-espace vectoriel de E.
-	Soit \GSfunction{$f_{G}$}{G}{$\real$} une forme linéaire.
+\begin{theorem} [Théorème 1 de Hahn-Banach - analytique]
+	Soit E un $\real$-espace vectoriel, et G un sous-espace vectoriel de E.
 
-	Alors il existe une forme linéaire \GSfunction{$f_{E}$}{E}{$\real$} tel que
-	$(f_{E})_{|G} = f_{G}$.
+	Soit \GSfunction{$f_{G}$}{$G$}{$\real$} une forme linéaire, et
+	\GSfunction{$p$}{$E$}{$\real$} une fonction convexe.
+
+	Supposons que $\forall x \in G$ $f_{G}(x) \leq p(x)$, c'est-à-dire que
+	$f_{G}$ est majorée par $p$ sur $G$.
+
+	Alors il existe une forme linéaire \GSfunction{$f_{E}$}{$E$}{$\real$} tel que
+	$(f_{E})_{|G} = f_{G}$ et $\forall x \in E$ $f_{E}(x) \leq p(x)$.
+	\label{hahn-banach-analytic-1}
 \end{theorem}
 
-La dernière condition insiste bien sur le fait que $f_{E}$ prolonge $f_{G}$
+La dernière condition insiste bien sur le fait que $f_{E}$ prolonge $f_{G}$ et
+que $f_{E}$ reste majorée par $p$, mais cette fois-ci, sur tout $E$, et pas
+seulement sur le sous espace vectoriel $G$.
+Remarquons en plus que $E$ n'est pas nécessairement normé. En effet, nous aurons
+un corollaire portant sur les espaces vectoriels normés.
+
+De plus, $f$ n'est pas nécessairement continue.
 
 \begin{proof}
 	
 \end{proof}
+
+\begin{corollary}
+	Si de plus $E$ est \textbf{normé}, on a $||f_{E}|| = ||f_{G}||$.
+\end{corollary}
+
+Nous pouvons nous demander si la condition de majoration par une fonction
+convexe est nécessaire. En réalité, si on suppose que $f$ est linéaire et
+continue, nous pouvons contruire $p(x)$, et nous avons alors le théorème
+suivant.
+
+\begin{theorem} [Théorème 2 de Hahn Banach - analytique]
+	Soit E un $\real$-espace vectoriel \textbf{normé}, et G un sous-espace
+	vectoriel de E.
+	Soit \GSfunction{$f_{G}$}{$G$}{$\real$} une forme linéaire
+	\textbf{continue}.
+
+	Alors il existe une forme linéaire \textbf{continue}
+	\GSfunction{$f_{E}$}{$E$}{$\real$} tel que $(f_{E})_{|G} = f_{G}$.
+	\label{hahn-banach-analytic-2}
+\end{theorem}
+
+\subsection{Applications analytiques}
+
+Dans cette section, nous allons démontrer quelques corollaires des théorèmes de
+Hahn-Banach analytiques.
+
+\begin{corollary}
+	Soit \GSnormedSpace{E}{\GSnorme{.}}, et un élément non-nul $x_{0}$ de $E$.
+
+	Alors, $\exists x^{*} \in \GSdual{E}$ tel que $x^{*}(x_{0}) = 1$ et
+	\GSnorme{x^{*}} $= \frac{1}{||x_{0}||}$
+\end{corollary}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{corollary}
+	Soit \GSnormedSpace{E}{\GSnorme{.}}, et un élément non-nul $x_{0}$ de $E$.
+
+	Alors, $\exists x^{*} \in \GSdual{E}$ tel que $x^{*}(x_{0}) = x_{0}$ et
+	\GSnorme{x^{*}} $= ||x_{0}||$.
+\end{corollary}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{corollary}
+	Soit \GSnormedSpace{E}{\GSnorme{.}}. Alors $\GSdual{E}$ sépare les points de
+	E, c'est-à-dire que $\forall x, y \in E$ $\exists x^{*} \in \GSdual{E}$ tel
+	que $x^{*}(x) \neq x^{*}(y)$.
+\end{corollary}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{corollary}
+	Soit \GSnormedSpace{E}{\GSnorme{.}}. Alors $\forall x \in E$, \GSnorme{x} 
+	$ = \max\limits_{x^{*} \in \GSunitBoule{\GSdual{E}}}$\GSnorme{x^{*}(x)}.
+\end{corollary}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{corollary}
+	Soit \GSnormedSpace{E}{\GSnorme{.}}, et $H$ un sous-espace vectoriel fermé.
+	Soit $x_{0} \in E_{/H}$.
+
+	Alors $\exists x^{*} \in \GSdual{E}$ tel que :
+
+	\begin{enumerate}
+		\item \GSnorme{x^{*}} $ = 1$.
+		\item $x^{*}(x_{0}) = d(x_{0}, H)$
+		\item $H \subseteq ker(x^{*})$
+	\end{enumerate}
+\end{corollary}
 
 \subsection{Forme géométrique}
 
