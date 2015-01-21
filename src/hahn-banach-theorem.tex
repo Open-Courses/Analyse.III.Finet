@@ -42,10 +42,15 @@ De plus, $f$ n'est pas nécessairement continue.
 	Si de plus $E$ est \textbf{normé}, on a $||f_{E}|| = ||f_{G}||$.
 \end{corollary}
 
+\begin{proof}
+	
+\end{proof}
+
 Nous pouvons nous demander si la condition de majoration par une fonction
 convexe est nécessaire. En réalité, si on suppose que $f$ est linéaire et
 continue, nous pouvons contruire $p(x)$, et nous avons alors le théorème
 suivant.
+%Et majoration nécessaire si pas continue ?
 
 \begin{theorem} [Théorème 2 de Hahn Banach - analytique]
 	Soit E un $\real$-espace vectoriel \textbf{normé}, et G un sous-espace
@@ -58,6 +63,9 @@ suivant.
 	\label{hahn-banach-analytic-2}
 \end{theorem}
 
+\begin{proof}
+	
+\end{proof}
 \section{Applications analytiques}
 
 Dans cette section, nous allons démontrer quelques corollaires des théorèmes de
@@ -125,7 +133,7 @@ vectoriel.
 \begin{definition} [Jauge]
 	Soit $C \subseteq E$ tel que $0 \in C$.
 
-	La jauge de $C$ est définie comme la fonction \GSfunction{$p$}{$E$}{$R^{+}}$
+	La jauge de $C$ est définie comme la fonction \GSfunction{$p$}{$E$}{$R^{+}$}
 	tel que $p(x) = \inf\left\{ \alpha > 0 \, | \, \alpha^{-1}x \in C\right\}$.
 \end{definition}
 
@@ -154,13 +162,13 @@ normé.
 
 \begin{definition} [Hyperplan]
 	Soit $H$ un sous-espace vectoriel de $E$. $H$ est appelé hyperplan
-	(vectoriel) si il est de codimension 1, c'est-à-dire que $E = H\oplus
+	(vectoriel) s'il est de codimension 1, c'est-à-dire que $E = H\oplus
 	\mathbb{K}e$ où $e \in E$, non nul.
 \end{definition}
 
 \begin{proposition}
 	$H$ est un hyperplan ssi $\exists$ \GSfunction{$f$}{$E$}{$\mathbb{K}$} non nulle
-	tel que $H = ker(f)$.
+	tel que $H = \ker(f)$.
 \end{proposition}
 
 \begin{proof}
@@ -188,7 +196,7 @@ normé.
 
 	et on dit que \textbf{$H$ sépare $A$ et $B$ au sens strict} si
 
-	$\exists \epsilon > 0 \forall x \in A$, $f(x) \leq \alpha -
+	$\exists \epsilon > 0$, $\forall x \in A$, $f(x) \leq \alpha -
 	\epsilon$ et $\forall x \in B$, $f(x) \geq \alpha + \epsilon$.
 
 \end{definition}
