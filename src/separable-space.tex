@@ -1,5 +1,8 @@
 \chapter{Espace séparable}
 
+Pour rappel, un ensemble $D$ est dense dans $E$ si pour tout $x_{0} \in E$, $D$
+coupe tout voisinage de $x_{0}$.
+
 \section{Séparabilité dans un espace topologique}
 
 \begin{definition}
@@ -10,20 +13,34 @@
 
 \begin{proposition}
 	Soit $D \subseteq E$.
-	$D$ est dense dans $E$ ssi $D$ coupe tout ouvert de $E$.
+	$D$ est dense dans $E$ ssi $D$ coupe tout ouvert non vide de $E$.
 \end{proposition}
 
 \begin{proof}
-
+	Reformulation de la définition en terme d'ouvert. En effet, un ouvert est un
+	voisinage de tous ses points.
 \end{proof}
+
+La proposition suivante caractérise les topologies des espaces séparables. Elle
+nous dit que si un espace est séparable, alors il a au plus un nombre
+dénombrable d'ouverts disjoints.
 
 \begin{proposition}
 	Prenons un espace topologique séparable $X$ et une famille d'ouvert
-	\GSsequence{O}{i}{I}. Alors $I$ est au plus dénombrable.
+	\GSsequence{O}{i}{I} 2 à 2 disjoints. Alors $I$ est au plus dénombrable.
 \end{proposition}
 
 \begin{proof}
-	
+	Soit $D$ dense dans $E$ et dénombrable. On sait que $\forall i \in I$, $D$
+	coupe $O_{i}$. Notons $x_{i}$ l'élément qui se trouve dans $D \bigcap
+	O_{i}$.
+
+	On construit \GSfunction{$f$}{$I$}{$D$} : $i \leftarrow x_{i}$. On a $f$ qui
+	est injective car si $x_{i} = x_{j}$ ($i \neq j$), avec $x_{j} \in O_{j}$ et
+	$x_{i} \in O_{i}$, $x_{j} \in O_{i}$ et donc $O_{i}$ et $O_{j}$ ne sont pas
+	disjoints.
+
+	Donc $Card(I) \leq Card(D)$. Donc $I$ au plus dénombrable car $D$ dénombrable.
 \end{proof}
 
 \section{Séparabilité dans les espaces métriques}
@@ -79,21 +96,33 @@ métrique, donc les équivalences de la section précédente restent vraies.
 	
 \end{proof}
 
-\begin{exemple}
+\begin{proposition}
 	$c_{0}(\real)$, l'ensemble des suites à coefficients dans $\real$
 	qui convergent vers 0, est séparable.
-\end{exemple}
+\end{proposition}
 
-\begin{exemple}
+\begin{proof}
+	
+\end{proof}
+
+\begin{proposition}
 	$l^{1}(\real)$, l'ensemble des suites à coefficients dans $\real$
 	tel que \GSnormeDef{x}{1} = \GSsum{n}{0}{\infty}{$x_{n}$} < $\infty$, est
 	séparable.
-\end{exemple}
+\end{proposition}
 
-\begin{exemple}
+\begin{proof}
+	
+\end{proof}
+
+\begin{proposition}
 	$l^{\infty}(\real)$, l'ensemble des suites bornées à coefficients dans
 	$\real$ n'est pas séparable.
-\end{exemple}
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
 
 \begin{question}
 	On a vu à travers les exemples que $c_{0}$, et $l^{1}$ sont séparables,
@@ -101,7 +130,7 @@ métrique, donc les équivalences de la section précédente restent vraies.
 	l^{1} \subseteq l^{\infty}$.
 	On pourrait se poser comme question si toute chaîne d'espace séparable
 	est bornée par un ensemble non séparable, en d'autres termes est-ce que tout
-	ensemble séparable est contenu dans un ensemble non séparable ? (En
+	ensemble séparable est contenu dans un ensemble non séparable? (En
 	utilisant la topologie induite).
 \end{question}
 %Théorème de Stone-Weierstrass ??

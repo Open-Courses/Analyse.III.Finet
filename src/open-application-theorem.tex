@@ -17,9 +17,9 @@ Nous définissons alors dans l'autre sens la propriété d'application ouverte :
 %	Toute application non continue est ouverte.
 %\end{proposition}
 
-\begin{proof}
-	
-\end{proof}
+%\begin{proof}
+%	
+%\end{proof}
 
 \begin{proposition}
 	L'ensemble des applications ouvertes de $E$ dans $F$, noté $O(E, F)$, est
@@ -30,43 +30,55 @@ Nous définissons alors dans l'autre sens la propriété d'application ouverte :
 	
 \end{proof}
 
-Le théorème de l'application ouverte nous dit :
+Le théorème de l'application ouverte nous dit:
 
 \begin{theorem} [Théorème des applications ouvertes]
+\label{theorem_open_application}
 	Soit $E$ et $F$ deux espaces de Banach, et $T \in$ \GScontinueHomo{E}{F} tel
 	que T est surjective.
 
 	Alors T est ouverte.
-	\label{open-application-theorem}
 \end{theorem}
 
 \begin{proof}
 	
 \end{proof}
 
-Pour rappel, on appelle application bicontinue une application bijective
-continue tel que sa réciproque est aussi continue.
+Pour rappel, on appelle homéomorphisme une application linéaire continue bijective
+tel que sa réciproque est aussi linéaire continue.
 
-Par le théorème \ref{open-application-theorem}, on en déduit les corollaires
-suivants :
+Par le théorème~\ref{theorem_open_application}, on en déduit les corollaires
+suivants:
 
 \begin{corollary}
-	Toute application bijective continue entre deux espaces de Banach est bicontinue.
+	Toute application linéaire continue bijective entre deux espaces de Banach
+	est un homéomorphisme.
 \end{corollary}
 
 \begin{proof}
-	
+	On a bien que $f^{-1}$ est linéaire, il reste alors à montrer que $f^{-1}$
+	est continue, c'est dire que $f(O)$ est un ouvert de $F$ pour tout ouvert
+	$O$ de $E$, c'est-à-dire que $f$ est ouverte.
+	Par~\ref{theorem_open_application}, on a $f$ ouverte car $f$ est bijective.
 \end{proof}
 
 \begin{corollary}
-	Soient deux normes \GSnormeDef{.}{1} et \GSnormeDef{.}{2} sur E tel que
-	$\exists C > 0$ tel que $\forall x \in E$ \GSnormeDef{x}{1} $\leq$
-	C \GSnormeDef{x}{2}, et que \GSnormedSpace{E}{\GSnormeDef{.}{1}} et
-	\GSnormedSpace{E}{\GSnormeDef{.}{2}} sont des espaces de Banach.
+	Soient deux normes \GSnormeDef{.}{1} et \GSnormeDef{.}{2} sur un espace de
+	Banach $E$ tel que $\exists C > 0$ tel que $\forall x \in E$
+	\GSnormeDef{x}{1} $\leq$ C \GSnormeDef{x}{2}, et que
+	\GSnormedSpace{E}{\GSnormeDef{.}{1}} et \GSnormedSpace{E}{\GSnormeDef{.}{2}}
+	sont des espaces de Banach.
 	
 	Alors les normes sont équivalentes.
 \end{corollary}
 
 \begin{proof}
+	Prenons l'application identité \GSfunction{$Id_{E}$}{$(E, ||.||_{2})$}{$(E,
+	||.||_{1})$}. L'hypothèse nous dit que $Id_{E}$ est continue. De plus,
+	$Id_{E}$ est linéaire bijective. On a alors que
+	\GSfunction{$Id_{E}$}{$(E, ||.||_{1})$}{$(E, ||.||_{2})$} est linéaine
+	continue qui nous donne $\exists M > 0, \, \forall x \in E, \,
+	||x||_{2} \leq M \, ||x||_{1}$. On a donc bien que les normes sont
+	équivalentes.
 	
 \end{proof}

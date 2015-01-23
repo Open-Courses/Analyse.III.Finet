@@ -12,7 +12,8 @@ généralisation simple).
 
 \section{Forme analytique}
 
-\begin{theorem} [Théorème 1 de Hahn-Banach - analytique]
+\begin{theorem} [Théorème 1 de Hahn-Banach --- analytique]
+\label{theorem_hahn_banach_analytic_1}
 	Soit E un $\real$-espace vectoriel, et G un sous-espace vectoriel de E.
 
 	Soit \GSfunction{$f_{G}$}{$G$}{$\real$} une forme linéaire, et
@@ -22,8 +23,7 @@ généralisation simple).
 	$f_{G}$ est majorée par $p$ sur $G$.
 
 	Alors il existe une forme linéaire \GSfunction{$f_{E}$}{$E$}{$\real$} tel que
-	$(f_{E})_{|G} = f_{G}$ et $\forall x \in E$ $f_{E}(x) \leq p(x)$.
-	\label{hahn-banach-analytic-1}
+	${(f_{E})}_{|G} = f_{G}$ et $\forall x \in E$ $f_{E}(x) \leq p(x)$.
 \end{theorem}
 
 La dernière condition insiste bien sur le fait que $f_{E}$ prolonge $f_{G}$ et
@@ -52,7 +52,8 @@ continue, nous pouvons contruire $p(x)$, et nous avons alors le théorème
 suivant.
 %Et majoration nécessaire si pas continue ?
 
-\begin{theorem} [Théorème 2 de Hahn Banach - analytique]
+\begin{theorem} [Théorème 2 de Hahn Banach --- analytique]
+\label{theorem_hahn_banach_analytic_2}
 	Soit E un $\real$-espace vectoriel \textbf{normé}, et G un sous-espace
 	vectoriel de E.
 	Soit \GSfunction{$f_{G}$}{$G$}{$\real$} une forme linéaire
@@ -60,11 +61,18 @@ suivant.
 
 	Alors il existe une forme linéaire \textbf{continue}
 	\GSfunction{$f_{E}$}{$E$}{$\real$} tel que $(f_{E})_{|G} = f_{G}$.
-	\label{hahn-banach-analytic-2}
 \end{theorem}
 
 \begin{proof}
-	
+	On va construire $p$ qui majore $f$.
+	On pose \GSfunction{$p$}{$E$}{$\mathbb{K}$}: $x \rightarrow ||f|| \,
+	||x||_{E}$.
+
+	Comme $f$ est linéaire continue sur $G$, on a bien que $|f(x)| \leq ||f|| \,
+	||x||_{E} = p(x)$. Donc on peut étendre $f$ en une forme linéaire $f_{E}$
+	sur tout $E$ par~\ref{theorem_hahn_banach_analytic_1}, et tel que
+	$|f_{E}(x)| \leq p(x) = ||f_{G}|| \, ||x||_{E} = ||f_{E}|| \, ||x||_{E}$,
+	c'est-à-dire $f_{E}$ continue.
 \end{proof}
 \section{Applications analytiques}
 
@@ -75,22 +83,31 @@ Hahn-Banach analytiques.
 	Soit \GSnormedSpace{E}{\GSnorme{.}}, et un élément non-nul $x_{0}$ de $E$.
 
 	Alors, $\exists x^{*} \in \GSdual{E}$ tel que $x^{*}(x_{0}) = 1$ et
-	\GSnorme{x^{*}} $= \frac{1}{||x_{0}||}$
+	$||x^{*}||_{E^{*}} = \frac{1}{||x_{0}||}$
 \end{corollary}
 
 \begin{proof}
+	Prenons $G = <x_{0}>$, et \GSfunction{$x^{*}$}{$G$}{$\mathbb{K}$}:$\lambda
+	x_{0} \rightarrow \lambda$. On a bien $x^{*}$ linéaire et continue, donc on peut
+	la prolonger sur tout $E$, et donc $x^{*} \in \GSdual{E}$.
+
+	De plus, on a bien que $x^{*}(x_{0}) = 1$.
 	
+	Enfin, $||x^{*}||_{E^{*}} = ||x^{*}||_{G} = \displaystyle \sup_{||\lambda x_{0}|| \leq
+1}|\lambda| = \sup_{|\lambda|||x_{0}|| \leq 1} = \sup_{|\lambda| \leq
+	\frac{1}{||x_{0}||}} = \frac{1}{||x_{0}||}$.
 \end{proof}
 
 \begin{corollary}
 	Soit \GSnormedSpace{E}{\GSnorme{.}}, et un élément non-nul $x_{0}$ de $E$.
 
-	Alors, $\exists x^{*} \in \GSdual{E}$ tel que $x^{*}(x_{0}) = x_{0}$ et
+	Alors, $\exists x^{*} \in \GSdual{E}$ tel que $x^{*}(x_{0}) = ||x_{0}||$ et
 	\GSnorme{x^{*}} $= ||x_{0}||$.
 \end{corollary}
 
 \begin{proof}
-	
+	Même que le corollaire précédent où $x_{*}$ est la norme restreinte à
+	$<x_{0}>$.
 \end{proof}
 
 \begin{corollary}
@@ -137,6 +154,9 @@ vectoriel.
 	tel que $p(x) = \inf\left\{ \alpha > 0 \, | \, \alpha^{-1}x \in C\right\}$.
 \end{definition}
 
+\begin{exercice}
+	$p(0) = 0$ quelque soit $C$.
+\end{exercice}
 %Donner des exercices et des exemples, avec les corrigés
 
 Regardons quels résultats nous avons quand $C$ est lié à la topologie de $E$
@@ -148,7 +168,13 @@ normé.
 \end{proposition}
 
 \begin{proof}
-	
+
+	Comme $C$ est ouvert et $0 \in C$ par hypothèse, il existe $B(0, r)
+	\subseteq C$. Le cas $x = 0$ est trivial.
+
+	Prenons $x \in E$ non nul, on a alors avec $\alpha^{-1} = \frac{r}{2} \frac{1}{||x||}$,
+	$\alpha^{-1} x \in B(0, r)$, donc $\alpha^{-1} x \in C$, donc $p(x) \leq
+	\alpha = \frac{2}{r} ||x||$.
 \end{proof}
 
 \begin{proposition}
@@ -167,12 +193,24 @@ normé.
 \end{definition}
 
 \begin{proposition}
-	$H$ est un hyperplan ssi $\exists$ \GSfunction{$f$}{$E$}{$\mathbb{K}$} non nulle
-	tel que $H = \ker(f)$.
+	$H$ est un hyperplan ssi $\exists$ \GSfunction{$f$}{$E$}{$\mathbb{K}$}
+	linéaire non nulle tel que $H = \ker(f)$. En d'autres termes, tout hyperplan
+	est le noyau d'une forme linéaire non nulle.
 \end{proposition}
 
 \begin{proof}
+	$(\Rightarrow)$ On a $E = H \oplus \mathbb{K}e$. Prenons
+	\GSfunction{$f$}{$E$}{$\mathbb{K}$}: $h + \lambda e \rightarrow \lambda$.
+	On a bien $H = \ker(f)$.
+
+	$(\Leftarrow)$ Soit $x \in E$, et $e \notin \ker(f)$. On a $x = (x - \lambda
+	e) + \lambda e$.
 	
+	Choisissons un $\lambda$ tel que $x - \lambda e \in
+	\ker(f)$. On a $f(x - \lambda e) = f(x) - \lambda f(e)$. Si $\lambda =
+	\frac{f(x)}{f(e)}$, on a ce qu'on veut.
+	On a donc bien que $\ker(f)$ est un hyperplan vectoriel car $E = \ker(f)
+	\oplus \mathbb{K}e$.
 \end{proof}
 
 \begin{definition} [Hyperplan affine]
@@ -198,13 +236,11 @@ normé.
 
 	$\exists \epsilon > 0$, $\forall x \in A$, $f(x) \leq \alpha -
 	\epsilon$ et $\forall x \in B$, $f(x) \geq \alpha + \epsilon$.
-
 \end{definition}
-
 
 Nous en venons aux théorèmes de Hahn-Banach sous leurs formes géométriques.
 
-\begin{theorem} [Théorème de Hahn-Banach 1 - géométrique]
+\begin{theorem} [Théorème de Hahn-Banach 1 --- géométrique]
 	Soit $A$, $B \subseteq E$ convexes et disjoints tel que $A$ est ouvert.
 
 	Alors il existe un hyperplan vectoriel fermé qui sépare $A$ et $B$ au sens
@@ -215,7 +251,7 @@ Nous en venons aux théorèmes de Hahn-Banach sous leurs formes géométriques.
 	
 \end{proof}
 
-\begin{theorem} [Théorème de Hahn-Banach 2 - géométrique]
+\begin{theorem} [Théorème de Hahn-Banach 2 --- géométrique]
 	Soit $A$, $B \subseteq E$ convexes et disjoints tel que $A$ est fermé et $B$
 	compact.
 
@@ -235,6 +271,30 @@ Nous en venons aux théorèmes de Hahn-Banach sous leurs formes géométriques.
 	Alors $A$ et $B$ ne peuvent être séparés par un hyperplan fermé.
 \end{corollary}
 
+\begin{proof}
+	Supposons qu'il existe un hyperplan fermé qui les sépare, c'est-à-dire qu'il
+	existe $x^{*} \in E^{*}$ non nulle et $\alpha \in \mathbb{K}$ tel que
+	$\forall a \in A, \, x^{*}(a) \leq \alpha$ et $\forall b \in B, \, x^{*}(b)
+	\geq \alpha$.
+
+	Soit $x \in A-B$ tel que $x^{*}(x) \neq 0$. Sans perte de généralité,
+	$x^{*}(x) > 0$
+	\footnote{Sinon, faire le même raisonnement avec $-x$. On aura
+	bien $x^{*}(-x) = -x^{*}(x) > 0$.}.  On a qu'il existe une suite $(a_{n}
+	- b_{n}) \rightarrow x$.
+
+	On a $\forall n \in \naturel$, $x^{*}(a_{n}) \leq \alpha$ et $x^{*}(b_{n})
+	\geq \alpha$, donc $x^{*}(a_{n} - b_{n}) = x^{*}(a_{n}) - x^{*}(b_{n}) \leq
+	0$.
+
+	Or, comme $x^{*}$ est continue, $x^{*}(a_{n} - b_{n}) \rightarrow x^{*}(x) >
+	0$. Contradiction.
+\end{proof}
+
 \begin{corollary}
 	Tout hyperplan vectoriel est soit fermé, soit dense dans $E$.
 \end{corollary}
+
+\begin{proof}
+	
+\end{proof}

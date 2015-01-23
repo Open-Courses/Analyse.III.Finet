@@ -22,15 +22,45 @@ continues, qu'elles sont bornées sur la boule unité, et le théorème nous dit
 qu'elles sont bornées par une même constante.
 
 \begin{proof}
-	
+	Le théorème est une conséquence du théorème de Baire. En effet, $E$ et $F$
+	(et donc $\mathcal{L}(E, F)$) sont des espaces de Baire car sont complets.
+
+	Pour utiliser la propriété de Baire, nous allons construire une suite de
+	fermé dont l'union recouvre tout $E$. On utilisera alors le
+	corollaire~\ref{corollary_baire_int_non_empty} qui dit qu'un des fermés est
+	d'intérieur non vide.
+
+	Posons $E_{n} = \left\{ x \in E \, | \, \forall i \in I, \, ||T_{i}(x)||_{F}
+\leq n \right\}$. On a bien que l'union des $E_{n}$ recouvre $E$.
+
+On a alors $E_{n_{0}}$ d'intérieur non vide. Soit $x_{0} \in int({E_{n_{0}}})$.
+Comme $int({E_{n_{0}}})$ est ouvert, elle est un voisinage de chacun de ses
+points et donc on a qu'il existe $r > 0$ tel que $B(x_{0}, r)
+\subseteq int({E_{n_{0}}}) \subseteq E_{n_{0}}$. Par définition de $E_{n_{0}}$,
+on a $\forall w \in B(x_{0}, r), \, \forall i \in I, \, ||T_{i}(w)|| \leq n_{0}$.
+
+	Soit $w \in B(x_{0}, r)$. On peut reécrire $w = x_{0} + r e$ où $||e|| <
+	1$. Donc, $\forall i \in I, \, ||T_{i}(x_{0} + re)||_{F} = ||T_{i}(x_{0}) +
+	rT_{i}(e)||_{F} \leq n_{0}$. 
+
+	On en déduit $||T_{i}(e)||_{F} \leq \displaystyle \frac{1}{r} (n_{0} +
+	||T_{i}(x_{0})||_{F})$.
+
+	En se rappelant que $||T_{i}(x_{0})||_{F} \leq \sup_{i \in I}
+	||T_{i}(x_{0})||_{F} = C$, qui est fini par hypothèse, et que $e$ parcourt toute
+	la boule unité quand on parcours tous les $w \in B(x_{0}, r)$, on a
+	$||T_{i}|| \leq \displaystyle \frac{1}{r} (n_{0} + C)$ pour tout $i$ dans
+	$I$.
+
+	Comme plus rien ne dépend de $I$, on a $\sup_{i \in I}||T_{i}|| < \infty$ 
 \end{proof}
 
-Nous avons alors un corollaire se rapportant aux formes linéaires :
+Nous avons alors un corollaire se rapportant aux formes linéaires:
 
 \begin{corollary}
 	Soit \GSsequence{x^{*}}{n}{\naturel} $\subseteq$ $\GSdual{E}$, tel que pour
-	tout $x \in E$, la suite $(x_{n}^{*}(x))_{n \in \naturel}$ est bornée. Alors
-	la suite $(||x_{n}||)_{n \in \naturel}$ est bornée.
+	tout $x \in E$, la suite ${(x_{n}^{*}(x))}_{n \in \naturel}$ est bornée. Alors
+	la suite ${(||x_{n}||)}_{n \in \naturel}$ est bornée.
 \end{corollary}
 
 \begin{proof}
