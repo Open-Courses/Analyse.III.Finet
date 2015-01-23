@@ -40,14 +40,16 @@ vraie):
 \end{proof}
 
 \begin{definition} [Espace de Baire]
+\label{definition_baire_space}
 	Si un espace topologie E a la propriété de Baire, on dit que c'est un espace
 	de Baire.
 \end{definition}
 
-La question à se poser est: est-ce qu'il existe des espaces de Baire. La
-réponse est oui, et le théorème nous en donne une partie.
+La question à se poser est: est-ce qu'il existe des espaces de Baire? La
+réponse est oui, et le théorème (de Baire) nous en donne une partie.
 
 \begin{theorem} [Théorème de Baire]
+\label{theorem_baire_complete_space}
 	Tout espace métrique complet est un espace de Baire.
 \end{theorem}
 
@@ -58,8 +60,9 @@ réponse est oui, et le théorème nous en donne une partie.
 \begin{remarque}
 	Si on considère les suites d'ouverts non dénombrables pour la propriété de
 	Baire, nous n'avons pas la proposition précédente.
-	En effet, si on prend, pour $\real$, tous les singletons, qui sont fermés
-	et d'intérieur vide, ils recouvrent $\real$.
+	En effet, si on prend, pour $\real$ qui est complet, tous les singletons,
+	qui sont fermés et d'intérieur vide, ils recouvrent $\real$. Or, cela
+	contredit la propriété de Baire fermé~\ref{property_baire_closed}.
 \end{remarque}
 
 On a alors comme conséquence une proposition très intéressante sur les bases
@@ -68,16 +71,45 @@ est un ensemble d'éléments B de E linéairement indépendants tel que tout él
 de E s'écrit comme une combinaire linéaire finie des éléments de B.
 
 \begin{proposition}
+\label{proposition_basis_banach_space}
 	Soit E un espace de Banach, alors toute base algébrique est soit finie, soit
 	non-dénombrable.
 \end{proposition}
 
 \begin{proof}
-	
+	Soit $E$ un espace de Banach. On a donc
+	par~\ref{theorem_baire_complete_space} que c'est un espace de Baire.
+
+	Si $E$ est de dimension finie, on a fini.
+	Supposons maintenant qu'il soit de dimension infinie dénombrable, et prenons
+	une base $B = $ \GSsequence{e}{n}{\naturel}.
+
+	On construit alors la suite $E_{n} = <e_{1}, \ldots, e_{n}>$. Ce sont des
+	sous espaces vectoriels de dimension finie, et donc fermés
+	par~\ref{theorem_closed_vectorial_subspace}. De plus, on a
+	clairement $E = \bigcup_{n \in \naturel} E_{n}$.
+
+	Par~\ref{corollary_baire_int_non_empty}, on a un $E_{n_{O}}$ d'intérieur non
+	vide. Il contient dont une boule de centre $x_{0} \in int({E_{n_{0}}})$ et
+	de rayon $r > 0$ ($B(x_{0}, r) \subseteq E_{n_{0}}$).
+	On a $B(x_{O}, r) = x_{0} + B(0, r) \subseteq E_{n_{0}}$, et comme
+	$E_{n_{0}}$ est un espace vectoriel, si on prend un élément $x_{0} + x \in
+	E_{n_{0}}$ où $x \in B(0, r)$, $x \in E_{n_{0}}$, donc $B(0, r) \subseteq
+	E_{n_{0}}$.
+
+	Montrons maintenant que $E_{n_{0}} = E$. Si on prend un élément $x$ de $E$
+	non nul, on a $y = \frac{x}{||x||} \frac{r}{2} \in B(0, r)$, donc $y \in
+	E_{n_{0}}$. Comme $E_{n_{0}}$ est un espace vectoriel, $x = \frac{2}{r}
+	||x|| y \in E_{n_{0}}$, d'où $E \subseteq E_{n_{0}}$. On a donc bien
+	l'égalité vu que $E_{n_{0}}$ est un sev de $E$.
+
+	On obtient alors une contradiction car $E_{n_{0}}$ est de dimension finie,
+	alors que $E$ est de dimension infinie dénombrable.
 \end{proof}
 
-On a alors comme exemple d'application de la proposition que $\mathcal{C}[0, 1]$
-et \GScontinueHomo{E}{F}, avec E ou F de dimension infinie, et F de Banach,
+On a alors comme exemple d'application de la
+proposition~\ref{proposition_basis_banach_space} que $\mathcal{C}[0, 1]$ et
+\GScontinueHomo{E}{F}, avec E ou F de dimension infinie, et F de Banach,
 n'ont que des bases algébriques non dénombrables (car ce ne sont pas des espaces
 vectoriels de dimension finie).
 
