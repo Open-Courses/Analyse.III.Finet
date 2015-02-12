@@ -17,6 +17,9 @@ topologie la moins fine qui rend les $f_{i}$ continues, c'est-à-dire que si on
 prend une autre topologie $\tau^{*}$ sur E qui rend les $f_{i}$ continues, chaque
 ouvert de $\tau$ doit être dans $\tau^{*}$.
 
+On construit $\tau$ comme l'intersection finie des $f^{-1}(O_{i})$ où $O_{i} \in
+\tau_{i}$.
+
 \begin{exemple}
 	La topologie produit est un cas particulier de topologie initiale où $E =
 	\displaystyle \prod_{i \in I} E_{i}$, et où les $f_{i}$ sont les projections.
@@ -24,25 +27,32 @@ ouvert de $\tau$ doit être dans $\tau^{*}$.
 
 \section{Topologie faible}
 
---- Construire topologie faible
+Soit $x \in E$ et $\phi_{x} : E^{*} \rightarrow \mathbb{K} : x^{*} \rightarrow
+|x^{*}(x)|$.
 
-On a construit précédemment sur $\GSdual{E}$ une topologie, qui est la topologie
-faible, notée \GSweakTopo{E}.
+La topologie faible est la topologie initiale avec les fonctions $\phi_{x}$, les
+espaces vectoriels $E_{i} = E^{*}$, et l'espace de départ est $E$. C'est un cas
+particulier de la topologie faible où $I$ couvre tout $E$. Cette topologie est
+notée \GSweakTopo{E}.
+
+Les ouverts sont donc:
+
+$\left\{ x \in E \, | \, x \in \displaystyle \cap_{i = 1}^{n}
+{\phi^{-1}}_{{x_{i}}}(O_{i}) \right\}$. Comme les boules centrées à l'origine
+forment une base d'ouvert, on peut sans perte de généralité que $O_{i}$ est une
+boule.
+
+$\left\{ x \in E \, | \, \forall \epsilon > 0, \cap_{i = 1}^{n}|\phi_{x_{i}}(x)| \leq \epsilon| \right\}$
+et en se rappelant la définition des $\phi_{x_{i}}$, on a 
+$\left\{ x \in E \, | \, \forall \epsilon > 0, \cap_{i = 1}^{n}|x_{i}^{*}(x)| \leq
+\epsilon| \right\} = $
+$\left\{ x \in E \, | \, \forall \epsilon > 0, \, \forall 1 \leq i \leq n, \, |x_{i}^{*}(x)| \leq \epsilon| \right\}$
 
 Nous avons vu dans le chapitre sur les espaces de Banach, que dans un espace
 vectoriel normé, la boule unité est compacte ssi l'espace est de dimension
 finie (~\ref{theorem_riesz_compact}). Nous cherchons à définir une topologie sur
 $E$ tel que la boule unité est compacte pour cette topologie, et la topologie
 \GSweakTopo{E} convient.
-
-\begin{theorem}
-	Soit l'espace topologique $(E,$ \GSweakTopo{E}$)$, alors la boule unité
-	est compacte.
-\end{theorem}
-
-\begin{proof}
-	
-\end{proof}
 
 \subsection{Convergence pour la topologie faible}
 Quels sont les liens entre la topologie faible et la topologie sur $\GSdual{E}$
@@ -51,16 +61,11 @@ qui a servi à la construire?
 D'abord, regardons la définition de convergence dans \GSweakTopo{E}.
 \begin{definition}
 	Soit une suite \GSsequence{x}{n}{\naturel} $\subseteq E$, et $x \in E$.
-	On dit que \GSsequence{x}{n}{\naturel} vers $x$ pour \GSweakTopo{E}, et on
-	note $x_{n} \xrightarrow{\sigma} x$ si pour tout
-	voisinage $V(x)$ de $x$, $\exists n_{0}$ tel que $\forall n \geq n_{0}$,
-	$x_{n} \in V(x)$.
+	On dit que \GSsequence{x}{n}{\naturel} \textbf{converge faiblement} vers $x$
+	pour \GSweakTopo{E}, et on note $x_{n} \xrightarrow{\sigma} x$ si pour tout
+	voisinage $V(x)$ de $x$ (resp $V(0)$ de $0$), $\exists n_{0}$ tel que
+	$\forall n \geq n_{0}$, $x_{n} \in V(x)$ (resp $x_{n} - x \in V(0)$).
 \end{definition}
-
-Vu la définition de la topologie \GSweakTopo{E}, les voisinages de $x$ sont les
-ensembles $V_{\epsilon, {x_{1}}^{*}, \ldots, {x_{n}}^{*}} = \left\{x \in E \, |
-	\, \forall 1 \leq i \leq n, \, |{x_{i}}^{*}(x)| \leq \epsilon \right\}$ où
-	$\epsilon$ parcourt tout $\real$.
 
 Il est parfois dure de travailler avec cette définition, et on a alors une
 équivalence plus facile à utiliser.
@@ -88,7 +93,7 @@ Continuons à donner des liens liant la topologie faible et la norme sur $E$.
 	
 \end{proof}
 
-Nous pouvons nous demander à quoi ressemble les ouverts de la topologie
+Nous pouvons nous demander à quoi ressemblent les ouverts de la topologie
 \GSweakTopo{E}. En fait, en dimension finie, la topologie est celle de la norme.
 
 \begin{proposition}
@@ -102,12 +107,12 @@ Nous pouvons nous demander à quoi ressemble les ouverts de la topologie
 
 Etudions ce qui se passe en dimension infinie.
 
-Nous savons que pour la norme $S_{E}$, la sphère unitée est fermée, et donc
+Nous savons que pour la norme, $S_{E}$, la sphère unitée, est fermée, et donc
 qu'elle vaut son adhérence.  Dans le cas $E$ fini, la sphère est également
-fermée par la proposition précédente. En dimension infinie, nous obtenons
-quelque chose de surprenant. En effet, $\overline{S_{E}}^{\sigma}$, c'est-à-dire
-l'adhérence de la sphère unitée par rapport à la topologie faible, vaut la boule
-unité fermée pour la norme.
+faibelemnt fermée par la proposition précédente. En dimension infinie, nous
+obtenons quelque chose de surprenant. En effet, $\overline{S_{E}}^{\sigma}$,
+c'est-à-dire l'adhérence de la sphère unitée par rapport à la topologie faible,
+vaut la boule unité fermée pour la norme.
 
 \begin{proposition}
 	Soit $E$ de dimension infinie, et \GSnorme{.} sur $E$. Alors
@@ -124,6 +129,17 @@ Que se passe-t-il pour la boule $\left\{ x \in E \, | \, ||x|| < 1 \right\}$?
 	La boule unité ouverte pour \GSnorme{.} est d'intérieur vide pour la
 	topologie faible. Par conséquence, elle n'est pas $\sigma$-ouverte.
 \end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+\subsection{Applications}
+
+\begin{theorem}
+	Soit l'espace topologique $(E,$ \GSweakTopo{E}$)$, alors la boule unité
+	est compacte.
+\end{theorem}
 
 \begin{proof}
 	
