@@ -1,0 +1,168 @@
+\chapter{Topologie (pré-)faible et applications}
+
+\section{Rappel : Topologie initiale}
+
+Prenons une famille
+\GSsequence{E}{i}{I} d'espace topologique, où la topologie sur $E_{i}$ est notée
+$\tau_{i}$, ainsi qu'une famille de fonctions \GSsequence{f}{i}{I} tel que
+\GSfunction{$f_{i}$}{E}{$E_{i}$} où E est un ensemble.
+
+Nous allons construire une topologie sur E, appelée \textbf{topologie initiale}
+et noté $\tau$, telle qu'elle rend les applications $f_{i}$ continues. Il faut
+pour cela que pour chaque $i \in I$, et pour chaque ouvert $O_{i} \in \tau_{i}$,
+$f_{i}^{-1}(O_{i}) \in \tau$.
+
+Nous posons une condition supplémentaire sur $\tau$ qui est qu'elle est la
+topologie la moins fine qui rend les $f_{i}$ continues, c'est-à-dire que si on
+prend une autre topologie $\tau^{*}$ sur E qui rend les $f_{i}$ continues, chaque
+ouvert de $\tau$ doit être dans $\tau^{*}$.
+
+\begin{exemple}
+	La topologie produit est un cas particulier de topologie initiale où $E =
+	\displaystyle \prod_{i \in I} E_{i}$, et où les $f_{i}$ sont les projections.
+\end{exemple}
+
+\section{Topologie faible}
+
+--- Construire topologie faible
+
+On a construit précédemment sur $\GSdual{E}$ une topologie, qui est la topologie
+faible, notée \GSweakTopo{E}.
+
+Nous avons vu dans le chapitre sur les espaces de Banach, que dans un espace
+vectoriel normé, la boule unité est compacte ssi l'espace est de dimension
+finie (~\ref{theorem_riesz_compact}). Nous cherchons à définir une topologie sur
+$E$ tel que la boule unité est compacte pour cette topologie, et la topologie
+\GSweakTopo{E} convient.
+
+\begin{theorem}
+	Soit l'espace topologique $(E,$ \GSweakTopo{E}$)$, alors la boule unité
+	est compacte.
+\end{theorem}
+
+\begin{proof}
+	
+\end{proof}
+
+\subsection{Convergence pour la topologie faible}
+Quels sont les liens entre la topologie faible et la topologie sur $\GSdual{E}$
+qui a servi à la construire?
+
+D'abord, regardons la définition de convergence dans \GSweakTopo{E}.
+\begin{definition}
+	Soit une suite \GSsequence{x}{n}{\naturel} $\subseteq E$, et $x \in E$.
+	On dit que \GSsequence{x}{n}{\naturel} vers $x$ pour \GSweakTopo{E}, et on
+	note $x_{n} \xrightarrow{\sigma} x$ si pour tout
+	voisinage $V(x)$ de $x$, $\exists n_{0}$ tel que $\forall n \geq n_{0}$,
+	$x_{n} \in V(x)$.
+\end{definition}
+
+Vu la définition de la topologie \GSweakTopo{E}, les voisinages de $x$ sont les
+ensembles $V_{\epsilon, {x_{1}}^{*}, \ldots, {x_{n}}^{*}} = \left\{x \in E \, |
+	\, \forall 1 \leq i \leq n, \, |{x_{i}}^{*}(x)| \leq \epsilon \right\}$ où
+	$\epsilon$ parcourt tout $\real$.
+
+Il est parfois dure de travailler avec cette définition, et on a alors une
+équivalence plus facile à utiliser.
+
+\begin{proposition}
+	$x_{n} \xrightarrow{\sigma} x \Leftrightarrow \forall x^{*} \in \GSdual{E}$,
+	$x^{*}(x_{n}) \rightarrow x^{*}(x)$.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+\subsection{Lien entre la topologie de la norme et la topologie faible}
+
+Continuons à donner des liens liant la topologie faible et la norme sur $E$.
+
+\begin{proposition}
+	Soit $C$ convexe non vide de $E$ (ça ne dépend pas de la topologie).
+	On a $C$ fermé pour la norme ssi $C$ est faiblement fermé (ie fermé pour
+	\GSweakTopo{E}).
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+Nous pouvons nous demander à quoi ressemble les ouverts de la topologie
+\GSweakTopo{E}. En fait, en dimension finie, la topologie est celle de la norme.
+
+\begin{proposition}
+	Soit \GSnormedSpace{E}{\GSnorme{.}} de dimension finie, alors $\tau_{||.||}
+	=$ \GSweakTopo{E}.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+Etudions ce qui se passe en dimension infinie.
+
+Nous savons que pour la norme $S_{E}$, la sphère unitée est fermée, et donc
+qu'elle vaut son adhérence.  Dans le cas $E$ fini, la sphère est également
+fermée par la proposition précédente. En dimension infinie, nous obtenons
+quelque chose de surprenant. En effet, $\overline{S_{E}}^{\sigma}$, c'est-à-dire
+l'adhérence de la sphère unitée par rapport à la topologie faible, vaut la boule
+unité fermée pour la norme.
+
+\begin{proposition}
+	Soit $E$ de dimension infinie, et \GSnorme{.} sur $E$. Alors
+	$\overline{S_{E}}^{\sigma} = \left\{ x \in E \, | \, ||x|| \leq 1 \right\}$.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+Que se passe-t-il pour la boule $\left\{ x \in E \, | \, ||x|| < 1 \right\}$?
+
+\begin{proposition}
+	La boule unité ouverte pour \GSnorme{.} est d'intérieur vide pour la
+	topologie faible. Par conséquence, elle n'est pas $\sigma$-ouverte.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+\subsection{Applications dans les espaces de Banach}
+
+\begin{proposition}
+	Soit \GSnormedSpace{E}{\GSnorme{.}} de Banach, et un sous ensemble $B$ non
+	vide de $E$.
+	Si $\forall x^{*} \in E^{*}$, $x^{*}(B)$ borné dans $\real$, alors $B$ borné
+	dans $E$.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{corollary}
+	Soit \GSnormedSpace{E}{\GSnorme{.}} de Banach.
+	Prenons une suite \GSsequence{x}{n}{\naturel} dans $E$ faiblement
+	convergente vers $x$.
+	Alors \GSsequence{||x_{n}||}{n}{\naturel} est bornée et \GSnorme{x} $\leq
+	\lim\inf$\GSnorme{x_{n}}.
+\end{corollary}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{proposition}
+	Prenons une suite bornée de $E$ ou $E$ est un espace de Banach, et $x$ dans
+	$E$.
+	Si $\left\{ x^{*} \in E^{*} \, | \, x^{*}(x_{n}) \rightarrow x^{*}(x)
+\right\}$ est dense dans $E^{*}$, alors $x_{n} \xrightarrow{\sigma} x$.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+\section{Topologie pré-faible}
