@@ -1,16 +1,16 @@
-\chapter{Ensemble de 1ière catégorie}
+\chapter{Ensemble de première catégorie d'un espace topologique}
 
 \begin{definition}
 	Soit $(X, \tau)$ un espace topologique, et $A \subset X$. On dit que $A$ est
-	\textbf{nulle part dense} ou \textbf{maigre} si $\int{\adh{A}} =
+	\textbf{nul part dense} ou \textbf{maigre} si $\int{\adh{A}} =
 	\emptyset$. On la note $\mathcal{C}_{npd}$.
 \end{definition}
 
 Par exemple, avec $(\real, |.|)$, $\emptyset$, $\naturel$, $\integer$ et tous
-les ensembles finis sont nulle part dense.
+les ensembles finis sont nul part denses.
 
 \begin{proposition}
-	La classe des ensembles nulle part dense est \textbf{héréditaire},
+	La classe des ensembles nul part denses est \textbf{héréditaire},
 	c'est-à-dire que $\forall A \in \mathcal{C}_{npd}$, $\forall B \subseteq A$,
 	$B \in \mathcal{C}_{npd}$.
 \end{proposition}
@@ -20,8 +20,8 @@ les ensembles finis sont nulle part dense.
 \end{proof}
 
 \begin{proposition}
-	$\mathcal{C}_{npd}$ est stable par fermeture, c'est-à-dire que $\forall A
-	\in \mathcal{C}_{npd}$, $\adh{A} \in \mathcal{C}_{npd}$.
+	$\mathcal{C}_{npd}$ est \textbf{stable par fermeture}, c'est-à-dire que
+	$\forall A \in \mathcal{C}_{npd}$, $\adh{A} \in \mathcal{C}_{npd}$.
 \end{proposition}
 
 \begin{proof}
@@ -38,9 +38,9 @@ les ensembles finis sont nulle part dense.
 
 \begin{definition}
 	Soit $(X, \tau)$ un espace topologique.
-	Un ensemble est de première catégorie si il est une union dénombrable
-	d'ensemble nulle part dense. Nous notons $\mathcal{C}_{1}$ la classe des
-	ensembles de première catégorie.
+	Un ensemble est de \textbf{première catégorie} s'il est une union
+	dénombrable d'ensembles nul part denses. Nous notons $\mathcal{C}_{1}$ la
+	classe des ensembles de première catégorie.
 \end{definition}
 
 Nous avons par exemple $\rational$ qui est de première catégorie dans $(\real,
@@ -57,6 +57,7 @@ Nous avons par exemple $\rational$ qui est de première catégorie dans $(\real,
 
 \begin{remarque}
 	$\mathcal{C}_{1}$ n'est pas stable par fermeture.
+	% Donner un exemple
 \end{remarque}
 
 \begin{definition}
@@ -65,11 +66,11 @@ Nous avons par exemple $\rational$ qui est de première catégorie dans $(\real,
 	dénombrable d'ouverts (resp. union dénombrable de fermés).
 \end{definition}
 
-\subsection{Applications dans les espaces de Baire (\ref{chapter_baire_theorem})}
+\section{Applications dans les espaces de Baire (\ref{chapter_baire_theorem})}
 
 Remarquons d'abord que la propriété de Baire fermé
 (\ref{property_baire_closed}) peut être écrit en toute union dénombrable
-de fermés nulle part dense est d'intérieur vide.
+de fermés nul part denses est d'intérieur vide.
 
 \begin{proposition}
 	Soit $(X, \tau)$ est un espace topologique.
@@ -83,7 +84,7 @@ de fermés nulle part dense est d'intérieur vide.
 \end{proof}
 
 \begin{corollary}
-	Si $(X, \tau)$ est un ensemble de Baire, $X \notin \mathcal{C}_{1}$.
+	Si $(X, \tau)$ est un ensemble de Baire, alors $X \notin \mathcal{C}_{1}$.
 \end{corollary}
 
 \begin{corollary}
@@ -120,3 +121,7 @@ de fermés nulle part dense est d'intérieur vide.
 	suite de fermés tel que $X = \displaystyle\cup_{n \in \naturel}F_{n}$.Alors
 	$\displaystyle\adh{\cup_{n \in \naturel}\int{F_{n}}} = X$.
 \end{proposition}
+
+\begin{proof}
+	
+\end{proof}
