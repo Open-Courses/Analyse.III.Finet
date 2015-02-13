@@ -1,0 +1,122 @@
+\chapter{Ensemble de 1ière catégorie}
+
+\begin{definition}
+	Soit $(X, \tau)$ un espace topologique, et $A \subset X$. On dit que $A$ est
+	\textbf{nulle part dense} ou \textbf{maigre} si $\int{\adh{A}} =
+	\emptyset$. On la note $\mathcal{C}_{npd}$.
+\end{definition}
+
+Par exemple, avec $(\real, |.|)$, $\emptyset$, $\naturel$, $\integer$ et tous
+les ensembles finis sont nulle part dense.
+
+\begin{proposition}
+	La classe des ensembles nulle part dense est \textbf{héréditaire},
+	c'est-à-dire que $\forall A \in \mathcal{C}_{npd}$, $\forall B \subseteq A$,
+	$B \in \mathcal{C}_{npd}$.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{proposition}
+	$\mathcal{C}_{npd}$ est stable par fermeture, c'est-à-dire que $\forall A
+	\in \mathcal{C}_{npd}$, $\adh{A} \in \mathcal{C}_{npd}$.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{proposition}
+	$\mathcal{C}_{npd}$ est stable par union finie.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{definition}
+	Soit $(X, \tau)$ un espace topologique.
+	Un ensemble est de première catégorie si il est une union dénombrable
+	d'ensemble nulle part dense. Nous notons $\mathcal{C}_{1}$ la classe des
+	ensembles de première catégorie.
+\end{definition}
+
+Nous avons par exemple $\rational$ qui est de première catégorie dans $(\real,
+|.|)$.
+
+\begin{proposition}
+	$\mathcal{C}_{1}$ est héréditaire et stable par union
+	dénombrable.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{remarque}
+	$\mathcal{C}_{1}$ n'est pas stable par fermeture.
+\end{remarque}
+
+\begin{definition}
+	Soit $(X, \tau)$ un espace topologique, et $A \subseteq X$.
+	Alors $A$ est un $G_{\delta}$ (resp. $F_{\sigma}$) s'il est intersection
+	dénombrable d'ouverts (resp. union dénombrable de fermés).
+\end{definition}
+
+\subsection{Applications dans les espaces de Baire (\ref{chapter_baire_theorem})}
+
+Remarquons d'abord que la propriété de Baire fermé
+(\ref{property_baire_closed}) peut être écrit en toute union dénombrable
+de fermés nulle part dense est d'intérieur vide.
+
+\begin{proposition}
+	Soit $(X, \tau)$ est un espace topologique.
+	$(X, \tau)$ est de Baire ssi le complémentaire de tout ensemble de première
+	catégorie est dense dans $X$, c'est-à-dire $\forall A \in \mathcal{C}_{1}$,
+	$\adh{A^{c}} = X$.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{corollary}
+	Si $(X, \tau)$ est un ensemble de Baire, $X \notin \mathcal{C}_{1}$.
+\end{corollary}
+
+\begin{corollary}
+	Tout espace métrique complet n'est pas de première catégorie.
+\end{corollary}
+
+\begin{definition}
+	Soit $(X, \tau)$ un espace topologique, et $A \subseteq X$.
+	$A$ est \textbf{résiduel} s'il est le complémentaire d'un ensemble de
+	première catégorie, ie $A^{c} \in \mathcal{C}_{1}$.
+\end{definition}
+
+\begin{proposition}
+	Soit $(X, \tau)$ un espace topologique.
+	$(X, \tau)$ est de Baire ssi tout ensemble résiduel est dense, ie $\forall A
+	\subseteq X$, $A^{c} \in \mathcal{C}_{1} \Rightarrow \adh{A} = X$.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{proposition}
+	Dans tout espace topologique, tout fermé privé de son intérieur est
+	d'intérieur vide.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}
+
+ \begin{proposition}
+	Soit $(X, \tau)$ un espace de Baire, et \GSsequence{F}{n}{\naturel} une
+	suite de fermés tel que $X = \displaystyle\cup_{n \in \naturel}F_{n}$.Alors
+	$\displaystyle\adh{\cup_{n \in \naturel}\int{F_{n}}} = X$.
+\end{proposition}
