@@ -16,7 +16,10 @@ les ensembles finis sont nul part denses.
 \end{proposition}
 
 \begin{proof}
-	
+	$B \subseteq A \implies \adh{B} \subseteq \adh{A} \implies
+	\int{\adh{B}} \subseteq \int{\adh{A}}$ et $\int{\adh{A}}= \emptyset$ par
+	hypothèse sur $A$. Donc $\int{\adh{B}} = \emptyset$, et c'est la définition
+	d'être nul part dense.
 \end{proof}
 
 \begin{proposition}
@@ -25,7 +28,8 @@ les ensembles finis sont nul part denses.
 \end{proposition}
 
 \begin{proof}
-	
+	$\adh{\adh{A}} = \adh{A}$, et donc, comme $A \in \mathcal{C}_{npd}$,
+	$\int{\adh{\adh{A}}} = \int{\adh{A}} = \emptyset$
 \end{proof}
 
 \begin{proposition}
@@ -33,7 +37,9 @@ les ensembles finis sont nul part denses.
 \end{proposition}
 
 \begin{proof}
-	
+	Il suffit de montrer pour $n = 2$, le cas $n > 2$ se montre par récurrence.
+	Soit $A$ et $B$ nul part dense. Il faut montrer que $A \union B$ est nul
+	part dense, c'est-à-dire que $\int{\adh{A \union B}} = \emptyset$.
 \end{proof}
 
 \begin{definition}
@@ -100,7 +106,7 @@ de fermés nul part denses est d'intérieur vide.
 \begin{proposition}
 	Soit $(X, \tau)$ un espace topologique.
 	$(X, \tau)$ est de Baire ssi tout ensemble résiduel est dense, ie $\forall A
-	\subseteq X$, $A^{c} \in \mathcal{C}_{1} \Rightarrow \adh{A} = X$.
+	\subseteq X$, $A^{c} \in \mathcal{C}_{1} \implies \adh{A} = X$.
 \end{proposition}
 
 \begin{proof}
