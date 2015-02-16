@@ -39,7 +39,8 @@ les ensembles finis sont nul part denses.
 \begin{proof}
 	Il suffit de montrer pour $n = 2$, le cas $n > 2$ se montre par récurrence.
 	Soit $A$ et $B$ nul part dense. Il faut montrer que $A \union B$ est nul
-	part dense, c'est-à-dire que $\int{\adh{A \union B}} = \emptyset$.
+	part dense, c'est-à-dire que $\int{\adh{A \union B}} = \emptyset$. (A
+	finir).
 \end{proof}
 
 \begin{definition}
@@ -58,7 +59,21 @@ Nous avons par exemple $\rational$ qui est de première catégorie dans $(\real,
 \end{proposition}
 
 \begin{proof}
+	$\mathcal{C}_{1}$ stable par union dénombrable:
+
+	Soit $A_{i} = \union_{n \in \naturel} A_{i, n}$ une famille dénombrable tel
+	que chaque $A_{i, n}$ est nul part dense. On a bien que $\union_{i \in \naturel,
+	n \in \naturel} A_{i, n}$ est une union dénombrable (union sur
+	$\naturel^{2}$ qui est dénombrable), et chaque $A_{i, n}$
+	est nul part dense par hypothèse.
+
+	$\mathcal{C}_{1}$ héréditaire:
 	
+	Soit $A = \union_{n \in \naturel} A_{n}$ avec chaque $A_{n}$ nul part dense,
+	et $B$ tel que $A \subseteq B$. On pose $B_{0} = A_{0} \union B\backslash
+	A$, et $B_{n} = A_{n}$ pour $n > 0$. Comme $A_{0}$ est nul part dense que et
+	$\mathcal{C}_{npd}$ héréditaire, $B_{0}$, qui comprend $A_{0}$, tel nul part
+	dense. Donc $B = \union_{n \in \naturel} B_{n}$ est de première catégorie.
 \end{proof}
 
 \begin{remarque}
@@ -79,6 +94,7 @@ Remarquons d'abord que la propriété de Baire fermé
 de fermés nul part denses est d'intérieur vide.
 
 \begin{proposition}
+	\label{proposition_first_set_category_equiv_baire}
 	Soit $(X, \tau)$ est un espace topologique.
 	$(X, \tau)$ est de Baire ssi le complémentaire de tout ensemble de première
 	catégorie est dense dans $X$, c'est-à-dire $\forall A \in \mathcal{C}_{1}$,
@@ -86,16 +102,40 @@ de fermés nul part denses est d'intérieur vide.
 \end{proposition}
 
 \begin{proof}
-	
+	$(\Rightarrow)$
+	Soit $S$ un ensemble de première catégorie, ie $S = \union_{n \in \naturel}
+	S_{n}$ où $S_{n}$ est nul part dense. Il faut montrer que $\comp{S} =
+	\inter_{n \in \naturel} \comp{(S_{n})}$ est dense dans $X$.
+
+	(notation lourde)
+
+	$(\Leftarrow)$
+	Soit \GSsequence{F}{n}{\naturel} une suite dénombrable de fermé tel que
+	$\int{F_{n}} = \emptyset$.
+	Il faut montrer que $F = \union_{n \in \naturel} F_{n} = \emptyset$
+	(\ref{property_baire_closed}).
+	On a $F$ de première catégorie car chaque $F_{n}$ est nul part dense, et
+	donc par hypothèse, $\adh{\comp{F}} = X$, c'est-à-dire $\int{F} =
+	\emptyset$ (en passant au complémentaire).
 \end{proof}
 
 \begin{corollary}
 	Si $(X, \tau)$ est un ensemble de Baire, alors $X \notin \mathcal{C}_{1}$.
 \end{corollary}
 
+\begin{proof}
+	Si $X$ est de première catégorie, alors $\emptyset = \comp{X}$ serait dense
+	dans $X$. Or $\adh{\emptyset} = \emptyset$.
+\end{proof}
+
 \begin{corollary}
 	Tout espace métrique complet n'est pas de première catégorie.
 \end{corollary}
+
+\begin{proof}
+	En effet, par $\ref{theorem_baire_complete_space}$, c'est un espace de
+	Baire, et par le corollaire précédent, on a qu'il n'est pas de première catégorie.
+\end{proof}
 
 \begin{definition}
 	Soit $(X, \tau)$ un espace topologique, et $A \subseteq X$.
@@ -104,13 +144,16 @@ de fermés nul part denses est d'intérieur vide.
 \end{definition}
 
 \begin{proposition}
+	\label{proposition_residual_equiv_baire}
 	Soit $(X, \tau)$ un espace topologique.
 	$(X, \tau)$ est de Baire ssi tout ensemble résiduel est dense, ie $\forall A
 	\subseteq X$, $A^{c} \in \mathcal{C}_{1} \implies \adh{A} = X$.
 \end{proposition}
 
 \begin{proof}
-	
+	Reformulation de \ref{proposition_first_set_category_equiv_baire}. En effet,
+	on a justement définie résiduel comme le complémentaire d'un ensemble de
+	première catégorie.
 \end{proof}
 
 \begin{proposition}

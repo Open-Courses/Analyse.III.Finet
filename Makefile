@@ -1,5 +1,5 @@
 SRC_DIR	= src
-NAME	= Analyse.III
+NAME	= Analyse.III.Finet
 SRC		= $(NAME).tex
 CP_DIR	= ~/Clouds/Dropbox/BA3/Analyse.III.Finet
 
