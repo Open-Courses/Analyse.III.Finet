@@ -2,7 +2,7 @@
 
 \begin{definition}
 	Soit $(X, \tau)$ un espace topologique, et $A \subset X$. On dit que $A$ est
-	\textbf{nul part dense} ou \textbf{maigre} si $\int{\adh{A}} =
+	\textbf{nul part dense} ou \textbf{maigre} si $\interior{\adh{A}} =
 	\emptyset$. On la note $\mathcal{C}_{npd}$.
 \end{definition}
 
@@ -17,8 +17,8 @@ les ensembles finis sont nul part denses.
 
 \begin{proof}
 	$B \subseteq A \implies \adh{B} \subseteq \adh{A} \implies
-	\int{\adh{B}} \subseteq \int{\adh{A}}$ et $\int{\adh{A}}= \emptyset$ par
-	hypothèse sur $A$. Donc $\int{\adh{B}} = \emptyset$, et c'est la définition
+	\interior{\adh{B}} \subseteq \interior{\adh{A}}$ et $\interior{\adh{A}}= \emptyset$ par
+	hypothèse sur $A$. Donc $\interior{\adh{B}} = \emptyset$, et c'est la définition
 	d'être nul part dense.
 \end{proof}
 
@@ -29,7 +29,7 @@ les ensembles finis sont nul part denses.
 
 \begin{proof}
 	$\adh{\adh{A}} = \adh{A}$, et donc, comme $A \in \mathcal{C}_{npd}$,
-	$\int{\adh{\adh{A}}} = \int{\adh{A}} = \emptyset$
+	$\interior{\adh{\adh{A}}} = \interior{\adh{A}} = \emptyset$
 \end{proof}
 
 \begin{proposition}
@@ -39,7 +39,7 @@ les ensembles finis sont nul part denses.
 \begin{proof}
 	Il suffit de montrer pour $n = 2$, le cas $n > 2$ se montre par récurrence.
 	Soit $A$ et $B$ nul part dense. Il faut montrer que $A \union B$ est nul
-	part dense, c'est-à-dire que $\int{\adh{A \union B}} = \emptyset$. (A
+	part dense, c'est-à-dire que $\interior{\adh{A \union B}} = \emptyset$. (A
 	finir).
 \end{proof}
 
@@ -116,11 +116,11 @@ de fermés nul part denses est d'intérieur vide.
 
 	$(\Leftarrow)$
 	Soit \GSsequence{F}{n}{\naturel} une suite dénombrable de fermé tel que
-	$\int{F_{n}} = \emptyset$.
+	$\interior{F_{n}} = \emptyset$.
 	Il faut montrer que $F = \union_{n \in \naturel} F_{n} = \emptyset$
 	(\ref{property_baire_closed}).
 	On a $F$ de première catégorie car chaque $F_{n}$ est nul part dense, et
-	donc par hypothèse, $\adh{\comp{F}} = X$, c'est-à-dire $\int{F} =
+	donc par hypothèse, $\adh{\comp{F}} = X$, c'est-à-dire $\interior{F} =
 	\emptyset$ (en passant au complémentaire).
 \end{proof}
 
@@ -173,7 +173,7 @@ de fermés nul part denses est d'intérieur vide.
  \begin{proposition}
 	Soit $(X, \tau)$ un espace de Baire, et \GSsequence{F}{n}{\naturel} une
 	suite de fermés tel que $X = \displaystyle\cup_{n \in \naturel}F_{n}$.Alors
-	$\displaystyle\adh{\cup_{n \in \naturel}\int{F_{n}}} = X$.
+	$\displaystyle\adh{\cup_{n \in \naturel}\interior{F_{n}}} = X$.
 \end{proposition}
 
 \begin{proof}
