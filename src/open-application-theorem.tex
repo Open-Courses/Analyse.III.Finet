@@ -17,18 +17,22 @@ Nous définissons alors dans l'autre sens la propriété d'application ouverte :
 %	Toute application non continue est ouverte.
 %\end{proposition}
 
+%\ifdefined\outputproof
 %\begin{proof}
 %
 %\end{proof}
+%\fi
 
 \begin{proposition}
 	L'ensemble des applications ouvertes de $E$ dans $F$, noté $O(E, F)$, est
 	ouvert dans $\GScontinueHomo{E}{F}$.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
 
 \end{proof}
+\fi
 
 Le théorème de l'application ouverte nous dit:
 
@@ -40,9 +44,11 @@ Le théorème de l'application ouverte nous dit:
 	Alors T est ouverte.
 \end{theorem}
 
+\ifdefined\outputproof
 \begin{proof}
 
 \end{proof}
+\fi
 
 Pour rappel, on appelle homéomorphisme une application linéaire continue bijective
 tel que sa réciproque est aussi linéaire continue.
@@ -55,12 +61,14 @@ suivants:
 	est un homéomorphisme.
 \end{corollary}
 
+\ifdefined\outputproof
 \begin{proof}
 	On a bien que $f^{-1}$ est linéaire, il reste alors à montrer que $f^{-1}$
 	est continue, c'est dire que $f(O)$ est un ouvert de $F$ pour tout ouvert
 	$O$ de $E$, c'est-à-dire que $f$ est ouverte.
 	Par~\ref{theorem_open_application}, on a $f$ ouverte car $f$ est bijective.
 \end{proof}
+\fi
 
 \begin{corollary}
 	Soient deux normes $\GSnormeDef{.}{1}$ et $\GSnormeDef{.}{2}$ sur un espace de
@@ -73,6 +81,7 @@ suivants:
 	Alors les normes sont équivalentes.
 \end{corollary}
 
+\ifdefined\outputproof
 \begin{proof}
 	Prenons l'application identité $\GSfunction{Id_{E}}{(E, ||.||_{2})}{(E,
 	||.||_{1})}$. L'hypothèse nous dit que $Id_{E}$ est continue. De plus,
@@ -82,6 +91,7 @@ suivants:
 	||x||_{2} \leq M \, ||x||_{1}$. On a donc bien que les normes sont
 	équivalentes.
 \end{proof}
+\fi
 
 \begin{corollary}
 	Soit $E$ et $F$ des espaces de Banach.

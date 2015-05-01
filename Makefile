@@ -4,6 +4,10 @@ SRC		= $(NAME).tex
 CP_DIR	= ~/Clouds/Dropbox/BA3/Analyse.III.Finet
 
 $(NAME):
+	cd src && pdflatex -output-directory ../ "\def\outputproof{0} \input{$(SRC)}"
+	cd src && pdflatex -output-directory ../ "\def\outputproof{0} \input{$(SRC)}"
+
+noproof:
 	cd src && pdflatex -output-directory ../ $(SRC)
 	cd src && pdflatex -output-directory ../ $(SRC)
 

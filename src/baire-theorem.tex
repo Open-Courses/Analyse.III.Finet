@@ -18,10 +18,12 @@ fermés.
 	$\displaystyle \bigcup_{n = 0}^{\infty} F_{n} = \emptyset$.
 \end{propriete}
 
+\ifdefined\outputproof
 \begin{proof}
 	$int(F) = \emptyset \Leftrightarrow adh(F^{c}) = E$ où $F$ est fermé. Donc
 	$F^{c}$ est ouvert et dense.
 \end{proof}
+\fi
 
 Nous avons alors un corollaire (en supposant que la propriété de Baire est
 vraie):
@@ -33,12 +35,14 @@ vraie):
 	d'intérieur non vide.
 \end{corollary}
 
+\ifdefined\outputproof
 \begin{proof}
 	Supposons que tous les $F_{n}$ soient fermés, alors par la
 	propriété de Baire fermé (~\ref{property_baire_closed}), on a que
 	$\displaystyle \bigcup_{n = 0}^{\infty}{F_{n}} \neq E$. Or, par hypothèse,
 	on a l'égalité.
 \end{proof}
+\fi
 
 \begin{definition} [Espace de Baire]
 \label{definition_baire_space}
@@ -54,9 +58,11 @@ réponse est oui, et le théorème (de Baire) nous en donne une partie.
 	Tout espace métrique complet est un espace de Baire.
 \end{theorem}
 
+\ifdefined\outputproof
 \begin{proof}
 	
 \end{proof}
+\fi
 
 \begin{remarque}
 	Si on considère les suites d'ouverts non dénombrables pour la propriété de
@@ -77,6 +83,7 @@ de E s'écrit comme une combinaire linéaire finie des éléments de B.
 	non-dénombrable.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
 	Soit $E$ un espace de Banach. On a donc
 	par~\ref{theorem_baire_complete_space} que c'est un espace de Baire.
@@ -107,6 +114,7 @@ de E s'écrit comme une combinaire linéaire finie des éléments de B.
 	On obtient alors une contradiction car $E_{n_{0}}$ est de dimension finie,
 	alors que $E$ est de dimension infinie dénombrable.
 \end{proof}
+\fi
 
 On a alors comme exemple d'application de la
 proposition~\ref{proposition_basis_banach_space} que $\mathcal{C}[0, 1]$ et
@@ -122,6 +130,8 @@ Banach :
 	Alors E n'est pas complet (ou E n'est pas de Banach).
 \end{corollary}
 
+\ifdefined\outputproof
 \begin{proof}
 	S'il était complet, il n'aurait pas de base dénombrable.
 \end{proof}
+\fi

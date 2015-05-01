@@ -15,33 +15,39 @@ les ensembles finis sont nul part denses.
 	$B \in \mathcal{C}_{npd}$.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
 	$B \subseteq A \implies \adh{B} \subseteq \adh{A} \implies
 	\interior{\adh{B}} \subseteq \interior{\adh{A}}$ et $\interior{\adh{A}}= \emptyset$ par
 	hypothèse sur $A$. Donc $\interior{\adh{B}} = \emptyset$, et c'est la définition
 	d'être nul part dense.
 \end{proof}
+\fi
 
 \begin{proposition}
 	$\mathcal{C}_{npd}$ est \textbf{stable par fermeture}, c'est-à-dire que
 	$\forall A \in \mathcal{C}_{npd}$, $\adh{A} \in \mathcal{C}_{npd}$.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
 	$\adh{\adh{A}} = \adh{A}$, et donc, comme $A \in \mathcal{C}_{npd}$,
 	$\interior{\adh{\adh{A}}} = \interior{\adh{A}} = \emptyset$
 \end{proof}
+\fi
 
 \begin{proposition}
 	$\mathcal{C}_{npd}$ est stable par union finie.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
 	Il suffit de montrer pour $n = 2$, le cas $n > 2$ se montre par récurrence.
 	Soit $A$ et $B$ nul part dense. Il faut montrer que $A \union B$ est nul
 	part dense, c'est-à-dire que $\interior{\adh{A \union B}} = \emptyset$. (A
 	finir).
 \end{proof}
+\fi
 
 \begin{definition}
 	Soit $(X, \tau)$ un espace topologique.
@@ -58,6 +64,7 @@ Nous avons par exemple $\rational$ qui est de première catégorie dans $(\real,
 	dénombrable.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
 	$\mathcal{C}_{1}$ stable par union dénombrable:
 
@@ -75,6 +82,7 @@ Nous avons par exemple $\rational$ qui est de première catégorie dans $(\real,
 	$\mathcal{C}_{npd}$ héréditaire, $B_{0}$, qui comprend $A_{0}$, tel nul part
 	dense. Donc $B = \union_{n \in \naturel} B_{n}$ est de première catégorie.
 \end{proof}
+\fi
 
 \begin{remarque}
 	$\mathcal{C}_{1}$ n'est pas stable par fermeture.
@@ -106,6 +114,7 @@ de fermés nul part denses est d'intérieur vide.
 	$\adh{A^{c}} = X$.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
 	$(\Rightarrow)$
 	Soit $S$ un ensemble de première catégorie, ie $S = \union_{n \in \naturel}
@@ -123,24 +132,29 @@ de fermés nul part denses est d'intérieur vide.
 	donc par hypothèse, $\adh{\comp{F}} = X$, c'est-à-dire $\interior{F} =
 	\emptyset$ (en passant au complémentaire).
 \end{proof}
+\fi
 
 \begin{corollary}
 	Si $(X, \tau)$ est un ensemble de Baire, alors $X \notin \mathcal{C}_{1}$.
 \end{corollary}
 
+\ifdefined\outputproof
 \begin{proof}
 	Si $X$ est de première catégorie, alors $\emptyset = \comp{X}$ serait dense
 	dans $X$. Or $\adh{\emptyset} = \emptyset$.
 \end{proof}
+\fi
 
 \begin{corollary}
 	Tout espace métrique complet n'est pas de première catégorie.
 \end{corollary}
 
+\ifdefined\outputproof
 \begin{proof}
 	En effet, par $\ref{theorem_baire_complete_space}$, c'est un espace de
 	Baire, et par le corollaire précédent, on a qu'il n'est pas de première catégorie.
 \end{proof}
+\fi
 
 \begin{definition}
 	Soit $(X, \tau)$ un espace topologique, et $A \subseteq X$.
@@ -155,20 +169,24 @@ de fermés nul part denses est d'intérieur vide.
 	\subseteq X$, $A^{c} \in \mathcal{C}_{1} \implies \adh{A} = X$.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
 	Reformulation de \ref{proposition_first_set_category_equiv_baire}. En effet,
 	on a justement définie résiduel comme le complémentaire d'un ensemble de
 	première catégorie.
 \end{proof}
+\fi
 
 \begin{proposition}
 	Dans tout espace topologique, tout fermé privé de son intérieur est
 	d'intérieur vide.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
 
 \end{proof}
+\fi
 
  \begin{proposition}
 	Soit $(X, \tau)$ un espace de Baire, et $\GSsequence{F}{n}{\naturel}$ une
@@ -176,9 +194,11 @@ de fermés nul part denses est d'intérieur vide.
 	$\displaystyle\adh{\cup_{n \in \naturel}\interior{F_{n}}} = X$.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
 
 \end{proof}
+\fi
 
 \begin{theorem}
 	\label{first_category_set_theorem_continued_function}
@@ -188,9 +208,11 @@ de fermés nul part denses est d'intérieur vide.
 	presque partout au sens de Baire.
 \end{theorem}
 
+\ifdefined\outputproof
 \begin{proof}
 
 \end{proof}
+\fi
 
 \begin{definition}
 	$f$ est \textbf{séparément continue} si elle est continue en chacune de ses
@@ -201,28 +223,34 @@ de fermés nul part denses est d'intérieur vide.
 	Toute fonction séparément continue est limite simple de fonction continues.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
 
 \end{proof}
+\fi
 
 \begin{corollary}
 	Soit $f : \real^{2} \rightarrow \real$ séparément continue (ie continue en
 	chaque variable). Alors $f$ est presque partout continue au sens de Baire.
 \end{corollary}
 
+\ifdefined\outputproof
 \begin{proof}
 	On utilise la proposition précédente et le théorème
 	\ref{first_category_set_theorem_continued_function}.
 \end{proof}
+\fi
 
 \begin{corollary}
 	La dérivée de toute fonction de $\real$ dans $\real$ dérivable est presque
 	partout continue au sens de Baire.
 \end{corollary}
 
+\ifdefined\outputproof
 \begin{proof}
 
 \end{proof}
+\fi
 
 \subsection{Fonctions nulle part dérivables}
 
@@ -230,6 +258,8 @@ de fermés nul part denses est d'intérieur vide.
 	Presque toute fonction de $\mathcal{C}[0, 1]$ est nul part dérivable.
 \end{theorem}
 
+\ifdefined\outputproof
 \begin{proof}
 
 \end{proof}
+\fi

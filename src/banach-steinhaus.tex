@@ -21,6 +21,7 @@ boule unité par une même constante. Nous savons, comme les applications sont
 continues, qu'elles sont bornées sur la boule unité, et le théorème nous dit
 qu'elles sont bornées par une même constante.
 
+\ifdefined\outputproof
 \begin{proof}
 	Le théorème est une conséquence du théorème de Baire. En effet, $E$ et $F$
 	(et donc $\mathcal{L}(E, F)$) sont des espaces de Baire car sont complets.
@@ -54,6 +55,7 @@ on a $\forall w \in B(x_{0}, r), \, \forall i \in I, \, ||T_{i}(w)|| \leq n_{0}$
 
 	Comme plus rien ne dépend de $I$, on a $\sup_{i \in I}||T_{i}|| < \infty$ 
 \end{proof}
+\fi
 
 Nous avons alors un corollaire se rapportant aux formes linéaires:
 
@@ -63,6 +65,8 @@ Nous avons alors un corollaire se rapportant aux formes linéaires:
 	la suite ${(||x_{n}||)}_{n \in \naturel}$ est bornée.
 \end{corollary}
 
+\ifdefined\outputproof
 \begin{proof}
 	Ce n'est qu'une application avec I = $\naturel$.
 \end{proof}
+\fi

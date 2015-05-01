@@ -34,17 +34,21 @@ un corollaire portant sur les espaces vectoriels normés.
 
 De plus, $f$ n'est pas nécessairement continue.
 
+\ifdefined\outputproof
 \begin{proof}
 
 \end{proof}
+\fi
 
 \begin{corollary}
 	Si de plus $E$ est \textbf{normé}, on a $||f_{E}|| = ||f_{G}||$.
 \end{corollary}
 
+\ifdefined\outputproof
 \begin{proof}
 
 \end{proof}
+\fi
 
 Nous pouvons nous demander si la condition de majoration par une fonction
 convexe est nécessaire. En réalité, si on suppose que $f$ est linéaire et
@@ -63,6 +67,7 @@ suivant.
 	$\GSfunction{f_{E}}{E}{\real}$ tel que $(f_{E})_{|G} = f_{G}$.
 \end{theorem}
 
+\ifdefined\outputproof
 \begin{proof}
 	On va construire $p$ qui majore $f$.
 	On pose $\GSfunction{p}{E}{\mathbb{K}}$ : $x \rightarrow ||f|| \,
@@ -74,6 +79,7 @@ suivant.
 	$|f_{E}(x)| \leq p(x) = ||f_{G}|| \, ||x||_{E} = ||f_{E}|| \, ||x||_{E}$,
 	c'est-à-dire $f_{E}$ continue.
 \end{proof}
+\fi
 \section{Applications analytiques}
 
 Dans cette section, nous allons démontrer quelques corollaires des théorèmes de
@@ -86,6 +92,7 @@ Hahn-Banach analytiques.
 	$||x^{*}||_{E^{*}} = \frac{1}{||x_{0}||}$
 \end{corollary}
 
+\ifdefined\outputproof
 \begin{proof}
 	Prenons $G = <x_{0}>$, et $\GSfunction{x^{*}}{G}{\mathbb{K}}$ : $\lambda
 	x_{0} \rightarrow \lambda$. On a bien $x^{*}$ linéaire et continue, donc on peut
@@ -97,6 +104,7 @@ Hahn-Banach analytiques.
 1}|\lambda| = \sup_{|\lambda|||x_{0}|| \leq 1} = \sup_{|\lambda| \leq
 	\frac{1}{||x_{0}||}} = \frac{1}{||x_{0}||}$.
 \end{proof}
+\fi
 
 \begin{corollary}
 	Soit $\GSnormedSpace{E}{\GSnorme{.}}$, et un élément non-nul $x_{0}$ de $E$.
@@ -105,10 +113,12 @@ Hahn-Banach analytiques.
 	$\GSnorme{x^{*}} = ||x_{0}||$.
 \end{corollary}
 
+\ifdefined\outputproof
 \begin{proof}
 	Même que le corollaire précédent où $x_{*}$ est la norme restreinte à
 	$<x_{0}>$.
 \end{proof}
+\fi
 
 \begin{corollary}
 	Soit $\GSnormedSpace{E}{\GSnorme{.}}$. Alors $\GSdual{E}$ sépare les points de
@@ -116,18 +126,22 @@ Hahn-Banach analytiques.
 	que $x^{*}(x) \neq x^{*}(y)$.
 \end{corollary}
 
+\ifdefined\outputproof
 \begin{proof}
 
 \end{proof}
+\fi
 
 \begin{corollary}
 	Soit $\GSnormedSpace{E}{\GSnorme{.}}$. Alors $\forall x \in E$, $\GSnorme{x}
 	= \max\limits_{x^{*} \in \GSunitBoule{\GSdual{E}}} \GSnorme{x^{*}(x)}$.
 \end{corollary}
 
+\ifdefined\outputproof
 \begin{proof}
 
 \end{proof}
+\fi
 
 \begin{corollary}
 	Soit $\GSnormedSpace{E}{\GSnorme{.}}$, et $H$ un sous-espace vectoriel fermé.
@@ -167,6 +181,7 @@ normé.
 	||x||$.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
 
 	Comme $C$ est ouvert et $0 \in C$ par hypothèse, il existe $B(0, r)
@@ -176,15 +191,18 @@ normé.
 	$\alpha^{-1} x \in B(0, r)$, donc $\alpha^{-1} x \in C$, donc $p(x) \leq
 	\alpha = \frac{2}{r} ||x||$.
 \end{proof}
+\fi
 
 \begin{proposition}
 	Si $C$ est ouvert et convexe, alors $C = \left\{x \in E \, | \, p(x) <
 	1\right\}$.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
 
 \end{proof}
+\fi
 
 \begin{definition} [Hyperplan]
 	Soit $H$ un sous-espace vectoriel de $E$. $H$ est appelé hyperplan
@@ -198,6 +216,7 @@ normé.
 	est le noyau d'une forme linéaire non nulle.
 \end{proposition}
 
+\ifdefined\outputproof
 \begin{proof}
 	$(\Rightarrow)$ On a $E = H \oplus \mathbb{K}e$. Prenons
 	$\GSfunction{f}{E}{\mathbb{K}}$ : $h + \lambda e \rightarrow \lambda$.
@@ -212,6 +231,7 @@ normé.
 	On a donc bien que $\ker(f)$ est un hyperplan vectoriel car $E = \ker(f)
 	\oplus \mathbb{K}e$.
 \end{proof}
+\fi
 
 \begin{definition} [Hyperplan affine]
 	Soit $\GSfunction{f}{E}{\mathbb{K}_{0}}$, et $\alpha \in \mathbb{K}$.
@@ -247,9 +267,11 @@ Nous en venons aux théorèmes de Hahn-Banach sous leurs formes géométriques.
 	large.
 \end{theorem}
 
+\ifdefined\outputproof
 \begin{proof}
 
 \end{proof}
+\fi
 
 \begin{theorem} [Théorème de Hahn-Banach 2 --- géométrique]
 	Soit $A$, $B \subseteq E$ convexes et disjoints tel que $A$ est fermé et $B$
@@ -259,9 +281,11 @@ Nous en venons aux théorèmes de Hahn-Banach sous leurs formes géométriques.
 	strict.
 \end{theorem}
 
+\ifdefined\outputproof
 \begin{proof}
 
 \end{proof}
+\fi
 
 \section{Applications géométriques}
 
@@ -271,6 +295,7 @@ Nous en venons aux théorèmes de Hahn-Banach sous leurs formes géométriques.
 	Alors $A$ et $B$ ne peuvent être séparés par un hyperplan fermé.
 \end{corollary}
 
+\ifdefined\outputproof
 \begin{proof}
 	Supposons qu'il existe un hyperplan fermé qui les sépare, c'est-à-dire qu'il
 	existe $x^{*} \in E^{*}$ non nulle et $\alpha \in \mathbb{K}$ tel que
@@ -290,11 +315,14 @@ Nous en venons aux théorèmes de Hahn-Banach sous leurs formes géométriques.
 	Or, comme $x^{*}$ est continue, $x^{*}(a_{n} - b_{n}) \rightarrow x^{*}(x) >
 	0$. Contradiction.
 \end{proof}
+\fi
 
 \begin{corollary}
 	Tout hyperplan vectoriel est soit fermé, soit dense dans $E$.
 \end{corollary}
 
+\ifdefined\outputproof
 \begin{proof}
 
 \end{proof}
+\fi
