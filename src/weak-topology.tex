@@ -3,9 +3,9 @@
 \section{Rappel : Topologie initiale}
 
 Prenons une famille
-\GSsequence{E}{i}{I} d'espace topologique, où la topologie sur $E_{i}$ est notée
-$\tau_{i}$, ainsi qu'une famille de fonctions \GSsequence{f}{i}{I} tel que
-\GSfunction{$f_{i}$}{E}{$E_{i}$} où E est un ensemble.
+$\GSsequence{E}{i}{I}$ d'espace topologique, où la topologie sur $E_{i}$ est notée
+$\tau_{i}$, ainsi qu'une famille de fonctions $\GSsequence{f}{i}{I}$ tel que
+$\GSfunction{f_{i}}{E}{E_{i}}$ où E est un ensemble.
 
 Nous allons construire une topologie sur E, appelée \textbf{topologie initiale}
 et noté $\tau$, telle qu'elle rend les applications $f_{i}$ continues. Il faut
@@ -33,7 +33,7 @@ Soit $x \in E$ et $\phi_{x} : E^{*} \rightarrow \mathbb{K} : x^{*} \rightarrow
 La topologie faible est la topologie initiale avec les fonctions $\phi_{x}$, les
 espaces vectoriels $E_{i} = E^{*}$, et l'espace de départ est $E$. C'est un cas
 particulier de la topologie faible où $I$ couvre tout $E$. Cette topologie est
-notée \GSweakTopo{E}.
+notée $\GSweakTopo{E}$.
 
 Les ouverts sont donc:
 
@@ -43,7 +43,7 @@ forment une base d'ouvert, on peut sans perte de généralité que $O_{i}$ est u
 boule.
 
 $\left\{ x \in E \, | \, \forall \epsilon > 0, \cap_{i = 1}^{n}|\phi_{x_{i}}(x)| \leq \epsilon| \right\}$
-et en se rappelant la définition des $\phi_{x_{i}}$, on a 
+et en se rappelant la définition des $\phi_{x_{i}}$, on a
 $\left\{ x \in E \, | \, \forall \epsilon > 0, \cap_{i = 1}^{n}|x_{i}^{*}(x)| \leq
 \epsilon| \right\} = $
 $\left\{ x \in E \, | \, \forall \epsilon > 0, \, \forall 1 \leq i \leq n, \, |x_{i}^{*}(x)| \leq \epsilon| \right\}$
@@ -52,17 +52,17 @@ Nous avons vu dans le chapitre sur les espaces de Banach, que dans un espace
 vectoriel normé, la boule unité est compacte ssi l'espace est de dimension
 finie (~\ref{theorem_riesz_compact}). Nous cherchons à définir une topologie sur
 $E$ tel que la boule unité est compacte pour cette topologie, et la topologie
-\GSweakTopo{E} convient.
+$\GSweakTopo{E}$ convient.
 
 \subsection{Convergence pour la topologie faible}
 Quels sont les liens entre la topologie faible et la topologie sur $\GSdual{E}$
 qui a servi à la construire?
 
-D'abord, regardons la définition de convergence dans \GSweakTopo{E}.
+D'abord, regardons la définition de convergence dans $\GSweakTopo{E}$.
 \begin{definition}
-	Soit une suite \GSsequence{x}{n}{\naturel} $\subseteq E$, et $x \in E$.
-	On dit que \GSsequence{x}{n}{\naturel} \textbf{converge faiblement} vers $x$
-	pour \GSweakTopo{E}, et on note $x_{n} \xrightarrow{\sigma} x$ si pour tout
+	Soit une suite $\GSsequence{x}{n}{\naturel} \subseteq E$, et $x \in E$.
+	On dit que $\GSsequence{x}{n}{\naturel}$ \textbf{converge faiblement} vers $x$
+	pour $\GSweakTopo{E}$, et on note $x_{n} \xrightarrow{\sigma} x$ si pour tout
 	voisinage $V(x)$ de $x$ (resp $V(0)$ de $0$), $\exists n_{0}$ tel que
 	$\forall n \geq n_{0}$, $x_{n} \in V(x)$ (resp $x_{n} - x \in V(0)$).
 \end{definition}
@@ -76,7 +76,7 @@ Il est parfois dure de travailler avec cette définition, et on a alors une
 \end{proposition}
 
 \begin{proof}
-	
+
 \end{proof}
 
 \subsection{Lien entre la topologie de la norme et la topologie faible}
@@ -86,23 +86,23 @@ Continuons à donner des liens liant la topologie faible et la norme sur $E$.
 \begin{proposition}
 	Soit $C$ convexe non vide de $E$ (ça ne dépend pas de la topologie).
 	On a $C$ fermé pour la norme ssi $C$ est faiblement fermé (ie fermé pour
-	\GSweakTopo{E}).
+	$\GSweakTopo{E}$).
 \end{proposition}
 
 \begin{proof}
-	
+
 \end{proof}
 
 Nous pouvons nous demander à quoi ressemblent les ouverts de la topologie
-\GSweakTopo{E}. En fait, en dimension finie, la topologie est celle de la norme.
+$\GSweakTopo{E}$. En fait, en dimension finie, la topologie est celle de la norme.
 
 \begin{proposition}
-	Soit \GSnormedSpace{E}{\GSnorme{.}} de dimension finie, alors $\tau_{||.||}
-	=$ \GSweakTopo{E}.
+	Soit $\GSnormedSpace{E}{\GSnorme{.}}$ de dimension finie, alors $\tau_{||.||}
+	= \GSweakTopo{E}$.
 \end{proposition}
 
 \begin{proof}
-	
+
 \end{proof}
 
 Etudions ce qui se passe en dimension infinie.
@@ -115,59 +115,59 @@ c'est-à-dire l'adhérence de la sphère unitée par rapport à la topologie fai
 vaut la boule unité fermée pour la norme.
 
 \begin{proposition}
-	Soit $E$ de dimension infinie, et \GSnorme{.} sur $E$. Alors
+	Soit $E$ de dimension infinie, et $\GSnorme{.}$ sur $E$. Alors
 	$\overline{S_{E}}^{\sigma} = \left\{ x \in E \, | \, ||x|| \leq 1 \right\}$.
 \end{proposition}
 
 \begin{proof}
-	
+
 \end{proof}
 
 Que se passe-t-il pour la boule $\left\{ x \in E \, | \, ||x|| < 1 \right\}$?
 
 \begin{proposition}
-	La boule unité ouverte pour \GSnorme{.} est d'intérieur vide pour la
+	La boule unité ouverte pour $\GSnorme{.}$ est d'intérieur vide pour la
 	topologie faible. Par conséquence, elle n'est pas $\sigma$-ouverte.
 \end{proposition}
 
 \begin{proof}
-	
+
 \end{proof}
 
 \subsection{Applications}
 
 \begin{theorem}
-	Soit l'espace topologique $(E,$ \GSweakTopo{E}$)$, alors la boule unité
+	Soit l'espace topologique $(E, \GSweakTopo{E})$, alors la boule unité
 	est compacte.
 \end{theorem}
 
 \begin{proof}
-	
+
 \end{proof}
 
 \subsection{Applications dans les espaces de Banach}
 
 \begin{proposition}
-	Soit \GSnormedSpace{E}{\GSnorme{.}} de Banach, et un sous ensemble $B$ non
+	Soit $\GSnormedSpace{E}{\GSnorme{.}}$ de Banach, et un sous ensemble $B$ non
 	vide de $E$.
 	Si $\forall x^{*} \in E^{*}$, $x^{*}(B)$ borné dans $\real$, alors $B$ borné
 	dans $E$.
 \end{proposition}
 
 \begin{proof}
-	
+
 \end{proof}
 
 \begin{corollary}
-	Soit \GSnormedSpace{E}{\GSnorme{.}} de Banach.
-	Prenons une suite \GSsequence{x}{n}{\naturel} dans $E$ faiblement
+	Soit $\GSnormedSpace{E}{\GSnorme{.}}$ de Banach.
+	Prenons une suite $\GSsequence{x}{n}{\naturel}$ dans $E$ faiblement
 	convergente vers $x$.
-	Alors \GSsequence{||x_{n}||}{n}{\naturel} est bornée et \GSnorme{x} $\leq
-	\lim\inf$\GSnorme{x_{n}}.
+	Alors $\GSsequence{||x_{n}||}{n}{\naturel}$ est bornée et $\GSnorme{x} \leq
+	\lim\inf \GSnorme{x_{n}}$.
 \end{corollary}
 
 \begin{proof}
-	
+
 \end{proof}
 
 \begin{proposition}
@@ -178,7 +178,7 @@ Que se passe-t-il pour la boule $\left\{ x \in E \, | \, ||x|| < 1 \right\}$?
 \end{proposition}
 
 \begin{proof}
-	
+
 \end{proof}
 
 \section{Topologie pré-faible}

@@ -16,13 +16,13 @@ généralisation simple).
 \label{theorem_hahn_banach_analytic_1}
 	Soit E un $\real$-espace vectoriel, et G un sous-espace vectoriel de E.
 
-	Soit \GSfunction{$f_{G}$}{$G$}{$\real$} une forme linéaire, et
-	\GSfunction{$p$}{$E$}{$\real$} une fonction convexe.
+	Soit $\GSfunction{f_{G}}{G}{\real}$ une forme linéaire, et
+	$\GSfunction{p}{E}{\real}$ une fonction convexe.
 
 	Supposons que $\forall x \in G$ $f_{G}(x) \leq p(x)$, c'est-à-dire que
 	$f_{G}$ est majorée par $p$ sur $G$.
 
-	Alors il existe une forme linéaire \GSfunction{$f_{E}$}{$E$}{$\real$} tel que
+	Alors il existe une forme linéaire $\GSfunction{f_{E}}{E}{\real}$ tel que
 	${(f_{E})}_{|G} = f_{G}$ et $\forall x \in E$ $f_{E}(x) \leq p(x)$.
 \end{theorem}
 
@@ -35,7 +35,7 @@ un corollaire portant sur les espaces vectoriels normés.
 De plus, $f$ n'est pas nécessairement continue.
 
 \begin{proof}
-	
+
 \end{proof}
 
 \begin{corollary}
@@ -43,7 +43,7 @@ De plus, $f$ n'est pas nécessairement continue.
 \end{corollary}
 
 \begin{proof}
-	
+
 \end{proof}
 
 Nous pouvons nous demander si la condition de majoration par une fonction
@@ -56,16 +56,16 @@ suivant.
 \label{theorem_hahn_banach_analytic_2}
 	Soit E un $\real$-espace vectoriel \textbf{normé}, et G un sous-espace
 	vectoriel de E.
-	Soit \GSfunction{$f_{G}$}{$G$}{$\real$} une forme linéaire
+	Soit $\GSfunction{f_{G}}{G}{\real}$ une forme linéaire
 	\textbf{continue}.
 
 	Alors il existe une forme linéaire \textbf{continue}
-	\GSfunction{$f_{E}$}{$E$}{$\real$} tel que $(f_{E})_{|G} = f_{G}$.
+	$\GSfunction{f_{E}}{E}{\real}$ tel que $(f_{E})_{|G} = f_{G}$.
 \end{theorem}
 
 \begin{proof}
 	On va construire $p$ qui majore $f$.
-	On pose \GSfunction{$p$}{$E$}{$\mathbb{K}$}: $x \rightarrow ||f|| \,
+	On pose $\GSfunction{p}{E}{\mathbb{K}}$ : $x \rightarrow ||f|| \,
 	||x||_{E}$.
 
 	Comme $f$ est linéaire continue sur $G$, on a bien que $|f(x)| \leq ||f|| \,
@@ -80,29 +80,29 @@ Dans cette section, nous allons démontrer quelques corollaires des théorèmes 
 Hahn-Banach analytiques.
 
 \begin{corollary}
-	Soit \GSnormedSpace{E}{\GSnorme{.}}, et un élément non-nul $x_{0}$ de $E$.
+	Soit $\GSnormedSpace{E}{\GSnorme{.}}$, et un élément non-nul $x_{0}$ de $E$.
 
 	Alors, $\exists x^{*} \in \GSdual{E}$ tel que $x^{*}(x_{0}) = 1$ et
 	$||x^{*}||_{E^{*}} = \frac{1}{||x_{0}||}$
 \end{corollary}
 
 \begin{proof}
-	Prenons $G = <x_{0}>$, et \GSfunction{$x^{*}$}{$G$}{$\mathbb{K}$}:$\lambda
+	Prenons $G = <x_{0}>$, et $\GSfunction{x^{*}}{G}{\mathbb{K}}$ : $\lambda
 	x_{0} \rightarrow \lambda$. On a bien $x^{*}$ linéaire et continue, donc on peut
 	la prolonger sur tout $E$, et donc $x^{*} \in \GSdual{E}$.
 
 	De plus, on a bien que $x^{*}(x_{0}) = 1$.
-	
+
 	Enfin, $||x^{*}||_{E^{*}} = ||x^{*}||_{G} = \displaystyle \sup_{||\lambda x_{0}|| \leq
 1}|\lambda| = \sup_{|\lambda|||x_{0}|| \leq 1} = \sup_{|\lambda| \leq
 	\frac{1}{||x_{0}||}} = \frac{1}{||x_{0}||}$.
 \end{proof}
 
 \begin{corollary}
-	Soit \GSnormedSpace{E}{\GSnorme{.}}, et un élément non-nul $x_{0}$ de $E$.
+	Soit $\GSnormedSpace{E}{\GSnorme{.}}$, et un élément non-nul $x_{0}$ de $E$.
 
 	Alors, $\exists x^{*} \in \GSdual{E}$ tel que $x^{*}(x_{0}) = ||x_{0}||$ et
-	\GSnorme{x^{*}} $= ||x_{0}||$.
+	$\GSnorme{x^{*}} = ||x_{0}||$.
 \end{corollary}
 
 \begin{proof}
@@ -111,32 +111,32 @@ Hahn-Banach analytiques.
 \end{proof}
 
 \begin{corollary}
-	Soit \GSnormedSpace{E}{\GSnorme{.}}. Alors $\GSdual{E}$ sépare les points de
+	Soit $\GSnormedSpace{E}{\GSnorme{.}}$. Alors $\GSdual{E}$ sépare les points de
 	E, c'est-à-dire que $\forall x, y \in E$ $\exists x^{*} \in \GSdual{E}$ tel
 	que $x^{*}(x) \neq x^{*}(y)$.
 \end{corollary}
 
 \begin{proof}
-	
+
 \end{proof}
 
 \begin{corollary}
-	Soit \GSnormedSpace{E}{\GSnorme{.}}. Alors $\forall x \in E$, \GSnorme{x} 
-	$ = \max\limits_{x^{*} \in \GSunitBoule{\GSdual{E}}}$\GSnorme{x^{*}(x)}.
+	Soit $\GSnormedSpace{E}{\GSnorme{.}}$. Alors $\forall x \in E$, $\GSnorme{x}
+	= \max\limits_{x^{*} \in \GSunitBoule{\GSdual{E}}} \GSnorme{x^{*}(x)}$.
 \end{corollary}
 
 \begin{proof}
-	
+
 \end{proof}
 
 \begin{corollary}
-	Soit \GSnormedSpace{E}{\GSnorme{.}}, et $H$ un sous-espace vectoriel fermé.
+	Soit $\GSnormedSpace{E}{\GSnorme{.}}$, et $H$ un sous-espace vectoriel fermé.
 	Soit $x_{0} \in E_{/H}$.
 
 	Alors $\exists x^{*} \in \GSdual{E}$ tel que :
 
 	\begin{enumerate}
-		\item \GSnorme{x^{*}} $ = 1$.
+		\item $\GSnorme{x^{*}} = 1$.
 		\item $x^{*}(x_{0}) = d(x_{0}, H)$
 		\item $H \subseteq ker(x^{*})$
 	\end{enumerate}
@@ -150,7 +150,7 @@ vectoriel.
 \begin{definition} [Jauge]
 	Soit $C \subseteq E$ tel que $0 \in C$.
 
-	La jauge de $C$ est définie comme la fonction \GSfunction{$p$}{$E$}{$R^{+}$}
+	La jauge de $C$ est définie comme la fonction $\GSfunction{p}{E}{R^{+}}$
 	tel que $p(x) = \inf\left\{ \alpha > 0 \, | \, \alpha^{-1}x \in C\right\}$.
 \end{definition}
 
@@ -183,29 +183,29 @@ normé.
 \end{proposition}
 
 \begin{proof}
-	
+
 \end{proof}
 
 \begin{definition} [Hyperplan]
 	Soit $H$ un sous-espace vectoriel de $E$. $H$ est appelé hyperplan
-	(vectoriel) s'il est de codimension 1, c'est-à-dire que $E = H\oplus
+	(vectoriel) s'il est de codimension 1, c'est-à-dire que $E = H \oplus
 	\mathbb{K}e$ où $e \in E$, non nul.
 \end{definition}
 
 \begin{proposition}
-	$H$ est un hyperplan ssi $\exists$ \GSfunction{$f$}{$E$}{$\mathbb{K}$}
+	$H$ est un hyperplan ssi $\exists \GSfunction{f}{E}{\mathbb{K}}$
 	linéaire non nulle tel que $H = \ker(f)$. En d'autres termes, tout hyperplan
 	est le noyau d'une forme linéaire non nulle.
 \end{proposition}
 
 \begin{proof}
 	$(\Rightarrow)$ On a $E = H \oplus \mathbb{K}e$. Prenons
-	\GSfunction{$f$}{$E$}{$\mathbb{K}$}: $h + \lambda e \rightarrow \lambda$.
+	$\GSfunction{f}{E}{\mathbb{K}}$ : $h + \lambda e \rightarrow \lambda$.
 	On a bien $H = \ker(f)$.
 
 	$(\Leftarrow)$ Soit $x \in E$, et $e \notin \ker(f)$. On a $x = (x - \lambda
 	e) + \lambda e$.
-	
+
 	Choisissons un $\lambda$ tel que $x - \lambda e \in
 	\ker(f)$. On a $f(x - \lambda e) = f(x) - \lambda f(e)$. Si $\lambda =
 	\frac{f(x)}{f(e)}$, on a ce qu'on veut.
@@ -214,8 +214,8 @@ normé.
 \end{proof}
 
 \begin{definition} [Hyperplan affine]
-	Soit \GSfunction{$f$}{$E$}{$\mathbb{K}_{0}$}, et $\alpha \in \mathbb{K}$.
-	
+	Soit $\GSfunction{f}{E}{\mathbb{K}_{0}}$, et $\alpha \in \mathbb{K}$.
+
 	Soit $H = \left\{ x \in E \, | \, f(x) = \alpha \right\}$.
 
 	$H$ est appelé hyperplan (vectoriel) affine.
@@ -224,7 +224,7 @@ normé.
 
 \begin{definition}
 	Soient $A$, $B \subseteq E$ convexes et disjoints.
-	
+
 	Soit $H = \left\{ x \in E \, | \, f(x) = \alpha\right\}$ un hyperplan affine
 
 	On dit que \textbf{$H$ sépare $A$ et $B$ au sens large} si
@@ -248,7 +248,7 @@ Nous en venons aux théorèmes de Hahn-Banach sous leurs formes géométriques.
 \end{theorem}
 
 \begin{proof}
-	
+
 \end{proof}
 
 \begin{theorem} [Théorème de Hahn-Banach 2 --- géométrique]
@@ -260,7 +260,7 @@ Nous en venons aux théorèmes de Hahn-Banach sous leurs formes géométriques.
 \end{theorem}
 
 \begin{proof}
-	
+
 \end{proof}
 
 \section{Applications géométriques}
@@ -296,5 +296,5 @@ Nous en venons aux théorèmes de Hahn-Banach sous leurs formes géométriques.
 \end{corollary}
 
 \begin{proof}
-	
+
 \end{proof}
