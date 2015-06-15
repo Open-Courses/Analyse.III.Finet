@@ -4,8 +4,8 @@
 Énonçons d'abord une propriété, qu'on appelle propriété de Baire.
 
 \begin{propriete} [Propriété de Baire ouverts]
-\label{property_baire_open}
-	Pour toutes suites dénombrables d'ouverts denses dans E, on a $\displaystyle
+	\label{property_baire_open}
+	Pour toutes suites dénombrables $\GSsequence{O}{n}{\naturel}$ d'ouverts denses dans E, on a $\displaystyle
 	\bigcap_{n = 0}^{\infty} O_{n}$ qui est dense dans E.
 \end{propriete}
 
@@ -14,14 +14,27 @@ fermés.
 
 \begin{propriete} [Propriété de Baire fermés]
 \label{property_baire_closed}
-	Pour toutes suites dénombrables de fermé d'intérieur vide, on a
+Pour toutes suites dénombrables $\GSsequence{F}{n}{\naturel}$ de fermés d'intérieur vide, on a
 	$\displaystyle \bigcup_{n = 0}^{\infty} F_{n} = \emptyset$.
 \end{propriete}
 
 \ifdefined\outputproof
 \begin{proof}
-	$int(F) = \emptyset \Leftrightarrow adh(F^{c}) = E$ où $F$ est fermé. Donc
-	$F^{c}$ est ouvert et dense.
+	Soit $\GSsequence{F}{n}{\naturel}$ une suite de fermés d'interieur vide et
+	posons $O_{n} := \comp{F_{n}}$. Alors, pour tout $n \in \naturel$, on a
+	$O_{n}$ qui est ouvert et dense car
+	\begin{align}
+		\interior{F_{n}} = \emptyset &\Leftrightarrow \adh{\comp{F_{n}}} = E \\
+		& \Leftrightarrow \adh{O_{n}} = E
+	\end{align}
+
+	Posons maintenant $F = \bigcup_{n = 0}^{\infty} F_{n}$. On a $\comp{F} = \bigcap_{n = 0}^{\infty} O_{n}$.
+
+	\begin{align}
+		\interior{F} = \emptyset & \Leftrightarrow \adh(F^{c}) = E \\
+		& \Leftrightarrow \adh{\bigcap_{n = 0}^{\infty} O_{n}} = E
+	\end{align}
+	Donc $F^{c}$ est ouvert et dense.
 \end{proof}
 \fi
 
@@ -30,24 +43,30 @@ vraie):
 
 \begin{corollary}
 \label{corollary_baire_int_non_empty}
-	Soit une suite $\GSsequence{F}{n}{\naturel}$ de fermés tel que $\displaystyle
-	\bigcup_{n = 0}^{\infty}{F_{n}} = E$, alors il existe un $F_{n_{0}}$
-	d'intérieur non vide.
+	Soit une suite $\GSsequence{F}{n}{\naturel}$ de fermés dont l'intérieur de
+	l'union est non vide, c'est-à-dire 
+	\begin{equation}
+		\interior{\left(\bigcup_{n = 0}^{\infty}{F_{n}}\right)} \neq \emptyset
+	\end{equation}
+	alors il existe un $n_{0} \in \naturel$ tel que $F_{n_{0}}$
+	est d'intérieur non vide.
 \end{corollary}
 
 \ifdefined\outputproof
 \begin{proof}
-	Supposons que tous les $F_{n}$ soient fermés, alors par la
-	propriété de Baire fermé (~\ref{property_baire_closed}), on a que
-	$\displaystyle \bigcup_{n = 0}^{\infty}{F_{n}} \neq E$. Or, par hypothèse,
-	on a l'égalité.
+	Supposons que tous les $F_{n}$ soient d'intérieur vide, alors par la
+	propriété de Baire fermé (~\ref{property_baire_closed}), on a
+	\begin{equation}
+		\interior{\left(\bigcup_{n = 0}^{\infty}{F_{n}} \right)} = \emptyset
+	\end{equation}
+	Or, par hypothèse, ce n'est pas vide.
 \end{proof}
 \fi
 
 \begin{definition} [Espace de Baire]
 \label{definition_baire_space}
-	Si un espace topologie E a la propriété de Baire, on dit que c'est un espace
-	de Baire.
+	Si un espace topologie E a la propriété de Baire, on dit que c'est \textbf{un espace
+	de Baire}.
 \end{definition}
 
 La question à se poser est: est-ce qu'il existe des espaces de Baire? La
@@ -60,7 +79,7 @@ réponse est oui, et le théorème (de Baire) nous en donne une partie.
 
 \ifdefined\outputproof
 \begin{proof}
-	
+
 \end{proof}
 \fi
 
@@ -85,31 +104,48 @@ de E s'écrit comme une combinaire linéaire finie des éléments de B.
 
 \ifdefined\outputproof
 \begin{proof}
-	Soit $E$ un espace de Banach. On a donc
+	Soit $E$ un espace de Banach. On a
 	par~\ref{theorem_baire_complete_space} que c'est un espace de Baire.
 
 	Si $E$ est de dimension finie, on a fini.
 	Supposons maintenant qu'il soit de dimension infinie dénombrable, et prenons
 	une base $B = \GSsequence{e}{n}{\naturel}$.
 
-	On construit alors la suite $E_{n} = <e_{1}, \ldots, e_{n}>$. Ce sont des
+	On construit alors la suite $E_{n} = \spanspace{e_{1}, \ldots, e_{n}}$. Ce sont des
 	sous espaces vectoriels de dimension finie, et donc fermés
 	par~\ref{theorem_closed_vectorial_subspace}. De plus, on a
 	clairement $E = \bigcup_{n \in \naturel} E_{n}$.
 
-	Par~\ref{corollary_baire_int_non_empty}, on a un $E_{n_{O}}$ d'intérieur non
-	vide. Il contient dont une boule de centre $x_{0} \in int({E_{n_{0}}})$ et
-	de rayon $r > 0$ ($B(x_{0}, r) \subseteq E_{n_{0}}$).
-	On a $B(x_{O}, r) = x_{0} + B(0, r) \subseteq E_{n_{0}}$, et comme
-	$E_{n_{0}}$ est un espace vectoriel, si on prend un élément $x_{0} + x \in
-	E_{n_{0}}$ où $x \in B(0, r)$, $x \in E_{n_{0}}$, donc $B(0, r) \subseteq
-	E_{n_{0}}$.
+	-- Par~\ref{corollary_baire_int_non_empty}, il existe $n_{0} \in \naturel$ tel que $E_{n_{0}}$ est d'intérieur non
+	vide.
+	Comme $E_{n_{0}}$ est d'intérieur non vide, il existe une
+	boule $B(x_{0}, r)$ de centre $x_{0} \in int({E_{n_{0}}})$ et de rayon $r > 0$ tel que
+	$B(x_{0}, r) \subseteq int(E_{n_{0}})$. En particulier, $B(x_{0}, r)
+	\subseteq E_{n_{0}}$.
+	
+	On a $B(x_{0}, r) = x_{0} + B(0, r) \subseteq
+	E_{n_{0}}$
 
-	Montrons maintenant que $E_{n_{0}} = E$. Si on prend un élément $x$ de $E$
-	non nul, on a $y = \frac{x}{||x||} \frac{r}{2} \in B(0, r)$, donc $y \in
-	E_{n_{0}}$. Comme $E_{n_{0}}$ est un espace vectoriel, $x = \frac{2}{r}
-	||x|| y \in E_{n_{0}}$, d'où $E \subseteq E_{n_{0}}$. On a donc bien
-	l'égalité vu que $E_{n_{0}}$ est un sev de $E$.
+	Comme $E_{n_{0}}$ est un espace vectoriel, si on prend un
+	élément $x_{0} + x \in E_{n_{0}}$ où $x \in B(0, r)$, alors $x \in E_{n_{0}}$.
+	Donc $B(0, r) \subseteq E_{n_{0}}$.
+
+	-- Montrons maintenant que $E_{n_{0}} = E$.
+
+	Prenons un élément $x$ de $E$ non nul et posons
+	\begin{equation}
+		y = \frac{x}{||x||} \frac{r}{2}
+	\end{equation}
+	On a $y \in B(0, r)$ et par conséquent $y \in E_{n_{0}}$.
+	
+	Comme $E_{n_{0}}$ est un espace vectoriel et que 
+	\begin{equation}
+		x = \frac{2}{r} ||x|| y
+	\end{equation}
+	on a $x \in E_{n_{0}}$. D'où $E \subseteq E_{n_{0}}$.
+	
+	On a donc bien l'égalité vu que $E_{n_{0}}$ est un sous-espace vectoriel de
+	$E$ par construction.
 
 	On obtient alors une contradiction car $E_{n_{0}}$ est de dimension finie,
 	alors que $E$ est de dimension infinie dénombrable.
@@ -118,12 +154,12 @@ de E s'écrit comme une combinaire linéaire finie des éléments de B.
 
 On a alors comme exemple d'application de la
 proposition~\ref{proposition_basis_banach_space} que $\mathcal{C}[0, 1]$ et
-$\GScontinueHomo{E}{F}$, avec E ou F de dimension infinie, et F de Banach,
+$\GScontinueHomo{E}{F}$, avec $E$ ou $F$ de dimension infinie, et $F$ de Banach,
 n'ont que des bases algébriques non dénombrables (car ce ne sont pas des espaces
 vectoriels de dimension finie).
 
-On a alors, grace à la contraposée, un corollaire important sur les espaces de
-Banach :
+Donnons maintenant, grace à la contraposée, un corollaire important sur les espaces de
+Banach.
 
 \begin{corollary}
 	Soit E un espace vectoriel normé qui a une base algébrique dénombrable.

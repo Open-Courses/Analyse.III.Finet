@@ -1,19 +1,27 @@
 \chapter{Espace séparable}
 
-Pour rappel, un ensemble $D$ est dense dans $E$ si pour tout $x_{0} \in E$, $D$
+Pour rappel, un ensemble $D$ est \textbf{dense} dans $E$ si pour tout $x_{0} \in E$, $D$
 coupe tout voisinage de $x_{0}$.
 
 \section{Séparabilité dans un espace topologique}
 
 \begin{definition}
 	Soit $E$ un espace topologique.
-	$E$ est dit séparable s'il existe un sous-ensemble $D$ tel que $D$ est dense
-	dans $E$ et dénombrable.
+	On dit que $E$ est \textbf{séparable} s'il existe un sous-ensemble $D$ de
+	$E$ tel que
+	\begin{enumerate}
+		\item $D$ est dense dans $E$.
+		\item $D$ est dénombrable.
+	\end{enumerate}
 \end{definition}
 
 \begin{proposition}
 	Soit $D \subseteq E$.
-	$D$ est dense dans $E$ ssi $D$ coupe tout ouvert non vide de $E$.
+	Alors les assertions suivantes sont équivalentes.
+	\begin{enumerate}
+		\item $D$ est dense dans $E$.
+		\item $D$ coupe tout ouvert non vide de $E$.
+	\end{enumerate}
 \end{proposition}
 
 \ifdefined\outputproof
@@ -28,22 +36,33 @@ nous dit que si un espace est séparable, alors il a au plus un nombre
 dénombrable d'ouverts disjoints.
 
 \begin{proposition}
-	Prenons un espace topologique séparable $X$ et une famille d'ouvert
-	$\GSsequence{O}{i}{I}$ 2 à 2 disjoints. Alors $I$ est au plus dénombrable.
+	Soit $(X, \tau)$ un espace topologique séparable et soit $\GSsequence{O}{i}{I}$ une famille d'ouvert
+	2 à 2 disjoints.
+
+	Alors $I$ est au plus dénombrable.
 \end{proposition}
 
 \ifdefined\outputproof
 \begin{proof}
-	Soit $D$ dense dans $E$ et dénombrable. On sait que $\forall i \in I$, $D$
-	coupe $O_{i}$. Notons $x_{i}$ l'élément qui se trouve dans $D \bigcap
-	O_{i}$.
+	Soit $D$ un sous-ensemble dénombrable de $X$ et dense dans $(X, \tau)$. On sait que
+	\begin{equation}
+		\forall i \in I, D \inter O_{i} \neq \emptyset
+	\end{equation}
+	car $D$ est dense dans $(X, \tau)$ et $O_{i}$ est un ouvert.
+	Notons $x_{i}$ l'élément qui se trouve dans $D \inter O_{i}$.
 
-	On construit $\GSfunction{f}{I}{D}$ : $i \rightarrow x_{i}$. On a $f$ qui
-	est injective car si $x_{i} = x_{j}$ ($i \neq j$), avec $x_{j} \in O_{j}$ et
-	$x_{i} \in O_{i}$, $x_{j} \in O_{i}$ et donc $O_{i}$ et $O_{j}$ ne sont pas
+	Construisons
+	\begin{equation}
+		\GSfunction{f}{I}{D} : i \rightarrow x_{i}
+	\end{equation}
+
+	Nous avons que $f$ est injective.
+	En effet, pour $i \neq j$, si $x_{i} = x_{j}$ avec $x_{j} \in O_{j}$ et
+	$x_{i} \in O_{i}$, alors $x_{j} \in O_{i}$ et donc $O_{i}$ et $O_{j}$ ne sont pas
 	disjoints.
 
-	Donc $Card(I) \leq Card(D)$. Donc $I$ au plus dénombrable car $D$ dénombrable.
+	Donc $Card(I) \leq Card(D)$. Donc $I$ est au plus dénombrable car $D$ est
+	dénombrable.
 \end{proof}
 \fi
 
@@ -53,13 +72,14 @@ Donnons quelques équivalences plus faciles à utiliser quand nous sommes dans u
 espace métrique.
 
 \begin{proposition}
-	Soit $(E, d_{E})$ un espace métrique, LASSE :
+	Soit $(E, d_{E})$ un espace métrique. Alors les assertions suivantes sont
+	équivalentes.
 	\begin{enumerate}
-		\item $\forall \epsilon > 0$, le recouvrement $(B(x, \epsilon))_{x \in
+		\item pour tout $\epsilon > 0$, le recouvrement $(B(x, \epsilon))_{x \in
 			E}$ admet un sous-recouvrement \textbf{dénombrable}.
 		\item E est séparable.
-		\item $\exists \GSsequence{O}{n}{\naturel}$, $O_{n}$ ouvert, tel que
-			tout ouvert de E s'écrit comme une union de $O_{n}$.
+		\item il existe une suite $\GSsequence{O}{n}{\naturel}$ d'ouverts de $(E,
+			d_{E})$, tel que tout ouvert de $E$ s'écrit comme une union de $O_{n}$.
 	\end{enumerate}
 \end{proposition}
 
@@ -87,12 +107,14 @@ espace métrique.
 \section{Séparabilité dans les espaces vectoriels normés}
 
 Comme nous l'avons fait pour les espaces métriques, nous allons donner des
-équivalences plus faciles à utiliser pour les espaces vectoriel normés. Il ne
-faut pas oublier qu'un espace vectoriel normé est en particulier un espace
+équivalences plus faciles à utiliser pour les espaces vectoriels normés.
+
+Remarquons qu'un espace vectoriel normé est en particulier un espace
 métrique, donc les équivalences de la section précédente restent vraies.
 
 \begin{proposition}
-	Soit $\GSnormedSpace{E}{\GSnorme{.}}$ un espace vectoriel normé, LASSE :
+	Soit $\GSnormedSpace{E}{\GSnorme{.}}$ un espace vectoriel normé. Alors les
+	assertions suivantes sont équivalentes.
 	\begin{enumerate}
 		\item $E$ est séparable.
 		\item $B(E)$ est séparable
@@ -107,8 +129,8 @@ métrique, donc les équivalences de la section précédente restent vraies.
 \fi
 
 \begin{proposition}
-	$c_{0}(\real)$, l'ensemble des suites à coefficients dans $\real$
-	qui convergent vers 0, est séparable.
+	L'ensemble des suites à coefficients dans $\real$ qui convergent vers 0,noté
+	$c_{0}(\real)$, est séparable.
 \end{proposition}
 
 \ifdefined\outputproof
@@ -118,9 +140,11 @@ métrique, donc les équivalences de la section précédente restent vraies.
 \fi
 
 \begin{proposition}
-	$l^{1}(\real)$, l'ensemble des suites à coefficients dans $\real$
-	tel que $\GSnormeDef{x}{1} = \GSsum{n}{0}{\infty}{x_{n}} < \infty$, est
-	séparable.
+	L'ensemble des suites $\GSsequence{x}{n}{\naturel}$ à coefficients dans $\real$ tel que
+	\begin{equation}
+		\GSnormeDef{x}{1} = \GSsum{n}{0}{\infty}{\abs{x_{n}}} < \infty
+	\end{equation}
+	noté $l^{1}(\real)$, est séparable.
 \end{proposition}
 
 \ifdefined\outputproof
@@ -130,8 +154,8 @@ métrique, donc les équivalences de la section précédente restent vraies.
 \fi
 
 \begin{proposition}
-	$l^{\infty}(\real)$, l'ensemble des suites bornées à coefficients dans
-	$\real$ n'est pas séparable.
+	L'ensemble des suites bornées à coefficients dans $\real$, noté
+	$l^{\infty}(\real)$, n'est pas séparable.
 \end{proposition}
 
 \ifdefined\outputproof

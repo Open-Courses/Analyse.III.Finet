@@ -10,7 +10,7 @@ définies au départ sur un sous-espace vectoriel.
 Nous les montrerons d'abord sur $\real$, et après sur $\complex$ (qui sera une
 généralisation simple).
 
-\section{Forme analytique}
+\section{Formes analytiques}
 
 \begin{theorem} [Théorème 1 de Hahn-Banach --- analytique]
 \label{theorem_hahn_banach_analytic_1}
@@ -19,11 +19,21 @@ généralisation simple).
 	Soit $\GSfunction{f_{G}}{G}{\real}$ une forme linéaire, et
 	$\GSfunction{p}{E}{\real}$ une fonction convexe.
 
-	Supposons que $\forall x \in G$ $f_{G}(x) \leq p(x)$, c'est-à-dire que
-	$f_{G}$ est majorée par $p$ sur $G$.
+	Supposons que
+	\begin{equation}
+		\forall x \in G, \abs{f_{G}(x)} \leq p(x)
+	\end{equation}
+	c'est-à-dire que $f_{G}$ est majorée par $p$ sur $G$.
 
-	Alors il existe une forme linéaire $\GSfunction{f_{E}}{E}{\real}$ tel que
-	${(f_{E})}_{|G} = f_{G}$ et $\forall x \in E$ $f_{E}(x) \leq p(x)$.
+	Alors il existe une forme linéaire
+	\begin{equation}
+		\GSfunction{f_{E}}{E}{\real}
+	\end{equation}
+	tel que
+	\begin{enumerate}
+		\item ${(f_{E})}_{|G} = f_{G}$
+		\item $\forall x \in E$, $\abs{f_{E}(x)} \leq p(x)$.
+	\end{enumerate}
 \end{theorem}
 
 La dernière condition insiste bien sur le fait que $f_{E}$ prolonge $f_{G}$ et
@@ -70,60 +80,85 @@ suivant.
 \ifdefined\outputproof
 \begin{proof}
 	On va construire $p$ qui majore $f$.
-	On pose $\GSfunction{p}{E}{\mathbb{K}}$ : $x \rightarrow ||f|| \,
-	||x||_{E}$.
+	On pose
+	\begin{equation}
+		\GSfunction{p}{E}{\real} : x \rightarrow \GSnorme{f} \,
+		\GSnormeDef{x}{E}
+	\end{equation}
 
-	Comme $f$ est linéaire continue sur $G$, on a bien que $|f(x)| \leq ||f|| \,
-	||x||_{E} = p(x)$. Donc on peut étendre $f$ en une forme linéaire $f_{E}$
+	Comme $f$ est linéaire continue sur $G$, on a bien
+	\begin{equation}
+		|f(x)| \leq ||f|| \, ||x||_{E} = p(x)
+	\end{equation}
+
+	Donc on peut étendre $f$ en une forme linéaire $f_{E}$
 	sur tout $E$ par~\ref{theorem_hahn_banach_analytic_1}, et tel que
-	$|f_{E}(x)| \leq p(x) = ||f_{G}|| \, ||x||_{E} = ||f_{E}|| \, ||x||_{E}$,
+	\begin{equation}
+		\abs{f_{E}(x)} \leq p(x) = \GSnorme{f_{G}} \, \GSnormeDef{x}{E} =
+			\GSnorme{f_{E}} \, \GSnormeDef{x}{E}
+	\end{equation}
 	c'est-à-dire $f_{E}$ continue.
 \end{proof}
 \fi
-\section{Applications analytiques}
+\section{Applications des formes analytiques}
 
 Dans cette section, nous allons démontrer quelques corollaires des théorèmes de
 Hahn-Banach analytiques.
 
 \begin{corollary}
-	Soit $\GSnormedSpace{E}{\GSnorme{.}}$, et un élément non-nul $x_{0}$ de $E$.
+	Soient $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$ un espace vectoriel normé et $x_{0}$
+	un élément non-nul de $E$.
 
-	Alors, $\exists x^{*} \in \GSdual{E}$ tel que $x^{*}(x_{0}) = 1$ et
-	$||x^{*}||_{E^{*}} = \frac{1}{||x_{0}||}$
+	Alors, il existe $x^{*} \in \GSdual{E}$ tel que
+	\begin{enumerate}
+		\item $x^{*}(x_{0}) = 1$
+		\item $\GSnormeDef{x^{*}}{\GSdual{E}} = \frac{1}{\GSnormeDef{x_{0}}{E}}$
+	\end{enumerate}
 \end{corollary}
 
 \ifdefined\outputproof
 \begin{proof}
-	Prenons $G = <x_{0}>$, et $\GSfunction{x^{*}}{G}{\mathbb{K}}$ : $\lambda
-	x_{0} \rightarrow \lambda$. On a bien $x^{*}$ linéaire et continue, donc on peut
-	la prolonger sur tout $E$, et donc $x^{*} \in \GSdual{E}$.
+	Posons $G = \spanspace{x_{0}}$, et
+	\begin{equation}
+		\GSfunction{\tilde{x}^{*}}{G}{\real} : \lambda x_{0} \rightarrow \lambda
+	\end{equation}
+	On a $\tilde{x}^{*}$ qui est une forme linéaire continue. Il existe donc un
+	prolongement $x^{*} \in \GSdual{E}$ de $\tilde{x}^{*}$.
 
 	De plus, on a bien que $x^{*}(x_{0}) = 1$.
 
-	Enfin, $||x^{*}||_{E^{*}} = ||x^{*}||_{G} = \displaystyle \sup_{||\lambda x_{0}|| \leq
-1}|\lambda| = \sup_{|\lambda|||x_{0}|| \leq 1} = \sup_{|\lambda| \leq
-	\frac{1}{||x_{0}||}} = \frac{1}{||x_{0}||}$.
+	Enfin,
+	\begin{align}
+		\GSnormeDef{x^{*}}{\GSdual{E}} &= \GSnormeDef{\tilde{x}^{*}}{\GSdual{G}} \\
+		&= \sup_{\GSnormeDef{\lambda x_{0}}{E} \leq 1} \abs{\lambda} \\
+		&= \sup_{\abs{\lambda} \GSnormeDef{x_{0}}{E} \leq 1} \abs{\lambda} \\
+		&= \sup_{|\lambda| \leq \frac{1}{\GSnormeDef{x_{0}}{E}}} \abs{\lambda} \\
+		&= \frac{1}{\GSnormeDef{x_{0}}{E}}
+	\end{align}
 \end{proof}
 \fi
 
 \begin{corollary}
-	Soit $\GSnormedSpace{E}{\GSnorme{.}}$, et un élément non-nul $x_{0}$ de $E$.
+	Soient $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$ et $x_{0}$ un élément non-nul de $E$.
 
-	Alors, $\exists x^{*} \in \GSdual{E}$ tel que $x^{*}(x_{0}) = ||x_{0}||$ et
-	$\GSnorme{x^{*}} = ||x_{0}||$.
+	Alors, il existe $x^{*} \in \GSdual{E}$ tel que
+	\begin{enumerate}
+		\item $x^{*}(x_{0}) = \GSnormeDef{x_{0}}{E}$
+		\item $\GSnorme{x^{*}} = \GSnormeDef{x_{0}}{E}$
+	\end{enumerate}
 \end{corollary}
 
 \ifdefined\outputproof
 \begin{proof}
-	Même que le corollaire précédent où $x_{*}$ est la norme restreinte à
-	$<x_{0}>$.
+	Même que le corollaire précédent où $x^{*}$ est la norme restreinte à
+	$\spanspace{x_{0}}$.
 \end{proof}
 \fi
 
 \begin{corollary}
-	Soit $\GSnormedSpace{E}{\GSnorme{.}}$. Alors $\GSdual{E}$ sépare les points de
-	E, c'est-à-dire que $\forall x, y \in E$ $\exists x^{*} \in \GSdual{E}$ tel
-	que $x^{*}(x) \neq x^{*}(y)$.
+	Soit $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$. Alors $\GSdual{E}$ sépare les points de
+	E, c'est-à-dire que pour tout $x, y \in E$, il existe $x^{*} \in \GSdual{E}$
+	tel que $x^{*}(x) \neq x^{*}(y)$.
 \end{corollary}
 
 \ifdefined\outputproof
@@ -133,8 +168,10 @@ Hahn-Banach analytiques.
 \fi
 
 \begin{corollary}
-	Soit $\GSnormedSpace{E}{\GSnorme{.}}$. Alors $\forall x \in E$, $\GSnorme{x}
-	= \max\limits_{x^{*} \in \GSunitBoule{\GSdual{E}}} \GSnorme{x^{*}(x)}$.
+	Soit $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$. Alors pour tout $x \in E$,
+	\begin{equation}
+		\GSnormeDef{x}{E} = \max\limits_{x^{*} \in \GSunitBoule{\GSdual{E}}} \abs{x^{*}(x)}
+	\end{equation}
 \end{corollary}
 
 \ifdefined\outputproof
@@ -144,10 +181,10 @@ Hahn-Banach analytiques.
 \fi
 
 \begin{corollary}
-	Soit $\GSnormedSpace{E}{\GSnorme{.}}$, et $H$ un sous-espace vectoriel fermé.
-	Soit $x_{0} \in E_{/H}$.
+	Soit $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$, et $H$ un sous-espace vectoriel fermé.
+	Soit $x_{0} \in E \backslash H$.
 
-	Alors $\exists x^{*} \in \GSdual{E}$ tel que :
+	Alors il existe $x^{*} \in \GSdual{E}$ tel que :
 
 	\begin{enumerate}
 		\item $\GSnorme{x^{*}} = 1$.
@@ -156,7 +193,13 @@ Hahn-Banach analytiques.
 	\end{enumerate}
 \end{corollary}
 
-\section{Forme géométrique}
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\section{Formes géométriques}
 
 Donnons d'abord quelques définitions. Dans cette partie, $E$ désigne un espace
 vectoriel.
@@ -164,8 +207,11 @@ vectoriel.
 \begin{definition} [Jauge]
 	Soit $C \subseteq E$ tel que $0 \in C$.
 
-	La jauge de $C$ est définie comme la fonction $\GSfunction{p}{E}{R^{+}}$
-	tel que $p(x) = \inf\left\{ \alpha > 0 \, | \, \alpha^{-1}x \in C\right\}$.
+	On définit \textbf{la jauge de $C$} comme la fonction
+	\begin{equation}
+		\GSfunction{p}{E}{\real^{+}} : x \rightarrow \inf \GSsetDef{\alpha >
+		0}{\alpha^{-1}x \in C}
+	\end{equation}
 \end{definition}
 
 \begin{exercice}
@@ -173,29 +219,41 @@ vectoriel.
 \end{exercice}
 %Donner des exercices et des exemples, avec les corrigés
 
-Regardons quels résultats nous avons quand $C$ est lié à la topologie de $E$
-normé.
+Regardons quels résultats nous avons quand $C$ est lié à la topologie de $E$.
 
 \begin{proposition}
-	Si $C$ est ouvert, alors $\exists M > 0$, $\forall x \in E$, $p(x) \leq M
-	||x||$.
+	Si $C$ est ouvert, alors il existe $M > 0$ tel que pour tout $x \in E$
+	\begin{equation}
+		p(x) \leq M \GSnormeDef{x}{E}
+	\end{equation}
 \end{proposition}
 
 \ifdefined\outputproof
 \begin{proof}
 
-	Comme $C$ est ouvert et $0 \in C$ par hypothèse, il existe $B(0, r)
-	\subseteq C$. Le cas $x = 0$ est trivial.
+	Comme $C$ est ouvert et que $0 \in C$ par hypothèse, il existe $r > 0$ tel
+	que $B(0, r) \subseteq C$.
 
-	Prenons $x \in E$ non nul, on a alors avec $\alpha^{-1} = \frac{r}{2} \frac{1}{||x||}$,
-	$\alpha^{-1} x \in B(0, r)$, donc $\alpha^{-1} x \in C$, donc $p(x) \leq
-	\alpha = \frac{2}{r} ||x||$.
+	Prenons $x \in E$ non nul (le cas $x = 0$ étant trivial).
+	Alors, en posant
+	\begin{equation}
+		\alpha^{-1} = \frac{r}{2} \frac{1}{||x||}
+	\end{equation}
+	on a $\alpha^{-1} x \in B(0, r)$.
+	Donc $\alpha^{-1} x \in C$.
+
+	Par conséquent,
+	\begin{equation}
+		p(x) \leq \alpha = \frac{2}{r} ||x||
+	\end{equation}
 \end{proof}
 \fi
 
 \begin{proposition}
-	Si $C$ est ouvert et convexe, alors $C = \left\{x \in E \, | \, p(x) <
-	1\right\}$.
+	Si $C$ est ouvert et convexe, alors
+	\begin{equation}
+		C = \GSsetDef{x \in E}{p(x) < 1}
+	\end{equation}
 \end{proposition}
 
 \ifdefined\outputproof
@@ -205,29 +263,48 @@ normé.
 \fi
 
 \begin{definition} [Hyperplan]
-	Soit $H$ un sous-espace vectoriel de $E$. $H$ est appelé hyperplan
-	(vectoriel) s'il est de codimension 1, c'est-à-dire que $E = H \oplus
-	\mathbb{K}e$ où $e \in E$, non nul.
+	Soit $H$ un sous-espace vectoriel de $E$.
+
+	On dit que $H$ est \textbf{un hyperplan (vectoriel)} s'il est de codimension
+	1, c'est-à-dire que $E = H \oplus \mathbb{K}e$ où $e \in E$ et $e$ non nul.
 \end{definition}
 
 \begin{proposition}
-	$H$ est un hyperplan ssi $\exists \GSfunction{f}{E}{\mathbb{K}}$
-	linéaire non nulle tel que $H = \ker(f)$. En d'autres termes, tout hyperplan
-	est le noyau d'une forme linéaire non nulle.
+	Les assertions suivantes sont équivalentes.
+	\begin{enumerate}
+		\item \label{statement:h_hyperplan} $H$ est un hyperplan.
+		\item \label{statement:kernel_linear_form} il existe une forme linéaire $\GSfunction{f}{E}{\mathbb{K}}$ non nulle tel que $H = \ker(f)$.
+	\end{enumerate}
+	En d'autres termes, tout hyperplan est le noyau d'une forme linéaire non
+	nulle.
 \end{proposition}
 
 \ifdefined\outputproof
 \begin{proof}
-	$(\Rightarrow)$ On a $E = H \oplus \mathbb{K}e$. Prenons
-	$\GSfunction{f}{E}{\mathbb{K}}$ : $h + \lambda e \rightarrow \lambda$.
-	On a bien $H = \ker(f)$.
+	$(\ref{statement:h_hyperplan} \implies \ref{statement:kernel_linear_form})$
+	Par hypothèse, on sait qu'il existe $e \in E$ non nul tel que $E = H \oplus \mathbb{K}e$.
 
-	$(\Leftarrow)$ Soit $x \in E$, et $e \notin \ker(f)$. On a $x = (x - \lambda
-	e) + \lambda e$.
+	Posons
+	\begin{equation}
+		\GSfunction{f}{\overbrace{H \oplus \mathbb{K}e}^{E}}{\mathbb{K}} : h + \lambda e \rightarrow \lambda
+	\end{equation}
+	$f$ est une forme linéaire continue et $H = \ker(f)$.
 
-	Choisissons un $\lambda$ tel que $x - \lambda e \in
-	\ker(f)$. On a $f(x - \lambda e) = f(x) - \lambda f(e)$. Si $\lambda =
-	\frac{f(x)}{f(e)}$, on a ce qu'on veut.
+	$(\ref{statement:kernel_linear_form} \implies \ref{statement:h_hyperplan})$
+	Soit $x \in E$, et $e \notin \ker(f)$.
+
+	On peut alors écrire $x$ tel que $x = (x - \lambda e) + \lambda e$.
+
+	Il nous faut $\lambda$ tel que $x - \lambda e \in
+	\ker(f)$.
+
+	On a $f(x - \lambda e) = f(x) - \lambda f(e)$.
+	Si
+	\begin{equation}
+		\lambda = \frac{f(x)}{f(e)}
+	\end{equation}
+	on a $x - \lambda e \in \ker(f)$.
+	
 	On a donc bien que $\ker(f)$ est un hyperplan vectoriel car $E = \ker(f)
 	\oplus \mathbb{K}e$.
 \end{proof}
@@ -236,32 +313,38 @@ normé.
 \begin{definition} [Hyperplan affine]
 	Soit $\GSfunction{f}{E}{\mathbb{K}_{0}}$, et $\alpha \in \mathbb{K}$.
 
-	Soit $H = \left\{ x \in E \, | \, f(x) = \alpha \right\}$.
+	Soit $H = \GSsetDef{x \in E}{f(x) = \alpha}$.
 
-	$H$ est appelé hyperplan (vectoriel) affine.
+	$H$ est appelé \textbf{hyperplan (vectoriel) affine}.
 \end{definition}
 
 
 \begin{definition}
-	Soient $A$, $B \subseteq E$ convexes et disjoints.
+	Soient $A$, $B \subseteq E$ deux ensembles convexes et disjoints.
 
-	Soit $H = \left\{ x \in E \, | \, f(x) = \alpha\right\}$ un hyperplan affine
+	Soit $H = \GSsetDef{x \in E}{f(x) = \alpha}$ un hyperplan affine.
 
 	On dit que \textbf{$H$ sépare $A$ et $B$ au sens large} si
 
-	$\forall x \in A$, $f(x) \leq \alpha$ et $\forall x \in B$, $f(x) \geq
-	\alpha$
+	\begin{enumerate}
+		\item pour tout $x \in A$, $f(x) \leq \alpha$
+		\item pour tout $x \in B$, $f(x) \geq \alpha$
+	\end{enumerate}
 
-	et on dit que \textbf{$H$ sépare $A$ et $B$ au sens strict} si
+	et on dit que \textbf{$H$ sépare $A$ et $B$ au sens strict} s'il existe
+	$\epsilon > 0$ tel que
 
-	$\exists \epsilon > 0$, $\forall x \in A$, $f(x) \leq \alpha -
-	\epsilon$ et $\forall x \in B$, $f(x) \geq \alpha + \epsilon$.
+	\begin{enumerate}
+		\item pour tout $x \in A$, $f(x) \leq \alpha -
+	\epsilon$
+		\item pour tout $x \in B$, $f(x) \geq \alpha + \epsilon$.
+	\end{enumerate}
 \end{definition}
 
 Nous en venons aux théorèmes de Hahn-Banach sous leurs formes géométriques.
 
 \begin{theorem} [Théorème de Hahn-Banach 1 --- géométrique]
-	Soit $A$, $B \subseteq E$ convexes et disjoints tel que $A$ est ouvert.
+	Soient $A$, $B \subseteq E$ deux ensembles convexes et disjoints tel que $A$ est ouvert.
 
 	Alors il existe un hyperplan vectoriel fermé qui sépare $A$ et $B$ au sens
 	large.
@@ -299,21 +382,27 @@ Nous en venons aux théorèmes de Hahn-Banach sous leurs formes géométriques.
 \begin{proof}
 	Supposons qu'il existe un hyperplan fermé qui les sépare, c'est-à-dire qu'il
 	existe $x^{*} \in E^{*}$ non nulle et $\alpha \in \mathbb{K}$ tel que
-	$\forall a \in A, \, x^{*}(a) \leq \alpha$ et $\forall b \in B, \, x^{*}(b)
-	\geq \alpha$.
+	\begin{equation}
+		\forall a \in A, \, x^{*}(a) \leq \alpha
+	\end{equation}
+	et
+	\begin{equation}
+		\forall b \in B, \, x^{*}(b) \geq \alpha
+	\end{equation}
 
-	Soit $x \in A-B$ tel que $x^{*}(x) \neq 0$. Sans perte de généralité,
+	Soit $x \in A - B$ tel que $x^{*}(x) \neq 0$. Sans perte de généralité,
 	$x^{*}(x) > 0$
-	\footnote{Sinon, faire le même raisonnement avec $-x$. On aura
-	bien $x^{*}(-x) = -x^{*}(x) > 0$.}.  On a qu'il existe une suite $(a_{n}
-	- b_{n}) \rightarrow x$.
+	\footnote{Si $x^{*}(x) < 0$, faire le même raisonnement avec $-x$. On aura
+	bien $x^{*}(-x) = -x^{*}(x) > 0$.}.
+	
+	Comme $A - B$ est dense dans $E$, il existe une suite $(a_{n} - b_{n}) \rightarrow x$.
 
-	On a $\forall n \in \naturel$, $x^{*}(a_{n}) \leq \alpha$ et $x^{*}(b_{n})
+	On a pour tout $n \in \naturel$, $x^{*}(a_{n}) \leq \alpha$ et $x^{*}(b_{n})
 	\geq \alpha$, donc $x^{*}(a_{n} - b_{n}) = x^{*}(a_{n}) - x^{*}(b_{n}) \leq
 	0$.
 
-	Or, comme $x^{*}$ est continue, $x^{*}(a_{n} - b_{n}) \rightarrow x^{*}(x) >
-	0$. Contradiction.
+	Or, comme $x^{*}$ est continue, $x^{*}(a_{n} - b_{n}) \rightarrow x^{*}(x)
+	\leq 0$. Contradiction avec l'hypothèse que $x^{*}(x) > 0$.
 \end{proof}
 \fi
 

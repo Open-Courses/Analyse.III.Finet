@@ -3,12 +3,12 @@
 \section{Rappel : Topologie initiale}
 
 Prenons une famille
-$\GSsequence{E}{i}{I}$ d'espace topologique, où la topologie sur $E_{i}$ est notée
-$\tau_{i}$, ainsi qu'une famille de fonctions $\GSsequence{f}{i}{I}$ tel que
+$( (E_{i}, \tau_{i}) )_{i \in I}$ d'espace topologique ainsi qu'une famille de fonctions $\GSsequence{f}{i}{I}$ tel que
 $\GSfunction{f_{i}}{E}{E_{i}}$ où E est un ensemble.
 
 Nous allons construire une topologie sur E, appelée \textbf{topologie initiale}
-et noté $\tau$, telle qu'elle rend les applications $f_{i}$ continues. Il faut
+et notée $\tau$, telle que les applications $f_{i}$ sont continues avec la
+topologie $\tau$. Il faut
 pour cela que pour chaque $i \in I$, et pour chaque ouvert $O_{i} \in \tau_{i}$,
 $f_{i}^{-1}(O_{i}) \in \tau$.
 
@@ -27,26 +27,37 @@ On construit $\tau$ comme l'intersection finie des $f^{-1}(O_{i})$ où $O_{i} \i
 
 \section{Topologie faible}
 
-Soit $x \in E$ et $\phi_{x} : E^{*} \rightarrow \mathbb{K} : x^{*} \rightarrow
-|x^{*}(x)|$.
+Soient $x \in E$ et
+\begin{equation}
+	\phi_{x} : E^{*} \rightarrow \mathbb{K} : x^{*} \rightarrow \abs{x^{*}(x)}
+\end{equation}
 
 La topologie faible est la topologie initiale avec les fonctions $\phi_{x}$, les
 espaces vectoriels $E_{i} = E^{*}$, et l'espace de départ est $E$. C'est un cas
 particulier de la topologie faible où $I$ couvre tout $E$. Cette topologie est
 notée $\GSweakTopo{E}$.
 
-Les ouverts sont donc:
+Les ouverts sont donc de la forme:
 
-$\left\{ x \in E \, | \, x \in \displaystyle \cap_{i = 1}^{n}
-{\phi^{-1}}_{{x_{i}}}(O_{i}) \right\}$. Comme les boules centrées à l'origine
-forment une base d'ouvert, on peut sans perte de généralité que $O_{i}$ est une
-boule.
+\begin{equation}
+	\GSsetDef{x \in E}{x \in \bigcap_{i = 1}^{n} {\phi^{-1}}_{{x_{i}}}(O_{i})}
+\end{equation}
+Comme les boules centrées à l'origine forment une base d'ouvert, on peut
+supposer, sans perte de généralité, que $O_{i}$ est une boule.
 
-$\left\{ x \in E \, | \, \forall \epsilon > 0, \cap_{i = 1}^{n}|\phi_{x_{i}}(x)| \leq \epsilon| \right\}$
+On a donc les ouverts qui sont
+
+\begin{equation}
+	\GSsetDef{x \in E}{\forall \epsilon > 0, \bigcap_{i = 1}^{n}
+	\abs{\phi_{x_{i}}(x)} \leq \epsilon}
+\end{equation}
+
 et en se rappelant la définition des $\phi_{x_{i}}$, on a
-$\left\{ x \in E \, | \, \forall \epsilon > 0, \cap_{i = 1}^{n}|x_{i}^{*}(x)| \leq
-\epsilon| \right\} = $
-$\left\{ x \in E \, | \, \forall \epsilon > 0, \, \forall 1 \leq i \leq n, \, |x_{i}^{*}(x)| \leq \epsilon| \right\}$
+\begin{equation}
+	\GSsetDef{x \in E}{\forall \epsilon > 0, \bigcap_{i = 1}^{n}
+	\abs{x_{i}^{*}(x)} \leq \epsilon} = \GSsetDef{x \in E}{\forall \epsilon > 0,
+		\, \forall 1 \leq i \leq n, \, \abs{x_{i}^{*}(x)} \leq \epsilon}
+\end{equation}
 
 Nous avons vu dans le chapitre sur les espaces de Banach, que dans un espace
 vectoriel normé, la boule unité est compacte ssi l'espace est de dimension

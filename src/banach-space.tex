@@ -4,16 +4,16 @@ h\chapter{Espace de Banach}
 
 \begin{definition} [Espace de Banach]
 	Soit $\GSnormedSpace{E}{\GSnorme{.}}$ un espace vectoriel normé. On dit que E
-	est un espace de Banach si E est complet pour la norme $\GSnorme{.}$,
-	c'est-à-dire que toutes suites de cauchy convergent.
+	est \textbf{un espace de Banach} si E est complet pour la norme $\GSnorme{.}$,
+	c'est-à-dire que toutes suites de cauchy convergent pour la norme
+	$\GSnorme{.}$.
 \end{definition}
 
 Prenons $\real$ comme corps de base, alors tout espace vectoriel de dimension n
 est complet.
 
 On peut généraliser cet exemple si on prend un corps de base complet, et
-n'importe quel espace vectoriel de dimension finie sur ce corps, comme
-$\complex$.
+n'importe quel espace vectoriel de dimension finie sur ce corps.
 
 \begin{theorem} [Riesz]
 \label{theorem_riesz_compact}
@@ -28,7 +28,12 @@ $\complex$.
 
 \begin{proposition}
 \label{proposition_dual_dimension}
-	$E^{*}$ est de dimension finie ssi $E$ est de dimension finie.
+	Soit $\GSnormedSpace{E}{\GSnorme{.}}$ un espace vectoriel normé.
+	Alors, les assertions suivantes sont équivalentes.
+	\begin{enumerate}
+		\item $E^{*}$ est de dimension finie.
+		\item $E$ est de dimension finie.
+	\end{enumerate}
 \end{proposition}
 
 \ifdefined\outputproof
@@ -60,8 +65,12 @@ $\complex$.
 
 
 \begin{proposition}
-	Soit K un corps, et E un espace vectoriel de dimension finie sur K. On a que
-	K est complet ssi E est un espace de Banach.
+	Soit K un corps, et E un espace vectoriel de dimension finie sur K. Alors
+	les assertions suivantes sont équivalentes.
+	\begin{enumerate}
+		\item $K$ est complet.
+		\item $E$ est un espace de Banach.
+	\end{enumerate}
 \end{proposition}
 
 \ifdefined\outputproof
@@ -91,8 +100,12 @@ $\complex$.
 \end{exercice}
 
 \begin{proposition}
-	E est un espace de Banach ssi toutes série absolument convergente
-	est convergente.
+	Soit $\GSnormedSpace{E}{\GSnorme{.}}$ un espace vectoriel normé.
+	Alors les assertions suivantes sont équivalentes.
+	\begin{enumerate}
+		\item $E$ est un espace de Banach.
+		\item toute série absolument convergente est convergente.
+	\end{enumerate}
 \end{proposition}
 
 \ifdefined\outputproof

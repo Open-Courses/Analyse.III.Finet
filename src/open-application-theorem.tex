@@ -9,8 +9,9 @@ ouvert de $X$.
 Nous définissons alors dans l'autre sens la propriété d'application ouverte :
 
 \begin{definition}
-	Soient $X$ et $Y$ deux espaces topologiques, et $\GSfunction{f}{X}{Y}$. Alors
-	f est ouverte si pour tout ouvert $O$ de $X$, $f(O)$ est un ouvert de $Y$.
+	Soient $X$ et $Y$ deux espaces topologiques, et $\GSfunction{f}{X}{Y}$. On
+	dit que f est \textbf{ouverte} si pour tout ouvert $O$ de $X$, $f(O)$ est un
+	ouvert de $Y$.
 \end{definition}
 
 %\begin{proposition}
@@ -71,32 +72,56 @@ suivants:
 \fi
 
 \begin{corollary}
-	Soient deux normes $\GSnormeDef{.}{1}$ et $\GSnormeDef{.}{2}$ sur un espace de
-	Banach $E$ tel que $\exists C > 0$ tel que $\forall x \in E
-	\GSnormeDef{x}{1} \leq C \GSnormeDef{x}{2}$, et que
-	$\GSnormedSpace{E}{\GSnormeDef{.}{1}}$ et
-	$\GSnormedSpace{E}{\GSnormeDef{.}{2}}$
-	sont des espaces de Banach.
+	Soient deux normes $\GSnormeDef{.}{1}$ et $\GSnormeDef{.}{2}$ sur un espace
+	vectoriel norm\'e $E$ tel qu'il existe $C > 0$ tel que pour tout $x \in E$
+	\begin{equation}
+		\label{equation:corollary_majoration_norme}
+		\GSnormeDef{x}{1} \leq C \GSnormeDef{x}{2}
+	\end{equation}
+	Supposons de plus que $\GSnormedSpace{E}{\GSnormeDef{.}{1}}$ et
+	$\GSnormedSpace{E}{\GSnormeDef{.}{2}}$ sont des espaces de Banach.
 
-	Alors les normes sont équivalentes.
+	Alors les normes $\GSnormeDef{.}{1}$ et $\GSnormeDef{.}{2}$ sont équivalentes.
 \end{corollary}
 
 \ifdefined\outputproof
 \begin{proof}
-	Prenons l'application identité $\GSfunction{Id_{E}}{(E, ||.||_{2})}{(E,
-	||.||_{1})}$. L'hypothèse nous dit que $Id_{E}$ est continue. De plus,
-	$Id_{E}$ est linéaire bijective. On a alors que
-	$\GSfunction{Id_{E}}{(E, ||.||_{1})}{(E, ||.||_{2})}$ est linéaine
-	continue qui nous donne $\exists M > 0, \, \forall x \in E, \,
-	||x||_{2} \leq M \, ||x||_{1}$. On a donc bien que les normes sont
-	équivalentes.
+	Prenons l'application identité
+	\begin{equation}
+		\GSfunction{Id_{E}}{(E, \GSnormeDef{.}{2})}{(E, \GSnormeDef{.}{1})}
+	\end{equation}.
+	L'hypothèse \ref{equation:corollary_majoration_norme} nous dit que $Id_{E}$
+	est continue.
+	De plus, $Id_{E}$ est linéaire bijective.
+	On en d\'eduit que la fonction
+	\begin{equation}
+		\GSfunction{Id_{E}}{(E, ||.||_{1})}{(E, ||.||_{2})}
+	\end{equation}
+	est linéaine continue. C'est-à-dire qu'il existe $M > 0
+	$ tel que pour tout $x \in E$,
+	\begin{equation}
+		\GSnormeDef{x}{2} \leq M \, \GSnormeDef{x}{1}
+	\end{equation}
+	On a donc bien que les normes sont équivalentes.
 \end{proof}
 \fi
 
 \begin{corollary}
 	Soit $E$ et $F$ des espaces de Banach.
 	Soit $\GSsequence{T}{n}{\naturel} \subseteq \GScontinueHomo{E}{F}$. On
-	construit $\GSfunction{T}{E}{F}$ : $T(x) = lim_{n \rightarrow \infty}
-	T_{n}(x)$. Alors pour tout $K$ compact, $T_{n} \rightarrow T$ de manière
-	uniforme.
+	construit
+	\begin{equation}
+		\GSfunction{T}{E}{F} : T(x) = lim_{n \rightarrow \infty} T_{n}(x)
+	\end{equation}
+	Alors pour tout sous-ensemble $K$ compact de $E$
+	\begin{equation}
+		T_{n} \rightarrow T
+	\end{equation}
+	de manière uniforme.
 \end{corollary}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi

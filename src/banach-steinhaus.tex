@@ -8,8 +8,14 @@ espace de Banach est de Baire. Nous utiliserons le corollaire.
 	Soit $\GSsequence{T}{i}{I} \subseteq \GScontinueHomo{E}{F}$
 	\label{banach-steinhaus}
 
-	On a alors que si $\forall x \in E$ $sup_{i \in I}||T_{i}(x)|| < \infty$,
-	alors $sup_{i \in I} ||T_{i}|| < \infty$
+	Si pour tout $x \in E$,
+	\begin{equation}
+		\sup_{i \in I} \GSnormeDef{T_{i}(x)}{F} < \infty
+	\end{equation}
+	alors
+	\begin{equation}
+		\sup_{i \in I} \GSnormeDef{T_{i}}{\GScontinueHomo{E}{F}} < \infty
+	\end{equation}
 \end{theorem}
 
 Avant de montrer ce théorème, expliquons ce qu'il signifie.
@@ -24,36 +30,70 @@ qu'elles sont bornées par une même constante.
 \ifdefined\outputproof
 \begin{proof}
 	Le théorème est une conséquence du théorème de Baire. En effet, $E$ et $F$
-	(et donc $\mathcal{L}(E, F)$) sont des espaces de Baire car sont complets.
+	(et donc $\mathcal{L}(E, F)$) sont des espaces de Baire car ce sont des
+	espaces de Banach.
 
 	Pour utiliser la propriété de Baire, nous allons construire une suite de
 	fermé dont l'union recouvre tout $E$. On utilisera alors le
-	corollaire~\ref{corollary_baire_int_non_empty} qui dit qu'un des fermés est
-	d'intérieur non vide.
+	corollaire~\ref{corollary_baire_int_non_empty} qui dit qu'un des fermés de
+	la suite est d'intérieur non vide.
 
-	Posons $E_{n} = \left\{ x \in E \, | \, \forall i \in I, \, ||T_{i}(x)||_{F}
-\leq n \right\}$. On a bien que l'union des $E_{n}$ recouvre $E$.
+	Posons
+	\begin{equation}
+		E_{n} = \GSsetDef{x \in E}{\forall i \in I, \, \GSnormeDef{T_{i}(x)}{F} \leq n}
+	\end{equation}
+	On a bien que l'union des $E_{n}$ recouvre $E$. De plus, ce sont des fermés
+	grace à la continuité des $T_{i}$.
 
-On a alors $E_{n_{0}}$ d'intérieur non vide. Soit $x_{0} \in int({E_{n_{0}}})$.
-Comme $int({E_{n_{0}}})$ est ouvert, elle est un voisinage de chacun de ses
-points et donc on a qu'il existe $r > 0$ tel que $B(x_{0}, r)
-\subseteq int({E_{n_{0}}}) \subseteq E_{n_{0}}$. Par définition de $E_{n_{0}}$,
-on a $\forall w \in B(x_{0}, r), \, \forall i \in I, \, ||T_{i}(w)|| \leq n_{0}$.
+	Par le corollaire \ref{corollary_baire_int_non_empty}, il existe $n_{0} \in
+	\naturel$ tel que $E_{n_{0}}$ d'intérieur non vide.
 
-	Soit $w \in B(x_{0}, r)$. On peut reécrire $w = x_{0} + r e$ où $||e|| <
-	1$. Donc, $\forall i \in I, \, ||T_{i}(x_{0} + re)||_{F} = ||T_{i}(x_{0}) +
-	rT_{i}(e)||_{F} \leq n_{0}$. 
+	Soit $x_{0} \in \interior{E_{n_{0}}}$.
+	Comme $\interior{E_{n_{0}}}$ est ouvert, $\interior{E_{n_{0}}}$ est un
+	voisinage de chacun de ses points. Donc, il existe $r > 0$ tel que
+	$B(x_{0}, r) \subseteq \interior{E_{n_{0}}}$ et $\interior{E_{n_{0}}} \subseteq
+	E_{n_{0}}$.
 
-	On en déduit $||T_{i}(e)||_{F} \leq \displaystyle \frac{1}{r} (n_{0} +
-	||T_{i}(x_{0})||_{F})$.
+	Par définition de $E_{n_{0}}$, on a
+	\begin{equation}
+		\forall w \in B(x_{0}, r), \, \forall i \in I, \,
+		\GSnormeDef{T_{i}(w)}{F} \leq n_{0}
+	\end{equation}
 
-	En se rappelant que $||T_{i}(x_{0})||_{F} \leq \sup_{i \in I}
-	||T_{i}(x_{0})||_{F} = C$, qui est fini par hypothèse, et que $e$ parcourt toute
-	la boule unité quand on parcours tous les $w \in B(x_{0}, r)$, on a
-	$||T_{i}|| \leq \displaystyle \frac{1}{r} (n_{0} + C)$ pour tout $i$ dans
-	$I$.
+	Soit $w \in B(x_{0}, r)$. Comme
+	\begin{equation}
+		B(x_{0}, r) = x_{0} + r B(0, 1)
+	\end{equation}
+	on peut écrire $w = x_{0} + r e$ où $\GSnormeDef{e}{E} < 1$.
 
-	Comme plus rien ne dépend de $I$, on a $\sup_{i \in I}||T_{i}|| < \infty$ 
+	Donc, pour tout $i \in I$,
+	\begin{equation}
+		\GSnormeDef{T_{i}(x_{0} + re)}{F} = \GSnormeDef{T_{i}(x_{0}) +
+		r T_{i}(e)}{F} \leq n_{0}
+	\end{equation}
+
+	On en déduit, par les propriétés d'une norme,
+	\begin{equation}
+		\GSnormeDef{T_{i}(e)}{F} \leq \frac{1}{r} (n_{0} +
+		\GSnormeDef{T_{i}(x_{0})}{F})
+	\end{equation}
+
+	En se rappelant que
+	\begin{equation}
+		\GSnormeDef{T_{i}(x_{0})}{F} \leq \sup_{i \in I}
+		\GSnormeDef{T_{i}(x_{0})}{F} = C
+	\end{equation}
+	où $C$ est fini par hypothèse, et en remarquant que $e$ parcourt toute
+	la boule unité quand on parcourt tous les $w \in B(x_{0}, r)$, on a
+	\begin{equation}
+		\GSnormeDef{T_{i}}{\GScontinueHomo{E}{F}} \leq \frac{1}{r} (n_{0} + C)
+	\end{equation}
+	pour tout $i$ dans $I$.
+
+	Comme plus rien ne dépend de $I$, on a
+	\begin{equation}
+		\sup_{i \in I} \GSnormeDef{T_{i}}{\GScontinueHomo{E}{F}} < \infty
+	\end{equation}
 \end{proof}
 \fi
 
@@ -62,7 +102,7 @@ Nous avons alors un corollaire se rapportant aux formes linéaires:
 \begin{corollary}
 	Soit $\GSsequence{x^{*}}{n}{\naturel} \subseteq \GSdual{E}$, tel que pour
 	tout $x \in E$, la suite ${(x_{n}^{*}(x))}_{n \in \naturel}$ est bornée. Alors
-	la suite ${(||x_{n}||)}_{n \in \naturel}$ est bornée.
+	la suite ${(\GSnormeDef{x_{n}}{E})}_{n \in \naturel}$ est bornée.
 \end{corollary}
 
 \ifdefined\outputproof
