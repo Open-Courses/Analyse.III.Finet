@@ -1,0 +1,174 @@
+\chapter{Le théorème d'Ascoli}
+
+\begin{definition}
+	Soit $(X, \tau)$ un espace topologique et $(Y, d_{Y})$ un espace métrique.
+	Posons
+	\begin{equation}
+		F(X, Y) = \GSset{f : X \rightarrow Y}
+	\end{equation}
+	l'ensemble des fonctions de $X$ dans $Y$.
+
+	Soient $A \subseteq F(X, Y)$ et $x_{0} \in X$.
+	On dit que $A$ est \textbf{équicontinu en $x_{0}$} si pour tout $\epsilon >
+	0$, il existe un voisinage ouvert $V_{x_{0}}$ de $x_{0}$ tel que pour toute
+	fonction $f \in A$, $d_{Y}(f(x), f(x_{0})) \leq \epsilon$.
+
+	On dit que $A$ est \textbf{équicontinu} si $A$ est équicontinu en tout point
+	$x_{0}$ de $X$.
+\end{definition}
+
+On va munir $F(X, Y)$ d'une topologie dépendante de la topologie $\tau$ et de
+la métrique $d_{Y}$.
+
+\begin{definition} [Topologie de la convergence uniforme]
+
+\end{definition}
+
+\begin{exemple}
+	\begin{enumerate}
+		\item Soient $(X, d_{X})$ et $(Y, d_{Y})$ deux espaces métriques.
+			L'ensemble des fonctions $k$-lipchitziennes pour $k > 0$ est
+			équicontinu.
+		\item Soient $(X, d_{X})$ et $(Y, d_{Y})$ deux espaces métriques. Soit
+			$F : (X, d_{X}) \cartprod (X, d_{X}) \rightarrow (Y, d_{Y})$ une
+			fonction uniformément continue et posons $A = \GSsetDef{f_{y} : X
+		\rightarrow Y}{f_{y}(x) = f(x, y)}$. Alors $A$ est équicontinu.
+	\end{enumerate}
+\end{exemple}
+
+
+\begin{proposition}
+	Soient $(X, \tau)$ un espace topologique et $(Y, d_{Y})$ un espace métrique
+	et soit $A \subseteq F(X, Y)$. Alors
+
+	\begin{enumerate}
+		\item Si $A$ est équicontinu en $x_{0}$, alors toute fonction $f \in A$
+			est continue en $x_{0}$.
+		\item Soit $B$ tel que $A \subseteq B$. Si $B$ est équicontinu en
+			$x_{0}$ (resp. équicontinu), alors $A$ est équicontinu en $x_{0}$
+			(resp. équicontinu).
+		\item Si $A$ est équicontinu en $x_{0}$ (resp. équicontinu), alors
+			$\adh{A}$ est équicontinu en $x_{0}$ (resp. équicontinu).
+		\item Soit $(X^{2}, \tau_{X^{2}})$ où $\tau_{X^{2}}$ est la topologie
+			produit. $A$ est équicontinu ssi pour tout $\epsilon > 0$, il existe un
+			ouvert $O$ de $(X^{2}, \tau_{X^{2}})$ contenant la diagonale tel que
+			pour tout $f \in A$, pour tout $(x, y) \in O$, $d_{Y}(f(x), f(y))
+			\leq \epsilon$.
+	\end{enumerate}
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{proposition}
+	Soient $(X, d_{X})$, $(Y, d_{Y})$ deux espaces métriques
+	et soit $A \subseteq F(X, Y)$. Supposons que $(X, d_{X})$ est un espace
+	métrique compact, alors les assertions suivantes sont équivalentes.
+
+	\begin{enumerate}
+		\item $A$ est équicontinu.
+		\item $A$ est uniformément continu.
+	\end{enumerate}
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{proposition}
+	Soient $(X, \tau)$ un espace topologique et soit $(Y, d_{Y})$ un espace métrique.
+	Soit $(\mathcal{C}(X, Y), \tau_{\infty})$ où $\mathcal{C}(X, Y)$ est
+	l'ensemble des fonctions continues de $(X, \tau)$ dans $(Y, d_{Y})$ et
+	$\tau_{\infty}$ est la topologie de la convergence uniforme.
+
+	Alors, la fonction
+	\begin{equation}
+		\phi : (\mathcal{C}(X, Y), \tau_{\infty}) \cartprod (X, \tau)
+		\rightarrow (Y, d_{Y}) : (f, x) \rightarrow f(x)
+	\end{equation}
+	est continue.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{theorem} [Théorème d'Ascoli]
+	Soient $(X, \tau)$ un espace topologique compact non vide, $(Y, d_{Y})$ un
+	espace métrique. Soit $(\mathcal{C}(X, Y), \tau_{\infty})$ où
+	$\mathcal{C}(X, Y)$ est l'ensemble des fonctions continues de $(X, \tau)$
+	dans $(Y, d_{Y})$ et $\tau_{\infty}$ est la topologie de la convergence uniforme.
+
+	Soit $A \subseteq \mathcal{C}(X, Y)$.
+
+	Alors les assertions suivantes sont équivalentes.
+	\begin{enumerate}
+		\item $A$ est relativement compact dans $(\mathcal{C}(X, Y),
+			\tau_{\infty})$
+		\item $A$ est équicontinu et pour tout $x \in X$, $\GSsetDef{f(x)}{f \in
+			A}$ est relativement compact dans $(Y, d_{Y})$
+	\end{enumerate}
+\end{theorem}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{corollary}
+	Soient $(X, \tau)$ un espace topologique compact non vide, $(Y, d_{Y})$ un
+	espace métrique. Soit $(\mathcal{C}(X, Y), \tau_{\infty})$ où
+	$\mathcal{C}(X, Y)$ est l'ensemble des fonctions continues de $(X, \tau)$
+	dans $(Y, d_{Y})$ et $\tau_{\infty}$ est la topologie de la convergence uniforme.
+
+	Soit $A \subseteq \mathcal{C}(X, Y)$.
+
+	Si $(Y, d_{Y})$ est compact, alors les assertions suivantes sont
+	équivalentes.
+
+	\begin{enumerate}
+		\item $\adh{A}$ est compact dans $(\mathcal{C}(X, Y), \tau_{\infty})$.
+		\item $A$ est équicontinu.
+	\end{enumerate}
+\end{corollary}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+Maintenant, oublions l'hypothèse de compacité sur $(Y, d_{Y})$, mais supposons
+que $Y$ est un espace vectoriel normé. On obtient alors une autre équivalence
+assez proche de la précédente.
+
+\begin{corollary}
+	Soient $(X, \tau)$ un espace topologique compact non vide, $(Y, d_{Y})$ un
+	espace métrique. Soit $(\mathcal{C}(X, Y), \tau_{\infty})$ où
+	$\mathcal{C}(X, Y)$ est l'ensemble des fonctions continues de $(X, \tau)$
+	dans $(Y, d_{Y})$ et $\tau_{\infty}$ est la topologie de la convergence uniforme.
+
+	Soit $A \subseteq \mathcal{C}(X, Y)$.
+
+	Si $Y$ est un espace vectoriel de dimension finie, alors les assertions suivantes sont
+	équivalentes.
+
+	\begin{enumerate}
+		\item $\adh{A}$ est compact dans $(\mathcal{C}(X, Y), \tau_{\infty})$.
+		\item $A$ est équicontinu et borné.
+	\end{enumerate}
+\end{corollary}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi

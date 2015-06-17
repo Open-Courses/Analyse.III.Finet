@@ -1,0 +1,115 @@
+\chapter{Le compactifié d'Alexandrov}
+
+\section*{Motivation}
+
+Le but de ce chapitre sera de donner des résultats sur la compactificationd
+d'espace topologique.
+
+Lorsque nous travaillons sur des espaces topologiques qui ne sont pas compacts,
+nous souhaitons plonger plonger ces espaces dans des espaces topologiques qui
+sont compacts. On dit qu'on \textbf{compactifie}.
+
+Dans notre cas, nous allons travailler avec des espaces localement compacts.
+
+\section{Espace localement compact}
+
+\begin{definition}
+	Soit $(X, \tau)$ un espace topologique.
+
+	On dit que $(X, \tau)$ est \textbf{(un espace topologique) localement
+	compact} si tout point de $X$ contient un voisinage compact.
+\end{definition}
+
+\begin{remarque}
+	De manière générale, quand on parle de propriété locale, c'est une propriété
+	qui est vrai au voisinage de chaque point.
+\end{remarque}
+
+Naturellement, on peut se demander si la propriété d'être (globalement) compact comprend la
+notion d'être localement compact. C'est évident vu la définition.
+
+\begin{proposition}
+	Soit $(X, \tau)$ un espace topologique.
+
+	Si $(X, \tau)$ est un espace compact, alors $(X, \tau)$ est un espace
+	localement compact.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{remarque}
+	De manière générale, une propriété locale, comme définie précédemment, est
+	globale.
+\end{remarque}
+
+\begin{definition}
+	Soit $(X, \tau)$ un espace topologique.
+
+	On dit que $(X, \tau)$ est \textbf{régulier} si tout point de $E$ admet un
+	système fondamental de voisinages de fermés, c'est-à-dire si pour tout point
+	$x \in X$, tout voisinage $V_{x}$ de $x$ contient un voisinage fermé de $x$.
+\end{definition}
+
+\begin{proposition}
+	Soit $(X, \tau)$ un espace topologique.
+
+	Si $(X, \tau)$ est compact, alors $(X, \tau)$ est régulier.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{theorem}
+	Soit $(X, \tau)$ un espace topologique séparé. Les assertions suivantes sont
+	équivalents.
+
+	\begin{enumerate}
+		\item $X$ est localement compact.
+		\item Pour tout point $x \in X$, tout voisinage $V_{x}$ de $x$ est
+			compris dans un voisinage \textit{compact} de $x$.
+		\item Pour tout $x \in X$, $x$ admet un système fondamental de
+			voisinages compacts.
+		\item Pour tout $x \in X$, $x$ admet un système fondamental de
+			voisinages relativement compacts.
+		\item Tout point de $X$ admet un voisinage relativement compact.
+		\item Tout point de $X$ admet un voisinage compact et fermé.
+	\end{enumerate}
+\end{theorem}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{proposition}
+	Soit $(X, \tau)$ un espace topologique séparé localement compact.
+
+	Alors les ouverts et fermés de $(X, \tau)$ sont localement compacts.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{proposition}
+	Soit $(X, \tau)$ un espace topologique séparé.
+
+	Alors tout sous-ensemble localement compact est l'intersection d'un ouvert
+	et d'un fermé.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi

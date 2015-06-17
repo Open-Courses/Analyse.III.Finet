@@ -1,69 +1,132 @@
 \chapter{Topologie (pré-)faible et applications}
 
-\section{Rappel : Topologie initiale}
+%\section{Rappel : Topologie initiale}
 
-Prenons une famille
-$( (E_{i}, \tau_{i}) )_{i \in I}$ d'espace topologique ainsi qu'une famille de fonctions $\GSsequence{f}{i}{I}$ tel que
-$\GSfunction{f_{i}}{E}{E_{i}}$ où E est un ensemble.
+%Prenons une famille
+%$( (E_{i}, \tau_{i}) )_{i \in I}$ d'espace topologique ainsi qu'une famille de fonctions $\GSsequence{f}{i}{I}$ tel que
+%$\GSfunction{f_{i}}{E}{E_{i}}$ où E est un ensemble.
 
-Nous allons construire une topologie sur E, appelée \textbf{topologie initiale}
-et notée $\tau$, telle que les applications $f_{i}$ sont continues avec la
-topologie $\tau$. Il faut
-pour cela que pour chaque $i \in I$, et pour chaque ouvert $O_{i} \in \tau_{i}$,
-$f_{i}^{-1}(O_{i}) \in \tau$.
+%Nous allons construire une topologie sur E, appelée \textbf{topologie initiale}
+%et notée $\tau$, telle que les applications $f_{i}$ sont continues avec la
+%topologie $\tau$. Il faut
+%pour cela que pour chaque $i \in I$, et pour chaque ouvert $O_{i} \in \tau_{i}$,
+%$f_{i}^{-1}(O_{i}) \in \tau$.
 
-Nous posons une condition supplémentaire sur $\tau$ qui est qu'elle est la
-topologie la moins fine qui rend les $f_{i}$ continues, c'est-à-dire que si on
-prend une autre topologie $\tau^{*}$ sur E qui rend les $f_{i}$ continues, chaque
-ouvert de $\tau$ doit être dans $\tau^{*}$.
+%Nous posons une condition supplémentaire sur $\tau$ qui est qu'elle est la
+%topologie la moins fine qui rend les $f_{i}$ continues, c'est-à-dire que si on
+%prend une autre topologie $\tau^{*}$ sur E qui rend les $f_{i}$ continues, chaque
+%ouvert de $\tau$ doit être dans $\tau^{*}$.
 
-On construit $\tau$ comme l'intersection finie des $f^{-1}(O_{i})$ où $O_{i} \in
-\tau_{i}$.
+%On construit $\tau$ comme l'intersection finie des $f_{i}^{-1}(O_{i})$ où $O_{i} \in
+%\tau_{i}$.
 
-\begin{exemple}
-	La topologie produit est un cas particulier de topologie initiale où $E =
-	\displaystyle \prod_{i \in I} E_{i}$, et où les $f_{i}$ sont les projections.
-\end{exemple}
+%\begin{exemple}
+	%La topologie produit est un cas particulier de topologie initiale où $E =
+	%\displaystyle \prod_{i \in I} E_{i}$, et où les $f_{i}$ sont les projections.
+%\end{exemple}
 
-\section{Topologie faible}
+%\section{Topologie faible}
 
-Soient $x \in E$ et
-\begin{equation}
-	\phi_{x} : E^{*} \rightarrow \mathbb{K} : x^{*} \rightarrow \abs{x^{*}(x)}
-\end{equation}
+%Soient $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$ un espace vectoriel normé et
+%$\GSnormedSpace{\GSdual{E}}{\GSnormeDef{.}{\GSdual{E}}}$ son dual.
 
-La topologie faible est la topologie initiale avec les fonctions $\phi_{x}$, les
-espaces vectoriels $E_{i} = E^{*}$, et l'espace de départ est $E$. C'est un cas
-particulier de la topologie faible où $I$ couvre tout $E$. Cette topologie est
-notée $\GSweakTopo{E}$.
+%Soient $x \in E$ et les fonctions
 
-Les ouverts sont donc de la forme:
+%\begin{equation}
+	%\phi_{x} : E^{*} \rightarrow \mathbb{K} : x^{*} \rightarrow \abs{x^{*}(x)}
+%\end{equation}
 
-\begin{equation}
-	\GSsetDef{x \in E}{x \in \bigcap_{i = 1}^{n} {\phi^{-1}}_{{x_{i}}}(O_{i})}
-\end{equation}
-Comme les boules centrées à l'origine forment une base d'ouvert, on peut
-supposer, sans perte de généralité, que $O_{i}$ est une boule.
+%La topologie faible est la topologie initiale avec les fonctions $\phi_{x}$, les
+%espaces vectoriels $E_{i} = E^{*}$, et l'espace de départ est $E$. Cette
+%topologie est notée $\GSweakTopo{E}$.
 
-On a donc les ouverts qui sont
+%Les ouverts sont donc de la forme:
 
-\begin{equation}
-	\GSsetDef{x \in E}{\forall \epsilon > 0, \bigcap_{i = 1}^{n}
-	\abs{\phi_{x_{i}}(x)} \leq \epsilon}
-\end{equation}
+%\begin{equation}
+	%\displaystyle \bigcap_{\substack{x \in J \\ J \subseteq E \\ J finie}} \phi_{x}^{-1}
+	%(O_{x})
+%\end{equation}
+%où $O_{x}$ est un ouvert de $\mathbb{K}$.
 
-et en se rappelant la définition des $\phi_{x_{i}}$, on a
-\begin{equation}
-	\GSsetDef{x \in E}{\forall \epsilon > 0, \bigcap_{i = 1}^{n}
-	\abs{x_{i}^{*}(x)} \leq \epsilon} = \GSsetDef{x \in E}{\forall \epsilon > 0,
-		\, \forall 1 \leq i \leq n, \, \abs{x_{i}^{*}(x)} \leq \epsilon}
-\end{equation}
+%Comme les boules centrées à l'origine $B(0, \epsilon)$ forment un système
+%fondamental de voisinage de $0$ dans $\mathbb{K}$, on peut
+%supposer, sans perte de généralité, que $O_{x}$ est une boule.
 
-Nous avons vu dans le chapitre sur les espaces de Banach, que dans un espace
-vectoriel normé, la boule unité est compacte ssi l'espace est de dimension
-finie (~\ref{theorem_riesz_compact}). Nous cherchons à définir une topologie sur
-$E$ tel que la boule unité est compacte pour cette topologie, et la topologie
-$\GSweakTopo{E}$ convient.
+%$J$ étant fini, on se permet de noté ses éléments $x_{1}, \cdots, x_{n}$. On se
+%retrouve alors avec la forme suivante.
+
+%\begin{equation}
+	%\displaystyle \bigcap_{i \in \GSset{1, \cdots, n}}
+%\phi_{x_{i}}^{-1}(]-\epsilon_{i}, \epsilon_{i}[)
+%\end{equation}
+
+%c'est-à-dire
+
+%\begin{equation}
+	%\GSsetDef{x \in E}{ \forall i \in \GSset{1, \cdots, n} \abs{\phi_{x_{i}}(x)} <
+	%\epsilon_{i}}
+%\end{equation}
+
+%En se rappelant la définition des $\phi_{x_{i}}$, on a
+
+%\begin{equation}
+	%\GSsetDef{x \in E}{ \forall i \in \GSset{1, \cdots, n} \abs{x_{i}^{*}(x)} <
+	%\epsilon_{i}}
+%\end{equation}
+
+%et si on pose $\epsilon = \min(\epsilon_{1}, \cdots, \epsilon_{n})$, on obtient
+
+%\begin{equation}
+	%\GSsetDef{x \in E}{ \forall i \in \GSset{1, \cdots, n} \abs{x_{i}^{*}(x)} <
+	%\epsilon}
+%\end{equation}
+
+%On pose alors
+
+%\begin{equation}
+	%V_{\epsilon, x_{1}^{*}, \ldots, x_{n}^{*}} = \GSsetDef{x \in E}{ \forall i
+		%\in \GSset{1, \cdots, n} \abs{x_{i}^{*}(x)} < \epsilon}
+%\end{equation}
+
+
+
+%Nous avons vu dans le chapitre sur les espaces de Banach, que dans un espace
+%vectoriel normé, la boule unité est compacte ssi l'espace est de dimension
+%finie (~\ref{theorem_riesz_compact}). Nous cherchons à définir une topologie sur
+%$E$ tel que la boule unité est compacte pour cette topologie, et la topologie
+%$\GSweakTopo{E}$ convient.
+
+\section{Rappel}
+
+\begin{definition}
+	Soit $(X, \tau)$ un espace topologique et soit $\mathcal{B} \in
+	\mathcal{P}(X)$.
+
+	On dit que \textbf{$\mathcal{B}$} est \textbf{une base d'ouverts} si tout
+	élément de $\mathcal{B}$ est un ouvert de $(X, \tau)$ et si tout ouvert de
+	$(X, \tau)$ s'écrit comme une union d'éléments de $\mathcal{B}$.
+\end{definition}
+
+Nous serons menés à travailler avec d'un côté la topologie engendrée par la
+norme $\GSnormeDef{.}{E}$, et d'un autre avec la topologie faible
+$\GSweakTopo{E}$. Nous serons menés à parler de convergence, d'ouverts/fermés et
+nous aurons besoin de distinguer quand nous parlons pour la topologie faible ou
+non.
+
+Pour cela, nous allons introduire des noms pour distinguer ces différences.
+
+
+\begin{definition}
+	Soient $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$ un espace vectoriel normé,
+	$\GSdual{E}$ son dual et $\GSweakTopo{E}$ sa topologie faible.
+
+	On dit qu'un ouvert (resp un fermé) de $(E, \GSweakTopo{E})$ est
+	\textbf{faiblement ouvert} ou \textbf{$\sigma$-ouvert} (resp
+	\textbf{faiblement fermé} ou \textbf{$\sigma$-fermé}).
+
+	L'adhérence d'un ensemble $A$ dans $(E, \GSweakTopo{E})$ sera notée
+	$\adh{A}^{\sigma}$ et l'intérieur $\interior{A}^{\sigma}$.
+\end{definition}
 
 \subsection{Convergence pour la topologie faible}
 Quels sont les liens entre la topologie faible et la topologie sur $\GSdual{E}$
@@ -73,17 +136,31 @@ D'abord, regardons la définition de convergence dans $\GSweakTopo{E}$.
 \begin{definition}
 	Soit une suite $\GSsequence{x}{n}{\naturel} \subseteq E$, et $x \in E$.
 	On dit que $\GSsequence{x}{n}{\naturel}$ \textbf{converge faiblement} vers $x$
-	pour $\GSweakTopo{E}$, et on note $x_{n} \xrightarrow{\sigma} x$ si pour tout
-	voisinage $V(x)$ de $x$ (resp $V(0)$ de $0$), $\exists n_{0}$ tel que
-	$\forall n \geq n_{0}$, $x_{n} \in V(x)$ (resp $x_{n} - x \in V(0)$).
+	pour $\GSweakTopo{E}$, et on note
+	\begin{equation}
+		x_{n} \xrightarrow{\GSweakTopo{E}} x
+	\end{equation}
+	si pour tout voisinage $V(x)$ de $x$,
+	\begin{equation}
+		\exists n_{0} \, \forall n \geq n_{0}, x_{n} \in V(x)
+	\end{equation}
+	ou de manière équivalente, pour tout voisinage $V(0)$ de $0$.
+	\begin{equation}
+		\exists n_{0} \, \forall n \geq n_{0}, x_{n} - x \in V(0)
+	\end{equation}
 \end{definition}
 
 Il est parfois dure de travailler avec cette définition, et on a alors une
 équivalence plus facile à utiliser.
 
 \begin{proposition}
-	$x_{n} \xrightarrow{\sigma} x \Leftrightarrow \forall x^{*} \in \GSdual{E}$,
-	$x^{*}(x_{n}) \rightarrow x^{*}(x)$.
+	Soient $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$ un espace vectoriel normé, $\GSdual{E}$ son dual et
+	$\GSweakTopo{E}$ sa topologie faible.
+	Les assertions suivantes sont équivalentes
+	\begin{enumerate}
+		\item $x_{n} \xrightarrow{\GSweakTopo{E}} x$
+		\item $\forall x^{*} \in \GSdual{E}$, $x^{*}(x_{n}) \rightarrow x^{*}(x)$.
+	\end{enumerate}
 \end{proposition}
 
 \ifdefined\outputproof
@@ -97,9 +174,13 @@ Il est parfois dure de travailler avec cette définition, et on a alors une
 Continuons à donner des liens liant la topologie faible et la norme sur $E$.
 
 \begin{proposition}
+	Soit $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$ un espace vectoriel normé.
 	Soit $C$ convexe non vide de $E$ (ça ne dépend pas de la topologie).
-	On a $C$ fermé pour la norme ssi $C$ est faiblement fermé (ie fermé pour
-	$\GSweakTopo{E}$).
+	Alors les assertions suivantes sont équivalentes.
+	\begin{enumerate}
+		\item $C$ est fermé dans $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$
+		\item $C$ est faiblement fermé (ie fermé dans $(E, \GSweakTopo{E})$.
+	\end{enumerate}
 \end{proposition}
 
 \ifdefined\outputproof
@@ -112,8 +193,8 @@ Nous pouvons nous demander à quoi ressemblent les ouverts de la topologie
 $\GSweakTopo{E}$. En fait, en dimension finie, la topologie est celle de la norme.
 
 \begin{proposition}
-	Soit $\GSnormedSpace{E}{\GSnorme{.}}$ de dimension finie, alors $\tau_{||.||}
-	= \GSweakTopo{E}$.
+	Soit $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$ un espace vectoriel normé de
+	dimension finie, alors $\tau_{\GSnormeDef{.}{E}} = \GSweakTopo{E}$.
 \end{proposition}
 
 \ifdefined\outputproof
@@ -126,14 +207,18 @@ Etudions ce qui se passe en dimension infinie.
 
 Nous savons que pour la norme, $S_{E}$, la sphère unitée, est fermée, et donc
 qu'elle vaut son adhérence.  Dans le cas $E$ fini, la sphère est également
-faibelemnt fermée par la proposition précédente. En dimension infinie, nous
+faiblement fermée par la proposition précédente. En dimension infinie, nous
 obtenons quelque chose de surprenant. En effet, $\overline{S_{E}}^{\sigma}$,
 c'est-à-dire l'adhérence de la sphère unitée par rapport à la topologie faible,
 vaut la boule unité fermée pour la norme.
+En d'autres termes,
 
 \begin{proposition}
-	Soit $E$ de dimension infinie, et $\GSnorme{.}$ sur $E$. Alors
-	$\overline{S_{E}}^{\sigma} = \left\{ x \in E \, | \, ||x|| \leq 1 \right\}$.
+	Soit $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$ un espace vectoriel normé de
+	dimension infinie. Alors
+	\begin{equation}
+		\adh{S_{E}}^{\sigma} = \GSsetDef{x \in E}{\GSnormeDef{x}{E} \leq 1}
+	\end{equation}
 \end{proposition}
 
 \ifdefined\outputproof
@@ -142,11 +227,58 @@ vaut la boule unité fermée pour la norme.
 \end{proof}
 \fi
 
-Que se passe-t-il pour la boule $\left\{ x \in E \, | \, ||x|| < 1 \right\}$?
+\begin{lemma}
+	Soient $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$ un espace vectoriel normé de
+	dimension infinie et
+	$\GSnormedSpace{\GSdual{E}}{\GSnormeDef{.}{\GSdual{E}}}$ son dual.
+
+	Soient $x_{1}^{*}, \cdots, x_{n}^{*} \in \GSdual{E}$.
+
+	Alors $x_{1}^{*}, \cdots, x_{n}^{*}$ ont une racine commune. En d'autres
+	termes, il existe $y_{0}$ tel que pour tout $i$ entre $1$ et $n$,
+	$x_{i}(y_{0}) = 0$.
+\end{lemma}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{lemma}
+	Soient $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$ un espace vectoriel normé de
+	dimension infinie, $\GSnormedSpace{\GSdual{E}}{\GSnormeDef{.}{\GSdual{E}}}$
+	son dual et $\GSweakTopo{E}$ sa topologie faible.
+
+	Soit $x$ un point de $E$.
+	Tout voisinage faible de $x$ contient une droite passant par $x$.
+
+	En particulier, tout voisinage faible n'est pas borné.
+\end{lemma}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+Que se passe-t-il pour la boule unité ouvert, c'est-à-dire
+\begin{equation}
+	B_{\GSnormeDef{.}{E}}(0, 1) := \GSsetDef{x \in E}{\GSnormeDef{x}{E} < 1}
+\end{equation}
+?
 
 \begin{proposition}
-	La boule unité ouverte pour $\GSnorme{.}$ est d'intérieur vide pour la
+	Soient $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$ un espace vectoriel normé,
+	$\GSdual{E}$ son dual et $\GSweakTopo{E}$ sa topologie faible.
+
+	La boule unité ouverte pour $\GSnormeDef{.}{E}$ est d'intérieur vide pour la
 	topologie faible. Par conséquence, elle n'est pas $\sigma$-ouverte.
+
+	En d'autres termes, si nous posons $U = B_{\GSnormeDef{.}{E}}(0, 1)$
+	\begin{equation}
+		\interior{U}^{\sigma} = \emptyset
+	\end{equation}
 \end{proposition}
 
 \ifdefined\outputproof
@@ -158,8 +290,11 @@ Que se passe-t-il pour la boule $\left\{ x \in E \, | \, ||x|| < 1 \right\}$?
 \subsection{Applications}
 
 \begin{theorem}
-	Soit l'espace topologique $(E, \GSweakTopo{E})$, alors la boule unité
-	est compacte.
+	Soient $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$ un espace vectoriel normé,
+	$\GSdual{E}$ son dual et $\GSweakTopo{E}$ sa topologie faible.
+
+	Alors la boule unité est faiblement compacte ie compacte dans $(E,
+	\GSweakTopo{E})$
 \end{theorem}
 
 \ifdefined\outputproof
@@ -171,9 +306,10 @@ Que se passe-t-il pour la boule $\left\{ x \in E \, | \, ||x|| < 1 \right\}$?
 \subsection{Applications dans les espaces de Banach}
 
 \begin{proposition}
-	Soit $\GSnormedSpace{E}{\GSnorme{.}}$ de Banach, et un sous ensemble $B$ non
-	vide de $E$.
-	Si $\forall x^{*} \in E^{*}$, $x^{*}(B)$ borné dans $\real$, alors $B$ borné
+	Soit $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$ un espace de Banach et soit
+	$B$ un sous-ensemble non vide de $E$.
+
+	Si pour tout $x^{*} \in E^{*}$, $x^{*}(B)$ borné dans $\real$, alors $B$ borné
 	dans $E$.
 \end{proposition}
 
@@ -184,11 +320,14 @@ Que se passe-t-il pour la boule $\left\{ x \in E \, | \, ||x|| < 1 \right\}$?
 \fi
 
 \begin{corollary}
-	Soit $\GSnormedSpace{E}{\GSnorme{.}}$ de Banach.
+	Soit $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$ de Banach.
 	Prenons une suite $\GSsequence{x}{n}{\naturel}$ dans $E$ faiblement
 	convergente vers $x$.
-	Alors $\GSsequence{||x_{n}||}{n}{\naturel}$ est bornée et $\GSnorme{x} \leq
-	\lim\inf \GSnorme{x_{n}}$.
+	Alors 
+	\begin{enumerate}
+		\item $(\GSnormeDef{x_{n}}{E})_{n \in \naturel}$ est bornée
+		\item $\GSnormeDef{x}{E} \leq \lim\inf \GSnormeDef{x_{n}}{E}$
+	\end{enumerate}
 \end{corollary}
 
 \ifdefined\outputproof
@@ -198,10 +337,19 @@ Que se passe-t-il pour la boule $\left\{ x \in E \, | \, ||x|| < 1 \right\}$?
 \fi
 
 \begin{proposition}
-	Prenons une suite bornée de $E$ ou $E$ est un espace de Banach, et $x$ dans
+	Soient $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$ un espace de Banach,
+	$\GSdual{E}$ son dual et $\GSpreweakTopo{E}$ sa topologie pré-faible.
+
+	Soient $\GSsequence{x}{n}{\naturel}$ une suite bornée de $E$ et $x$ dans
 	$E$.
-	Si $\left\{ x^{*} \in E^{*} \, | \, x^{*}(x_{n}) \rightarrow x^{*}(x)
-\right\}$ est dense dans $E^{*}$, alors $x_{n} \xrightarrow{\sigma} x$.
+
+	Si
+	\begin{equation}
+		\GSsetDef{x^{*} \in \GSdual{E}}{x^{*}(x_{n})
+		\xrightarrow{\GSnormeDef{.}{\GSdual{E}}} x^{*}(x)}
+	\end{equation}
+	est dense dans
+	$\GSdual{E}$, alors $x_{n} \xrightarrow{\GSpreweakTopo{E}} x$.
 \end{proposition}
 
 \ifdefined\outputproof
@@ -212,8 +360,21 @@ Que se passe-t-il pour la boule $\left\{ x \in E \, | \, ||x|| < 1 \right\}$?
 
 \section{Topologie pré-faible}
 
-
 \begin{proposition}
-	$x^{*}_{n} \xrightarrow{\sigma^{*}} x^{*} \Leftrightarrow \forall x \in \GSdual{E}$,
-	$x^{*}_{n}(x) \rightarrow x^{*}(x)$.
+	Soient $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$ un espace vectoriel normé,
+	$\GSnormedSpace{\GSdual{E}}{\GSnormeDef{.}{\GSdual{E}}}$ son dual et soit
+	$\GSpreweakTopo{E}$ sa topologie pré-faible.
+
+	Soient $\GSsequence{x^{*}}{n}{\naturel}$ une suite de $\GSdual{E}$ et
+	$x^{*}$ dans $\GSdual{E}$. Les assertions suivantes sont équivalentes.
+	\begin{enumerate}
+		\item $x^{*}_{n} \xrightarrow{\GSpreweakTopo{E}} x^{*}$
+		\item $\forall x \in E$, $x^{*}_{n}(x) \rightarrow x^{*}(x)$.
+	\end{enumerate}
 \end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi

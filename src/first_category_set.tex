@@ -1,30 +1,47 @@
 \chapter{Ensemble de première catégorie d'un espace topologique}
 
-\begin{definition}
+\begin{definition} [Ensemble maigre ou nul part dense]
 	Soit $(X, \tau)$ un espace topologique, et $A \subset X$. On dit que $A$ est
 	\textbf{nul part dense} ou \textbf{maigre} si $\interior{\adh{A}} =
-	\emptyset$. On la note $\mathcal{C}_{npd}$.
+	\emptyset$. On note $\mathcal{C}_{npd}$ la classe des ensembles nul part
+	denses.
 \end{definition}
 
-Par exemple, avec $(\real, |.|)$, $\emptyset$, $\naturel$, $\integer$ et tous
-les ensembles finis sont nul part denses.
+\begin{exemple}
+	Si nous prenons l'espace topologique $(\real, \abs{.})$,
+	\begin{enumerate}
+		\item $\emptyset$, $\naturel$, $\integer$
+		\item tous les ensembles finis.
+	\end{enumerate}
+	sont des ensembles nul part denses.
+\end{exemple}
 
 \begin{proposition}
+	Soit $(X, \tau)$ un espace topologique.
+
 	La classe des ensembles nul part denses est \textbf{héréditaire},
-	c'est-à-dire que $\forall A \in \mathcal{C}_{npd}$, $\forall B \subseteq A$,
-	$B \in \mathcal{C}_{npd}$.
+	c'est-à-dire
+	\begin{equation}
+		\forall A \in \mathcal{C}_{npd}, \forall B \subseteq A,
+		B \in \mathcal{C}_{npd}
+	\end{equation}
 \end{proposition}
 
 \ifdefined\outputproof
 \begin{proof}
-	$B \subseteq A \implies \adh{B} \subseteq \adh{A} \implies
-	\interior{\adh{B}} \subseteq \interior{\adh{A}}$ et $\interior{\adh{A}}= \emptyset$ par
+	\begin{align}
+		B \subseteq A & \implies \adh{B} \subseteq \adh{A} \\
+		& \implies \interior{\adh{B}} \subseteq \interior{\adh{A}}
+	\end{align}
+	et $\interior{\adh{A}}= \emptyset$ par
 	hypothèse sur $A$. Donc $\interior{\adh{B}} = \emptyset$, et c'est la définition
 	d'être nul part dense.
 \end{proof}
 \fi
 
 \begin{proposition}
+	Soit $(X, \tau)$ un espace topologique.
+
 	$\mathcal{C}_{npd}$ est \textbf{stable par fermeture}, c'est-à-dire que
 	$\forall A \in \mathcal{C}_{npd}$, $\adh{A} \in \mathcal{C}_{npd}$.
 \end{proposition}
@@ -37,6 +54,8 @@ les ensembles finis sont nul part denses.
 \fi
 
 \begin{proposition}
+	Soit $(X, \tau)$ un espace topologique.
+
 	$\mathcal{C}_{npd}$ est stable par union finie.
 \end{proposition}
 
@@ -49,15 +68,19 @@ les ensembles finis sont nul part denses.
 \end{proof}
 \fi
 
-\begin{definition}
+\begin{definition} [Ensemble de première et deuxième catégorie]
 	Soit $(X, \tau)$ un espace topologique.
+
 	Un ensemble est de \textbf{première catégorie} s'il est une union
-	dénombrable d'ensembles nul part denses. Nous notons $\mathcal{C}_{1}$ la
+	dénombrable d'ensembles nul part denses dans $(X, \tau)$. Nous notons $\mathcal{C}_{1}$ la
 	classe des ensembles de première catégorie.
+
+	Sinon, on dit qu'il est \textbf{de deuxième catégorie}, et on
+	note $\mathcal{C}_{2}$ la classe des ensembles de deuxième catégorie.
 \end{definition}
 
 Nous avons par exemple $\rational$ qui est de première catégorie dans $(\real,
-|.|)$.
+\abs{.})$.
 
 \begin{proposition}
 	$\mathcal{C}_{1}$ est héréditaire et stable par union
@@ -69,18 +92,23 @@ Nous avons par exemple $\rational$ qui est de première catégorie dans $(\real,
 	$\mathcal{C}_{1}$ stable par union dénombrable:
 
 	Soit $A_{i} = \union_{n \in \naturel} A_{i, n}$ une famille dénombrable tel
-	que chaque $A_{i, n}$ est nul part dense. On a bien que $\union_{i \in \naturel,
+	que chaque $A_{i, n}$ est nul part dense dans $(X, \tau)$. On a bien que
+	$\union_{i \in \naturel,
 	n \in \naturel} A_{i, n}$ est une union dénombrable (union sur
 	$\naturel^{2}$ qui est dénombrable), et chaque $A_{i, n}$
-	est nul part dense par hypothèse.
+	est nul part dense dans $(X, \tau)$ par hypothèse.
 
 	$\mathcal{C}_{1}$ héréditaire:
 
-	Soit $A = \union_{n \in \naturel} A_{n}$ avec chaque $A_{n}$ nul part dense,
-	et $B$ tel que $A \subseteq B$. On pose $B_{0} = A_{0} \union B\backslash
-	A$, et $B_{n} = A_{n}$ pour $n > 0$. Comme $A_{0}$ est nul part dense que et
-	$\mathcal{C}_{npd}$ héréditaire, $B_{0}$, qui comprend $A_{0}$, tel nul part
-	dense. Donc $B = \union_{n \in \naturel} B_{n}$ est de première catégorie.
+	Soit $A = \union_{n \in \naturel} A_{n}$ un ensemble de première catégorie
+	et soit $B \subseteq A$.
+
+	Posons $B_{n} = A_{n} \inter B$. On a $B_{n} \subseteq A_{n}$ où $A_{n}$ est
+	nul part dense dans $(X, \tau)$. Comme la classe des ensembles nul part
+	dense est
+	héréditaire, $B_{n}$ est nul part dense dans $(X, \tau)$.
+	De plus, $\union_{n \in \naturel} B_{n} = \union_{n \in \naturel} (A_{n}
+	\inter B) = \union_{n \in \naturel} A_{n} \inter B = A \inter B = B$.
 \end{proof}
 \fi
 
@@ -89,18 +117,18 @@ Nous avons par exemple $\rational$ qui est de première catégorie dans $(\real,
 	% Donner un exemple
 \end{remarque}
 
-\begin{definition}
+\begin{definition} [$G_{\delta}$ et $F_{\sigma}$]
 	Soit $(X, \tau)$ un espace topologique, et $A \subseteq X$.
-	Alors $A$ est un $G_{\delta}$ (resp. $F_{\sigma}$) s'il est intersection
+	Alors $A$ est \textbf{un $G_{\delta}$ (resp. $F_{\sigma}$)} s'il est intersection
 	dénombrable d'ouverts (resp. union dénombrable de fermés).
 \end{definition}
 
-\begin{definition}
+\begin{definition} [Proposition vraie presque partout]
 	Une proposition est \textbf{vraie presque partout} si elle est vraie sauf
 	peut-être sur un ensemble de première catégorie.
 \end{definition}
 
-\section{Applications dans les espaces de Baire (\ref{chapter_baire_theorem})}
+\section{Applications dans les espaces de Baire}
 
 Remarquons d'abord que la propriété de Baire fermé
 (\ref{property_baire_closed}) peut être écrit en toute union dénombrable
@@ -108,10 +136,13 @@ de fermés nul part denses est d'intérieur vide.
 
 \begin{proposition}
 	\label{proposition_first_set_category_equiv_baire}
-	Soit $(X, \tau)$ est un espace topologique.
-	$(X, \tau)$ est de Baire ssi le complémentaire de tout ensemble de première
-	catégorie est dense dans $X$, c'est-à-dire $\forall A \in \mathcal{C}_{1}$,
-	$\adh{A^{c}} = X$.
+	Soit $(X, \tau)$ est un espace topologique. Les assertions suivantes sont
+	équivalentes.
+	\begin{enumerate}
+		\item $(X, \tau)$ est de Baire
+		\item Le complémentaire de tout ensemble de première catégorie est dense
+			dans $X$, c'est-à-dire pour tout $A \in \mathcal{C}_{1}$, $\adh{A^{c}} = X$.
+	\end{enumerate}
 \end{proposition}
 
 \ifdefined\outputproof
@@ -156,7 +187,7 @@ de fermés nul part denses est d'intérieur vide.
 \end{proof}
 \fi
 
-\begin{definition}
+\begin{definition} [Résiduel]
 	Soit $(X, \tau)$ un espace topologique, et $A \subseteq X$.
 	$A$ est \textbf{résiduel} s'il est le complémentaire d'un ensemble de
 	première catégorie, ie $A^{c} \in \mathcal{C}_{1}$.
@@ -164,9 +195,14 @@ de fermés nul part denses est d'intérieur vide.
 
 \begin{proposition}
 	\label{proposition_residual_equiv_baire}
-	Soit $(X, \tau)$ un espace topologique.
-	$(X, \tau)$ est de Baire ssi tout ensemble résiduel est dense, ie $\forall A
-	\subseteq X$, $A^{c} \in \mathcal{C}_{1} \implies \adh{A} = X$.
+	Soit $(X, \tau)$ un espace topologique. Alors les assertions suivantes sont
+	équivalentes.
+	\begin{enumerate}
+		\item $(X, \tau)$ est de Baire.
+		\item Tout ensemble résiduel est dense, c'est-à-dire pour tout
+			sous-ensemble $A$ de $X$, si $A^{c} \in \mathcal{C}_{1}$ alors
+			$\adh{A} = X$.
+	\end{enumerate}
 \end{proposition}
 
 \ifdefined\outputproof
@@ -188,10 +224,14 @@ de fermés nul part denses est d'intérieur vide.
 \end{proof}
 \fi
 
- \begin{proposition}
-	Soit $(X, \tau)$ un espace de Baire, et $\GSsequence{F}{n}{\naturel}$ une
-	suite de fermés tel que $X = \displaystyle\cup_{n \in \naturel}F_{n}$.Alors
-	$\displaystyle\adh{\cup_{n \in \naturel}\interior{F_{n}}} = X$.
+\begin{proposition}
+	Soit $(X, \tau)$ un espace de Baire et soit $E$ un sous-ensemble de $X$.
+
+	Alors les assertions suivantes sont équivalentes.
+	\begin{enumerate}
+		\item $E$ est un ensemble résiduel.
+		\item $E$ contient un sous-ensemble $O_{\delta}$ dense dans $(X, \tau)$.
+	\end{enumerate}
 \end{proposition}
 
 \ifdefined\outputproof
@@ -199,6 +239,26 @@ de fermés nul part denses est d'intérieur vide.
 
 \end{proof}
 \fi
+
+ \begin{proposition}
+	Soit $(X, \tau)$ un espace de Baire, et $\GSsequence{F}{n}{\naturel}$ une
+	suite de fermés tel que $X = \displaystyle\cup_{n \in \naturel}F_{n}$.
+
+	Alors
+	\begin{equation}
+		\displaystyle \adh{\cup_{n \in \naturel}\interior{F_{n}}} = X
+	\end{equation}
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\section{Applications à l'analyse fonctionnelle}
+
+\subsection{Fonctions séparément continues}
 
 \begin{theorem}
 	\label{first_category_set_theorem_continued_function}
@@ -214,7 +274,7 @@ de fermés nul part denses est d'intérieur vide.
 \end{proof}
 \fi
 
-\begin{definition}
+\begin{definition} [Séparément continue]
 	$f$ est \textbf{séparément continue} si elle est continue en chacune de ses
 	variables.
 \end{definition}
