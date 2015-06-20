@@ -1,7 +1,47 @@
 \chapter{Le théorème d'Ascoli}
 
+\section{Rappels et définitions}
+
+\begin{proposition}
+	Soit $(X, \tau)$ un espace topologique.
+
+	Soient $F$ un fermé de $(X, \tau)$ et $K$ un compact de $(X, \tau)$.
+
+	Si $F \subseteq K$, alors $F$ est compact dans $(X, \tau)$.
+
+	En d'autres termes, tout fermé dans un compact est compact.
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
 \begin{definition}
-	Soit $(X, \tau)$ un espace topologique et $(Y, d_{Y})$ un espace métrique.
+	Soit $(X, \tau)$ un espace topologique et soit $A \subseteq X$.
+
+	On dit que $A$ est \textbf{relativement compact dans $(X, \tau)$} si
+	$\adh{A}$ est compact dans $(X, \tau)$.
+\end{definition}
+
+\begin{proposition}
+	Soit $(X, \tau)$ un espace topologique et soit $A \subseteq X$.
+	Alors les assertions suivantes sont équivalentes.
+	\begin{enumerate}
+		\item $A$ est relativement compact dans $(X, \tau)$.
+		\item $A$ est contenu dans un compact $K$ de $(X, \tau)$.
+	\end{enumerate}
+\end{proposition}
+
+\ifdefined\outputproof
+\begin{proof}
+
+\end{proof}
+\fi
+
+\begin{definition}
+	Soient $(X, \tau)$ un espace topologique et $(Y, d_{Y})$ un espace métrique.
 	Posons
 	\begin{equation}
 		F(X, Y) = \GSset{f : X \rightarrow Y}
@@ -17,12 +57,47 @@
 	$x_{0}$ de $X$.
 \end{definition}
 
-On va munir $F(X, Y)$ d'une topologie dépendante de la topologie $\tau$ et de
+\begin{definition}
+	Soient $(X, d_{X})$, $(Y, d_{Y})$ deux espaces métriques.
+	Posons
+	\begin{equation}
+		F(X, Y) = \GSset{f : X \rightarrow Y}
+	\end{equation}
+	l'ensemble des fonctions de $X$ dans $Y$.
+
+	Soit $A \subseteq F(X, Y)$.
+
+	On dit que $A$ est \textbf{uniformément continu} si pour tout $\epsilon >
+	0$, il existe $\delta > 0$ tel que pour tout $x \in X$, pour tout $y \in
+	B(x, \delta)$ et pour tout $f \in A$, $d_{Y}(f(x), f(y)) \leq \epsilon$.
+\end{definition}
+
+On va munir $\mathcal{C}(X, Y)$, l'ensemble des fonctions continues de $(X,
+\tau)$ dans $(Y, d_{Y})$, d'une topologie dépendante uniquement de
 la métrique $d_{Y}$.
 
 \begin{definition} [Topologie de la convergence uniforme]
+	Soient $(X, \tau)$ un espace topologique compact et soit $(Y, d_{Y})$ un
+	espace métrique.
+	Soit $\mathcal{C}(X, Y)$ où $\mathcal{C}(X, Y)$ est
+	l'ensemble des fonctions continues de $(X, \tau)$ dans $(Y, d_{Y})$
 
+	\textbf{La topologie de la convergence uniforme}, notée $\tau_{\infty}$, est
+	la topologie engendrée par la métrique
+	\begin{equation}
+		d : (\mathcal{C}(X, Y), \mathcal{C}(X, Y)) \rightarrow \real
+	\end{equation}
+	tel que
+	\begin{equation}
+		d(f, g) = \sup_{x \in X} d_{Y}(f(x), g(x))
+	\end{equation}
 \end{definition}
+
+\begin{remarque}
+	La définition de la métrique précédente contient un $\sup$. En realité,
+	celui-ci est un maximum car $(X, \tau)$ est compact par hypothèse et $f, g$
+	sont des fonctions continues.
+\end{remarque}
 
 \begin{exemple}
 	\begin{enumerate}
@@ -30,9 +105,14 @@ la métrique $d_{Y}$.
 			L'ensemble des fonctions $k$-lipchitziennes pour $k > 0$ est
 			équicontinu.
 		\item Soient $(X, d_{X})$ et $(Y, d_{Y})$ deux espaces métriques. Soit
-			$F : (X, d_{X}) \cartprod (X, d_{X}) \rightarrow (Y, d_{Y})$ une
-			fonction uniformément continue et posons $A = \GSsetDef{f_{y} : X
-		\rightarrow Y}{f_{y}(x) = f(x, y)}$. Alors $A$ est équicontinu.
+			\begin{equation}
+				f : (X, d_{X}) \cartprod (X, d_{X}) \rightarrow (Y, d_{Y})
+			\end{equation}
+			une fonction uniformément continue et posons
+			\begin{equation}
+				A = \GSsetDef{f_{y} : X \rightarrow Y}{f_{y}(x) = f(x, y)}
+			\end{equation}
+			Alors $A$ est équicontinu.
 	\end{enumerate}
 \end{exemple}
 
@@ -86,7 +166,7 @@ la métrique $d_{Y}$.
 	l'ensemble des fonctions continues de $(X, \tau)$ dans $(Y, d_{Y})$ et
 	$\tau_{\infty}$ est la topologie de la convergence uniforme.
 
-	Alors, la fonction
+	Alors, la fonction d'évalutation
 	\begin{equation}
 		\phi : (\mathcal{C}(X, Y), \tau_{\infty}) \cartprod (X, \tau)
 		\rightarrow (Y, d_{Y}) : (f, x) \rightarrow f(x)
@@ -96,9 +176,37 @@ la métrique $d_{Y}$.
 
 \ifdefined\outputproof
 \begin{proof}
+	Il faut montrer que pour tout $(f_{0}, x_{0})$, pour tout $\epsilon > 0$,
+	il existe $V_{(f_{0}, x_{0})}$ tel que pour tout $(f, x) \in V_{(f_{0},
+	x_{0})}$, $d_{Y}(f_{0}(x_{0}), f(x)) \leq \epsilon$.
 
+	Soit $(f_{0}, x_{0})$ et $\epsilon > 0$. On sait que $f_{0}$ est continue en
+	$x_{0}$ par hypothèse. Donc
+	\begin{equation}
+		\forall \epsilon' > 0, \, \exists V_{x_{0}}, \, \forall x \in V_{x_{0}},
+		\, d_{Y}(f_{0}(x), f_{0}(x_{0})) \leq \epsilon'
+	\end{equation}
+	Prenons le cas particulier où $\epsilon' = \frac{\epsilon}{2}$ et prenons
+	\begin{equation}
+		V_{(f_{0}, x_{0})} = B_{\mathcal{C}(X, Y)}(f_{0}, \frac{\epsilon}{2})
+		\cartprod V_{x_{0}}
+	\end{equation}
+	où $V_{x_{0}}$ est le voisinage de $x_{0}$ donné par $\epsilon'$.
+
+	Il nous reste à vérifier que pour tout $(f, x) \in V_{(f_{0}, x_{0})}$,
+	$d_{Y}(f(x), f_{0}(x_{0})) \leq \epsilon$.
+
+	Soit $(f, x) \in V_{(f_{0}, x_{0})}$. On a
+	\begin{align}
+		d_{Y}(f(x), f_{0}(x_{0})) & \leq d(f(x), f(x_{0})) + d(f(x_{0}), f_{0}(x_{0}))
+		\\
+		& \leq \frac{\epsilon}{2} + \frac{\epsilon}{2} \\
+		& \leq \epsilon
+	\end{align}
 \end{proof}
 \fi
+
+\section{Enoncé du théorème et corollaires}
 
 \begin{theorem} [Théorème d'Ascoli]
 	Soient $(X, \tau)$ un espace topologique compact non vide, $(Y, d_{Y})$ un
@@ -123,6 +231,10 @@ la métrique $d_{Y}$.
 \end{proof}
 \fi
 
+On remarque qu'en ajoutant l'hypothèse de compacité sur $(Y, d_{Y})$, on obtient
+immédiatement que $\adh{\GSsetDef{f(x)}{f \in A}}$ est relativement compact dans
+$(Y, d_{Y})$.
+
 \begin{corollary}
 	Soient $(X, \tau)$ un espace topologique compact non vide, $(Y, d_{Y})$ un
 	espace métrique. Soit $(\mathcal{C}(X, Y), \tau_{\infty})$ où
@@ -135,16 +247,40 @@ la métrique $d_{Y}$.
 	équivalentes.
 
 	\begin{enumerate}
-		\item $\adh{A}$ est compact dans $(\mathcal{C}(X, Y), \tau_{\infty})$.
-		\item $A$ est équicontinu.
+		\item \label{statement:adherence} $\adh{A}$ est compact dans $(\mathcal{C}(X, Y), \tau_{\infty})$.
+		\item \label{statement:equicontinu} $A$ est équicontinu.
 	\end{enumerate}
 \end{corollary}
 
 \ifdefined\outputproof
 \begin{proof}
+	$(\ref{statement:adherence}) \implies (\ref{statement:equicontinu})$.
+	On a vu que $\adh{A}$ compact dans $(\mathcal{C}(X, Y), \tau_{\infty})$
+	est équivalent à $A$ relativement compact dans $(\mathcal{C}(X, Y),
+	\tau_{\infty})$.
 
+	Par le théorème d'Ascoli, $A$ est équicontinu.
+
+	$(\ref{statement:equicontinu}) \implies (\ref{statement:adherence})$.
+	Il suffit de montrer, par le théorème d'Ascoli, que pour tout $x \in X$
+	\begin{equation}
+		\GSsetDef{f(x)}{f \in A}
+	\end{equation}
+	est relativement compact dans $(Y, d_{Y})$,
+	c'est-à-dire que
+	\begin{equation}
+		\adh{\GSsetDef{f(x)}{f \in A}}
+	\end{equation}
+	est compact dans $(Y, d_{Y})$.
+
+	Comme $\adh{\GSsetDef{f(x)}{f \in A}}$ est fermé dans $(Y, d_{Y})$ et que
+	$Y$ est compact dans $(Y, d_{Y})$, alors $\adh{\GSsetDef{f(x)}{f \in A}}$ est
+	compact dans $(Y, d_{Y})$.
 \end{proof}
 \fi
+
+Le théorème d'Ascoli donne donc une équivalence entre la compactité et
+l'équicontinuité quand nous avons deux espaces compacts.
 
 Maintenant, oublions l'hypothèse de compacité sur $(Y, d_{Y})$, mais supposons
 que $Y$ est un espace vectoriel normé. On obtient alors une autre équivalence

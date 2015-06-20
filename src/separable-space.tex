@@ -36,7 +36,7 @@ nous dit que si un espace est séparable, alors il a au plus un nombre
 dénombrable d'ouverts disjoints.
 
 \begin{proposition}
-	Soit $(X, \tau)$ un espace topologique séparable et soit $\GSsequence{O}{i}{I}$ une famille d'ouvert
+	Soit $(X, \tau)$ un espace topologique séparable et soit $\GSsequence{O}{i}{I}$ une famille d'ouverts
 	2 à 2 disjoints.
 
 	Alors $I$ est au plus dénombrable.
@@ -77,7 +77,7 @@ espace métrique.
 	\begin{enumerate}
 		\item pour tout $\epsilon > 0$, le recouvrement $(B(x, \epsilon))_{x \in
 			E}$ admet un sous-recouvrement \textbf{dénombrable}.
-		\item E est séparable.
+		\item $(E, d_{E})$ est séparable.
 		\item il existe une suite $\GSsequence{O}{n}{\naturel}$ d'ouverts de $(E,
 			d_{E})$, tel que tout ouvert de $E$ s'écrit comme une union de $O_{n}$.
 	\end{enumerate}
@@ -90,7 +90,8 @@ espace métrique.
 \fi
 
 \begin{proposition}
-	Si $(E, d_{E})$ est séparable, alors toute partie de E est séparable.
+	Si $(E, d_{E})$ est séparable, alors toute partie de E est séparable pour la
+	topologie induite.
 \end{proposition}
 
 \ifdefined\outputproof
@@ -113,12 +114,14 @@ Remarquons qu'un espace vectoriel normé est en particulier un espace
 métrique, donc les équivalences de la section précédente restent vraies.
 
 \begin{proposition}
-	Soit $\GSnormedSpace{E}{\GSnorme{.}}$ un espace vectoriel normé. Alors les
+	Soit $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$ un espace vectoriel normé. Alors les
 	assertions suivantes sont équivalentes.
 	\begin{enumerate}
-		\item $E$ est séparable.
-		\item $B(E)$ est séparable
-		\item $S(E)$ est séparable
+		\item $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$ est séparable.
+		\item $(B(E), \tau_{ind})$ est séparable où $\tau_{ind}$ est la
+			topologie induite sur $B(E)$.
+		\item $(S(E), \tau_{ind})$ est séparable où $\tau_{ind}$ est la
+			topologie induite sur $S(E)$.
 	\end{enumerate}
 \end{proposition}
 

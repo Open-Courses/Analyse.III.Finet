@@ -15,7 +15,10 @@ fermés.
 \begin{propriete} [Propriété de Baire fermés]
 \label{property_baire_closed}
 Pour toutes suites dénombrables $\GSsequence{F}{n}{\naturel}$ de fermés d'intérieur vide, on a
-	$\displaystyle \bigcup_{n = 0}^{\infty} F_{n} = \emptyset$.
+	
+	\begin{equation}
+		\interior{\bigcup_{n = 0}^{\infty} F_{n}} = \emptyset
+	\end{equation}
 \end{propriete}
 
 \ifdefined\outputproof
@@ -31,7 +34,7 @@ Pour toutes suites dénombrables $\GSsequence{F}{n}{\naturel}$ de fermés d'int�
 	Posons maintenant $F = \bigcup_{n = 0}^{\infty} F_{n}$. On a $\comp{F} = \bigcap_{n = 0}^{\infty} O_{n}$.
 
 	\begin{align}
-		\interior{F} = \emptyset & \Leftrightarrow \adh(F^{c}) = E \\
+		\interior{F} = \emptyset & \Leftrightarrow \adh{F^{c}} = E \\
 		& \Leftrightarrow \adh{\bigcap_{n = 0}^{\infty} O_{n}} = E
 	\end{align}
 	Donc $F^{c}$ est ouvert et dense.
@@ -87,25 +90,26 @@ réponse est oui, et le théorème (de Baire) nous en donne une partie.
 	Si on considère les suites d'ouverts non dénombrables pour la propriété de
 	Baire, nous n'avons pas la proposition précédente.
 	En effet, si on prend, pour $\real$ qui est complet, tous les singletons,
-	qui sont fermés et d'intérieur vide, ils recouvrent $\real$. Or, cela
+	qui sont fermés et d'intérieur vide, recouvrent $\real$. Or, cela
 	contredit la propriété de Baire fermé~\ref{property_baire_closed}.
 \end{remarque}
 
 On a alors comme conséquence une proposition très intéressante sur les bases
-algébriques des espaces vectoriels normés E. Pour rappel, une base algébrique
+algébriques des espaces vectoriels normés
+$\GSnormedSpace{E}{\GSnormeDef{.}{E}}$. Pour rappel, une base algébrique
 est un ensemble d'éléments B de E linéairement indépendants tel que tout élément
 de E s'écrit comme une combinaire linéaire finie des éléments de B.
 
 \begin{proposition}
 \label{proposition_basis_banach_space}
-	Soit E un espace de Banach, alors toute base algébrique est soit finie, soit
+	Soit $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$ un espace de Banach, alors toute base algébrique est soit finie, soit
 	non-dénombrable.
 \end{proposition}
 
 \ifdefined\outputproof
 \begin{proof}
-	Soit $E$ un espace de Banach. On a
-	par~\ref{theorem_baire_complete_space} que c'est un espace de Baire.
+	Soit $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$ un espace de Banach.
+	On a par~\ref{theorem_baire_complete_space} que c'est un espace de Baire.
 
 	Si $E$ est de dimension finie, on a fini.
 	Supposons maintenant qu'il soit de dimension infinie dénombrable, et prenons
@@ -162,12 +166,14 @@ Donnons maintenant, grace à la contraposée, un corollaire important sur les es
 Banach.
 
 \begin{corollary}
-	Soit E un espace vectoriel normé qui a une base algébrique dénombrable.
-	Alors E n'est pas complet (ou E n'est pas de Banach).
+	Soit $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$ un espace vectoriel normé qui a
+	une base algébrique dénombrable.
+	Alors $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$ n'est pas un espace de Banach.
 \end{corollary}
 
 \ifdefined\outputproof
 \begin{proof}
-	S'il était complet, il n'aurait pas de base dénombrable.
+	Si $\GSnormedSpace{E}{\GSnormeDef{.}{E}}$ était un espace de Banach, il
+	n'aurait pas de base dénombrable.
 \end{proof}
 \fi
