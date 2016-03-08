@@ -2,8 +2,9 @@
 
 Cours d'analyse III donné à l'Université de Mons (UMONS) pendant l'année 2014-2015 par Catherine Finet
 
-**Toutes les preuves ne sont pas présentes, voire aucune. N'hésitez pas à
-contribuer pour le transformer en un cours complet.**
+**Toutes les preuves ne sont pas présentes, voire aucune. Il peut aussi avoir
+des erreurs. N'hésitez pas à contribuer pour le transformer en un cours
+complet.**
 
 ## Comment compiler
 
